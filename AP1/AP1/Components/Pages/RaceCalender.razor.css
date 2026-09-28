@@ -1,0 +1,222 @@
+﻿.race-calendar {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.calendar-header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.calendar-header p {
+    margin: 6px 0 0;
+    color: #777;
+}
+
+.season-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.season-selector select {
+    padding: 9px 30px 9px 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background: white;
+}
+
+
+/* Monate */
+
+.months {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.month-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+    background: white;
+    overflow: hidden;
+}
+
+.month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 18px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.month-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.month-header span {
+    font-size: 13px;
+    color: #888;
+}
+
+
+/* Rennen */
+
+.race {
+    display: flex;
+    align-items: center;
+
+    padding: 15px;
+
+    border-bottom: 1px solid #eee;
+
+    transition: background 0.15s;
+}
+
+.race:last-child {
+    border-bottom: none;
+}
+
+.race:hover {
+    background: #f8f8f8;
+}
+
+
+/* Datum */
+
+.race-date {
+    width: 50px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.race-date .day {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.race-date .weekday {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+
+/* Informationen */
+
+.race-info {
+    flex: 1;
+    min-width: 0;
+    padding-left: 15px;
+}
+
+.race-info h3 {
+    margin: 0 0 5px;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.race-info p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #555;
+}
+
+.race-info .circuit {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #999;
+}
+
+
+/* Grand Prix */
+
+.race-type {
+    margin-left: 10px;
+}
+
+.race-type span {
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    color: #777;
+
+    background: #f2f2f2;
+}
+
+
+/* Loading */
+
+.loading {
+    padding: 50px;
+
+    text-align: center;
+
+    color: #777;
+}
+
+
+/* Fehler */
+
+.error {
+    padding: 15px 20px;
+
+    border-radius: 8px;
+
+    background: #ffe5e5;
+
+    border: 1px solid #ffb3b3;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+
+    .months {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .calendar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .months {
+        grid-template-columns: 1fr;
+    }
+
+}

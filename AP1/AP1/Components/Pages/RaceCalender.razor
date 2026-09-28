@@ -1,0 +1,276 @@
+﻿@page "/race-calendar"
+
+@using System.Net.Http.Json
+@using System.Text.Json.Serialization
+
+@inject HttpClient Http
+
+<PageTitle>Race Calendar</PageTitle>
+
+<div class="race-calendar">
+
+    <div class="calendar-header">
+
+        <div>
+            <h1>Race Calendar</h1>
+            <p>Formula 1 season @selectedYear</p>
+        </div>
+
+        <div class="season-selector">
+            <label for="season">Season</label>
+
+            <select id="season"
+                    @bind="selectedYear"
+                    @bind:after="LoadRaces">
+
+                @foreach (var year in availableYears)
+                {
+                    <option value="@year">@year</option>
+                }
+
+            </select>
+        </div>
+
+    </div>
+
+
+    @if (loading)
+    {
+        <div class="loading">
+            Loading race calendar...
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="error">
+            @errorMessage
+        </div>
+    }
+    else
+    {
+        <div class="months">
+
+            @foreach (var month in racesByMonth)
+            {
+                <div class="month-card">
+
+                    <div class="month-header">
+
+                        <h2>@month.Name</h2>
+
+                        <span>
+                            @month.Races.Count
+                            @(month.Races.Count == 1 ? "race" : "races")
+                        </span>
+
+                    </div>
+
+
+                    <div class="month-races">
+
+                        @foreach (var race in month.Races)
+                        {
+                            <div class="race">
+
+                                <div class="race-date">
+
+                                    <span class="day">
+                                        @race.DateStart.ToString("dd")
+                                    </span>
+
+                                    <span class="weekday">
+                                        @race.DateStart.ToString("ddd")
+                                    </span>
+
+                                </div>
+
+
+                                <div class="race-info">
+
+                                    <h3>
+                                        @race.MeetingName
+                                    </h3>
+
+                                    <p>
+                                        @race.Location, @race.CountryName
+                                    </p>
+
+                                    <span class="circuit">
+                                        @race.CircuitShortName
+                                    </span>
+
+                                </div>
+
+
+                                <div class="race-type">
+
+                                    <span>Grand Prix</span>
+
+                                </div>
+
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+
+</div>
+
+
+@code {
+
+    private int selectedYear = DateTime.Now.Year;
+
+
+    private List<int> availableYears =
+        Enumerable
+            .Range(2023, DateTime.Now.Year - 2023 + 1)
+            .Reverse()
+            .ToList();
+
+
+    private List<Race> races = new();
+
+    private List<MonthGroup> racesByMonth = new();
+
+
+    private bool loading = true;
+
+    private string? errorMessage;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRaces();
+    }
+
+
+    private async Task LoadRaces()
+    {
+        loading = true;
+        errorMessage = null;
+
+        try
+        {
+            var url =
+                $"https://api.openf1.org/v1/meetings?year={selectedYear}";
+
+            var result =
+                await Http.GetFromJsonAsync<List<Meeting>>(url);
+
+
+            races = result?
+
+                .Where(r => !r.IsCancelled)
+
+                .OrderBy(r => r.DateStart)
+
+                .Select(r => new Race
+                {
+                    MeetingName = r.MeetingName,
+                    CountryName = r.CountryName,
+                    Location = r.Location,
+                    CircuitShortName = r.CircuitShortName,
+                    DateStart = r.DateStart
+                })
+
+                .ToList()
+
+                ?? new List<Race>();
+
+
+            racesByMonth = races
+
+                .GroupBy(r => r.DateStart.Month)
+
+                .OrderBy(g => g.Key)
+
+                .Select(g => new MonthGroup
+                {
+                    Name = new DateTime(
+                        selectedYear,
+                        g.Key,
+                        1
+                    ).ToString("MMMM"),
+
+                    Races = g.ToList()
+                })
+
+                .ToList();
+        }
+        catch (Exception ex)
+        {
+            errorMessage =
+                "The race calendar could not be loaded.";
+
+            Console.WriteLine(ex);
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+
+    public class Meeting
+    {
+        [JsonPropertyName("meeting_key")]
+        public int MeetingKey { get; set; }
+
+
+        [JsonPropertyName("meeting_name")]
+        public string MeetingName { get; set; } = "";
+
+
+        [JsonPropertyName("circuit_short_name")]
+        public string CircuitShortName { get; set; } = "";
+
+
+        [JsonPropertyName("country_name")]
+        public string CountryName { get; set; } = "";
+
+
+        [JsonPropertyName("location")]
+        public string Location { get; set; } = "";
+
+
+        [JsonPropertyName("date_start")]
+        public DateTimeOffset DateStart { get; set; }
+
+
+        [JsonPropertyName("date_end")]
+        public DateTimeOffset DateEnd { get; set; }
+
+
+        [JsonPropertyName("is_cancelled")]
+        public bool IsCancelled { get; set; }
+    }
+
+
+    public class Race
+    {
+        public string MeetingName { get; set; } = "";
+
+        public string CountryName { get; set; } = "";
+
+        public string Location { get; set; } = "";
+
+        public string CircuitShortName { get; set; } = "";
+
+        public DateTimeOffset DateStart { get; set; }
+    }
+
+
+    public class MonthGroup
+    {
+        public string Name { get; set; } = "";
+
+        public List<Race> Races { get; set; } = new();
+    }
+
+}
