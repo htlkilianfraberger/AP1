@@ -1,5 +1,6 @@
 ﻿@page "/race-calendar"
 
+@rendermode InteractiveServer
 @using System.Net.Http.Json
 @using System.Text.Json.Serialization
 
@@ -17,11 +18,12 @@
         </div>
 
         <div class="season-selector">
+
             <label for="season">Season</label>
 
             <select id="season"
-                    @bind="selectedYear"
-                    @bind:after="LoadRaces">
+                    value="@selectedYear"
+                    @onchange="OnYearChanged">
 
                 @foreach (var year in availableYears)
                 {
@@ -29,6 +31,7 @@
                 }
 
             </select>
+
         </div>
 
     </div>
@@ -44,6 +47,12 @@
     {
         <div class="error">
             @errorMessage
+        </div>
+    }
+    else if (races.Count == 0)
+    {
+        <div class="error">
+            No races found for @selectedYear.
         </div>
     }
     else
@@ -103,9 +112,7 @@
 
 
                                 <div class="race-type">
-
                                     <span>Grand Prix</span>
-
                                 </div>
 
                             </div>
@@ -124,52 +131,79 @@
 
 @code {
 
+    // Currently selected season
     private int selectedYear = DateTime.Now.Year;
 
 
+    // Available seasons
     private List<int> availableYears =
         Enumerable
-            .Range(2023, DateTime.Now.Year - 2023 + 1)
+            .Range(
+                2023,
+                DateTime.Now.Year - 2023 + 1
+            )
             .Reverse()
             .ToList();
 
 
+    // Race data
     private List<Race> races = new();
 
     private List<MonthGroup> racesByMonth = new();
 
 
+    // Loading / error state
     private bool loading = true;
 
     private string? errorMessage;
 
 
+    // Initial page load
     protected override async Task OnInitializedAsync()
     {
         await LoadRaces();
     }
 
 
+    // Called when the selected season changes
+    private async Task OnYearChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out int year))
+        {
+            selectedYear = year;
+
+            await LoadRaces();
+        }
+    }
+
+
+    // Load races from OpenF1
     private async Task LoadRaces()
     {
         loading = true;
         errorMessage = null;
 
+        // Remove old season data
+        races.Clear();
+        racesByMonth.Clear();
+
         try
         {
+            // OpenF1 API
             var url =
                 $"https://api.openf1.org/v1/meetings?year={selectedYear}";
 
+            Console.WriteLine($"Loading: {url}");
+
+            // Request data
             var result =
                 await Http.GetFromJsonAsync<List<Meeting>>(url);
 
 
+            // Convert API data into our Race objects
             races = result?
-
                 .Where(r => !r.IsCancelled)
-
                 .OrderBy(r => r.DateStart)
-
                 .Select(r => new Race
                 {
                     MeetingName = r.MeetingName,
@@ -178,18 +212,14 @@
                     CircuitShortName = r.CircuitShortName,
                     DateStart = r.DateStart
                 })
-
                 .ToList()
-
                 ?? new List<Race>();
 
 
+            // Group races by month
             racesByMonth = races
-
                 .GroupBy(r => r.DateStart.Month)
-
                 .OrderBy(g => g.Key)
-
                 .Select(g => new MonthGroup
                 {
                     Name = new DateTime(
@@ -200,7 +230,6 @@
 
                     Races = g.ToList()
                 })
-
                 .ToList();
         }
         catch (Exception ex)
@@ -216,6 +245,10 @@
         }
     }
 
+
+    // ==========================================
+    // OpenF1 API model
+    // ==========================================
 
     public class Meeting
     {
@@ -252,6 +285,10 @@
     }
 
 
+    // ==========================================
+    // Application race model
+    // ==========================================
+
     public class Race
     {
         public string MeetingName { get; set; } = "";
@@ -266,11 +303,14 @@
     }
 
 
+    // ==========================================
+    // Month grouping
+    // ==========================================
+
     public class MonthGroup
     {
         public string Name { get; set; } = "";
 
         public List<Race> Races { get; set; } = new();
     }
-
 }

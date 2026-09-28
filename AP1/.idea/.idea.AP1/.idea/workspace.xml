@@ -16,6 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba3c0d7c-9e94-4164-88f2-aa04b81e2288" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AP1/Components/Pages/RaceCalender.razor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AP1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AP1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AP1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Program.cs" afterDir="false" />
     </list>
