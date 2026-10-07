@@ -1,0 +1,16 @@
+@page "/uebersicht"
+@page "/rennen"
+@page "/konstrukteurs-wm"
+@page "/kalender"
+@page "/ergebnisse"
+@page "/news"
+@page "/statistiken"
+@page "/einstellungen"
+@inject NavigationManager Navigation
+<PageTitle>@Title | F1 Dashboard</PageTitle>
+<header class="page-heading"><div><p class="eyebrow">FORMULA 1</p><h1>@Title</h1></div></header>
+@code {
+    private string Title => Navigation.ToBaseRelativePath(Navigation.Uri).Split('?')[0].Trim('/') switch {
+        "uebersicht" => "Übersicht", "rennen" => "Rennen", "konstrukteurs-wm" => "Konstrukteurs-WM", "kalender" => "Kalender", "ergebnisse" => "Ergebnisse", "news" => "News", "statistiken" => "Statistiken", "einstellungen" => "Einstellungen", _ => "Dashboard"
+    };
+}
