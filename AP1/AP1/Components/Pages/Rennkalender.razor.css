@@ -1,0 +1,57 @@
+.calendar-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    background: #f4f4f2;
+}
+
+.calendar-panel {
+    width: min(100%, 42rem);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid #deded8;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.calendar-panel h1 {
+    margin: 0;
+    font-size: clamp(2.25rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.calendar-panel p {
+    max-width: 34rem;
+    margin: 1rem 0 0;
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.export-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.1rem;
+    border-radius: 0.5rem;
+    background: #151515;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.export-button:hover {
+    background: #d90429;
+    color: #fff;
+}
+
+.eyebrow {
+    margin: 0 0 0.5rem;
+    color: #d90429;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}

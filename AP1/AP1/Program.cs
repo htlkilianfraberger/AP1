@@ -1,9 +1,11 @@
 using AP1.Components;
+using AP1.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddHttpClient<RaceCalendarService>();
 
 var app = builder.Build();
 
@@ -18,6 +20,13 @@ app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages:
 app.UseAntiforgery();
 
 app.MapStaticAssets();
+app.MapGet("/rennkalender/export", async (RaceCalendarService raceCalendarService, CancellationToken cancellationToken) =>
+{
+    var calendar = await raceCalendarService.CreateCurrentSeasonCalendarAsync(cancellationToken);
+    var fileName = $"f1-rennkalender-{DateTime.UtcNow.Year}.ics";
+
+    return Results.File(calendar, "text/calendar; charset=utf-8", fileName);
+});
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
