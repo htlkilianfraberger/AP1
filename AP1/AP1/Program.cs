@@ -13,6 +13,12 @@ builder.Services.AddHttpClient<OpenF1Service>(client =>
     client.Timeout = TimeSpan.FromSeconds(20);
 });
 
+builder.Services.AddHttpClient<OpenF1Service>(client =>
+{
+    client.BaseAddress = new Uri("https://api.openf1.org/v1/");
+    client.Timeout = TimeSpan.FromSeconds(20);
+});
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
