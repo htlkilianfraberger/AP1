@@ -1,0 +1,15 @@
+<span class="portrait @(Large ? "portrait-large" : "")">
+    @if (!_failed && Uri.TryCreate(Driver.HeadshotUrl, UriKind.Absolute, out var uri) && uri.Scheme == "https")
+    { <img src="@ImageUrl" alt="@Driver.DriverName" loading="@(Large ? "eager" : "lazy")" @onerror="ImageFailed" /> }
+    else { <span class="portrait-fallback">@Driver.Acronym</span> }
+</span>
+@code {
+    [Parameter, EditorRequired] public DriverChampionshipStanding Driver { get; set; } = default!;
+    [Parameter] public bool Large { get; set; }
+    private bool _failed;
+    private bool _useOriginal;
+    private string? _url;
+    private string? ImageUrl => Large && !_useOriginal ? Driver.HeadshotUrl?.Replace("/1col/", "/5col/", StringComparison.Ordinal) : Driver.HeadshotUrl;
+    private void ImageFailed() { if (Large && !_useOriginal && ImageUrl != Driver.HeadshotUrl) _useOriginal = true; else _failed = true; }
+    protected override void OnParametersSet() { if (_url != Driver.HeadshotUrl) { _failed = false; _useOriginal = false; _url = Driver.HeadshotUrl; } }
+}
