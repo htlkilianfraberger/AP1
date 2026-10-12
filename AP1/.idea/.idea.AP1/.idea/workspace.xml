@@ -15,16 +15,30 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba3c0d7c-9e94-4164-88f2-aa04b81e2288" name="Changes" comment="" />
+    <list default="true" id="ba3c0d7c-9e94-4164-88f2-aa04b81e2288" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AP1/Components/Pages/RaceCalender.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AP1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AP1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AP1/AP1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/AP1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AP1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="3" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -36,12 +50,75 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/htlkilianfraberger/AP1.git&quot;,
-    &quot;accountId&quot;: &quot;81b0e294-f2bf-4d93-8a7d-9d2799144f7f&quot;
+    &quot;accountId&quot;: &quot;72960d00-c73c-426a-a4fc-c96983ce436a&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d94f8311e6161d575c5eafbd01cf3f1ff4c15c19e8e9e6af7d37dc171e51623/AddressBinder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="2.043559677164108" />
+      <entry key="MS500" value="3.9936390580825765" />
+      <entry key="S2" value="5.298028836230885" />
+      <entry key="S5" value="5.695873767001063" />
+      <entry key="S10" value="5.843767050496144" />
+      <entry key="S30" value="6.064153832762606" />
+      <entry key="S60" value="6.691543589590082" />
+      <entry key="M2" value="8.413878682040512" />
+      <entry key="M5" value="17.424143372137227" />
+      <entry key="M10" value="31.725017830490934" />
+      <entry key="M15" value="43.576364492716436" />
+      <entry key="M30" value="76.83518372514963" />
+      <entry key="H1" value="123.89365044250728" />
+      <entry key="H2" value="167.31125765583613" />
+      <entry key="H4" value="197.3640599395661" />
+      <entry key="D1" value="228.12047999157093" />
+      <entry key="W1" value="234.00117397635222" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="3.649902797508263E-148" />
+      <entry key="S5" value="1.0590403797514552E-59" />
+      <entry key="S10" value="3.2542900604455255E-30" />
+      <entry key="S30" value="1.481899505954216E-10" />
+      <entry key="S60" value="1.2173329478635711E-5" />
+      <entry key="M2" value="0.0034890298848831254" />
+      <entry key="M5" value="0.10404884246023166" />
+      <entry key="M10" value="0.32860906403378165" />
+      <entry key="M15" value="0.5036722730818335" />
+      <entry key="M30" value="0.8684962230797271" />
+      <entry key="H1" value="1.2555755551146714" />
+      <entry key="H2" value="1.5638131215199997" />
+      <entry key="H4" value="1.7625255880876227" />
+      <entry key="D1" value="1.9573798272469485" />
+      <entry key="W1" value="1.993831884009306" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.9589158618326403" />
+      <entry key="MS500" value="3.9612191868775737" />
+      <entry key="S2" value="5.287312639384749" />
+      <entry key="S5" value="5.691267028820982" />
+      <entry key="S10" value="5.841404043018126" />
+      <entry key="S30" value="6.063328028722636" />
+      <entry key="S60" value="6.691079487481703" />
+      <entry key="M2" value="8.41700640348353" />
+      <entry key="M5" value="17.52749752551465" />
+      <entry key="M10" value="32.05274055660437" />
+      <entry key="M15" value="44.07916015297406" />
+      <entry key="M30" value="77.7029061355066" />
+      <entry key="H1" value="125.14863575027555" />
+      <entry key="H2" value="168.87468843326343" />
+      <entry key="H4" value="199.12636516881736" />
+      <entry key="D1" value="230.07781821153182" />
+      <entry key="W1" value="235.99499978446823" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6,
@@ -60,11 +137,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Niklas&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -142,6 +221,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

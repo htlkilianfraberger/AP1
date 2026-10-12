@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AP1" type="DotNetProject" factoryName=".NET Project">
+    <option name="PROJECT_PATH" value="$PROJECT_DIR$/AP1/AP1.csproj" />
+    <option name="PROJECT_TFM" value="net10.0" />
+    <option name="LAUNCH_PROFILE" value="http" />
+    <option name="USE_EXTERNAL_CONSOLE" value="0" />
+    <method v="2">
+      <option name="Build" />
+    </method>
+  </configuration>
+</component>
