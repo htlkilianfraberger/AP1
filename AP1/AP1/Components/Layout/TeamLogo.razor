@@ -1,0 +1,26 @@
+<span class="team-logo @(Large ? "team-logo-large" : "")" title="@TeamName">
+    @if (!_failed && TeamIdentity.Logo(TeamName) is { } url)
+    {
+        <img @key="url" src="@url" alt="@($"{TeamName} Logo")" loading="@(Large ? "eager" : "lazy")" @onerror="() => _failed = true" />
+    }
+    else
+    {
+        <span class="team-logo-fallback">@Initials</span>
+    }
+</span>
+
+@code {
+    [Parameter, EditorRequired] public string TeamName { get; set; } = string.Empty;
+    [Parameter] public bool Large { get; set; }
+    private bool _failed;
+    private string? _previousName;
+    private string Initials => string.Concat(TeamName.Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(2).Select(x => x[0])).ToUpperInvariant();
+
+    protected override void OnParametersSet()
+    {
+        if (_previousName != TeamName) { _failed = false; _previousName = TeamName; }
+    }
+}
+
+
+
