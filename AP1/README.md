@@ -22,6 +22,22 @@ Die App ist danach unter folgender Adresse erreichbar:
 http://localhost:5277
 ```
 
+## Mit Docker starten
+
+Voraussetzung ist Docker Desktop (Windows/macOS) oder eine Docker Engine mit Docker Compose. Im Repository-Ordner mit der `docker-compose.yml` ausführen:
+
+```powershell
+docker compose up --build
+```
+
+Danach ist die App unter [http://localhost:8080](http://localhost:8080) erreichbar. Zum Beenden im selben Terminal `Ctrl+C` drücken. Der Container kann anschließend mit folgendem Befehl entfernt werden:
+
+```powershell
+docker compose down
+```
+
+Docker baut die Anwendung im SDK-Container und startet das veröffentlichte Ergebnis in einem ASP.NET-Runtime-Container. Lokale `bin`- und `obj`-Ordner werden nicht in das Image übernommen.
+
 ## Start in Rider
 
 Fuer Rider ist eine feste Run-Konfiguration im Ordner `.run` hinterlegt. Waehle in Rider die Konfiguration `AP1` aus und starte sie.
