@@ -904,3 +904,42 @@ td strong,.points {
         height:185px;
     }
 }
+/* Constructors reuse the driver dashboard layout, with transparent white team marks. */
+.team-logo {
+    display:inline-flex;
+    width:38px;
+    height:42px;
+    flex-shrink:0;
+    align-items:center;
+    justify-content:center;
+    vertical-align:middle;
+}
+.team-logo img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+.team-logo-fallback {
+    display:grid;
+    place-items:center;
+    padding:6px;
+    border-radius:4px;
+    background:#252a32;
+    color:#f3f4f6;
+    font-size:11px;
+    font-weight:800;
+}
+.constructor-card > .team-logo-large {
+    position:absolute;
+    right:5%;
+    top:22%;
+    width:39%;
+    height:57%;
+    z-index:2;
+    filter:drop-shadow(0 5px 12px #0004);
+}
+.constructor-card .podium-copy { width:57%; }
+@media(max-width:850px) and (min-width:601px) {
+    .constructor-card > .team-logo-large { width:28%; right:4%; }
+    .constructor-card .podium-copy { width:68%; }
+}
