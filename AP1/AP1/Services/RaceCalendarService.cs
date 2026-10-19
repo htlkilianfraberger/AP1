@@ -7,7 +7,33 @@ namespace AP1.Services;
 
 public sealed class RaceCalendarService(HttpClient httpClient)
 {
+    private const string OpenF1MeetingsUrl = "https://api.openf1.org/v1/meetings";
     private const string OpenF1SessionsUrl = "https://api.openf1.org/v1/sessions";
+
+    public async Task<IReadOnlyList<RaceCalendarMeeting>> GetSeasonMeetingsAsync(
+        int year,
+        CancellationToken cancellationToken = default)
+    {
+        if (year < 2023 || year > DateTime.UtcNow.Year)
+        {
+            throw new ArgumentOutOfRangeException(nameof(year));
+        }
+
+        var meetings = await httpClient.GetFromJsonAsync<List<OpenF1Meeting>>(
+            $"{OpenF1MeetingsUrl}?year={year}",
+            cancellationToken) ?? [];
+
+        return meetings
+            .Where(meeting => !meeting.IsCancelled && meeting.DateStart.Year == year)
+            .OrderBy(meeting => meeting.DateStart)
+            .Select(meeting => new RaceCalendarMeeting(
+                meeting.MeetingName,
+                meeting.Location,
+                meeting.CountryName,
+                meeting.CircuitShortName,
+                meeting.DateStart))
+            .ToList();
+    }
 
     public async Task<byte[]> CreateCurrentSeasonCalendarAsync(CancellationToken cancellationToken = default)
     {
@@ -96,4 +122,19 @@ public sealed class RaceCalendarService(HttpClient httpClient)
         [property: JsonPropertyName("session_key")] int SessionKey,
         [property: JsonPropertyName("session_name")] string SessionName,
         [property: JsonPropertyName("circuit_short_name")] string CircuitShortName);
+
+    private sealed record OpenF1Meeting(
+        [property: JsonPropertyName("meeting_name")] string MeetingName,
+        [property: JsonPropertyName("location")] string Location,
+        [property: JsonPropertyName("country_name")] string CountryName,
+        [property: JsonPropertyName("circuit_short_name")] string CircuitShortName,
+        [property: JsonPropertyName("date_start")] DateTimeOffset DateStart,
+        [property: JsonPropertyName("is_cancelled")] bool IsCancelled);
 }
+
+public sealed record RaceCalendarMeeting(
+    string MeetingName,
+    string Location,
+    string CountryName,
+    string CircuitShortName,
+    DateTimeOffset DateStart);
