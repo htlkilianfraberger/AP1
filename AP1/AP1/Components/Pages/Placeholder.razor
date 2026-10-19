@@ -5,7 +5,7 @@
 @page "/statistiken"
 @page "/einstellungen"
 @inject NavigationManager Navigation
-<PageTitle>@Title | Dashboard</PageTitle>
+<PageTitle>@Title | F1 Dashboard</PageTitle>
 <header class="page-heading"><div><p class="eyebrow">FORMULA 1</p><h1>@Title</h1></div></header>
 @code {
     private string Title => Navigation.ToBaseRelativePath(Navigation.Uri).Split('?')[0].Trim('/') switch {
