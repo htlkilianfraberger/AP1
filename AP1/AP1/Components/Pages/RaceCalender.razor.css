@@ -9,6 +9,15 @@
 .calendar-export {
     min-height: 39px;
     text-decoration: none;
+    background: #171b20;
+    border-color: #3a414b;
+    color: var(--text);
+}
+
+.calendar-export:hover {
+    background: #232a32;
+    border-color: #697280;
+    color: #fff;
 }
 
 .months {

@@ -2,13 +2,24 @@ using System.Text.Json.Serialization;
 
 namespace AP1.Services;
 
-public sealed class OpenF1Service(HttpClient httpClient)
+public sealed class OpenF1Service(HttpClient httpClient, ApiResultCache? cache = null)
 {
     private const int FirstSupportedSeason = 2023;
 
-    public async Task<DriverChampionshipStandingResult> GetCurrentDriverChampionshipAsync(int year, CancellationToken cancellationToken = default)
+    public Task<DriverChampionshipStandingResult> GetCurrentDriverChampionshipAsync(int year, CancellationToken cancellationToken = default, bool forceRefresh = false)
     {
         if (year < FirstSupportedSeason || year > DateTime.UtcNow.Year) throw new ArgumentOutOfRangeException(nameof(year));
+        if (cache is not null && forceRefresh)
+            return cache.RefreshAsync($"driver-championship:{year}", ApiResultCache.LifetimeForSeason(year),
+                token => LoadDriverChampionshipAsync(year, token), cancellationToken);
+        return cache is null
+            ? LoadDriverChampionshipAsync(year, cancellationToken)
+            : cache.GetOrLoadAsync($"driver-championship:{year}", ApiResultCache.LifetimeForSeason(year),
+                token => LoadDriverChampionshipAsync(year, token), cancellationToken);
+    }
+
+    private async Task<DriverChampionshipStandingResult> LoadDriverChampionshipAsync(int year, CancellationToken cancellationToken)
+    {
         {
             var raceSessions = await httpClient.GetFromJsonAsync<List<OpenF1Session>>(
                 $"sessions?year={year}&session_type=Race",
@@ -84,9 +95,20 @@ public sealed class OpenF1Service(HttpClient httpClient)
         return new DriverChampionshipStandingResult(null, []);
     }
 
-    public async Task<TeamChampionshipStandingResult> GetCurrentTeamChampionshipAsync(int year, CancellationToken cancellationToken = default)
+    public Task<TeamChampionshipStandingResult> GetCurrentTeamChampionshipAsync(int year, CancellationToken cancellationToken = default, bool forceRefresh = false)
     {
         if (year < FirstSupportedSeason || year > DateTime.UtcNow.Year) throw new ArgumentOutOfRangeException(nameof(year));
+        if (cache is not null && forceRefresh)
+            return cache.RefreshAsync($"team-championship:{year}", ApiResultCache.LifetimeForSeason(year),
+                token => LoadTeamChampionshipAsync(year, token), cancellationToken);
+        return cache is null
+            ? LoadTeamChampionshipAsync(year, cancellationToken)
+            : cache.GetOrLoadAsync($"team-championship:{year}", ApiResultCache.LifetimeForSeason(year),
+                token => LoadTeamChampionshipAsync(year, token), cancellationToken);
+    }
+
+    private async Task<TeamChampionshipStandingResult> LoadTeamChampionshipAsync(int year, CancellationToken cancellationToken)
+    {
         var sessions = await httpClient.GetFromJsonAsync<List<OpenF1Session>>($"sessions?year={year}&session_type=Race", cancellationToken) ?? [];
         var completed = sessions.Where(s => !s.IsCancelled && s.SessionName == "Race" && s.DateEnd < DateTimeOffset.UtcNow).OrderBy(s => s.DateStart).ToList();
         foreach (var race in completed.AsEnumerable().Reverse())
