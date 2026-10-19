@@ -118,6 +118,15 @@ h1:focus {
     color:#fff;
 }
 
+.sidebar a.nav-unavailable {
+    opacity:.45;
+}
+
+.sidebar a.nav-unavailable:hover,
+.sidebar a.nav-unavailable.active {
+    opacity:.62;
+}
+
 .settings {
     margin-top:auto;
 }
