@@ -193,31 +193,72 @@ h1:focus {
     height:39px;
     display:flex;
     align-items:center;
-    gap:12px;
-    background:#f8f9fa;
-    color:#0b0d10;
-    border:1px solid #d1d4d9;
+    gap:10px;
+    background:#171b20;
+    color:var(--text);
+    border:1px solid #3a414b;
     border-radius:7px;
-    padding:0 15px;
+    padding:0 14px;
     font-weight:600;
+    transition:background-color .15s ease,border-color .15s ease,box-shadow .15s ease;
+}
+
+.season:hover,.season:focus-within {
+    border-color:#697280;
+    background:#1d232a;
+}
+
+.season:focus-within {
+    box-shadow:0 0 0 3px #ff38422e;
+}
+
+.season::after {
+    content:"";
+    width:7px;
+    height:7px;
+    border-right:2px solid #dce0e7;
+    border-bottom:2px solid #dce0e7;
+    transform:translateY(-2px) rotate(45deg);
+    pointer-events:none;
 }
 
 .season select {
     border:0;
     background:transparent;
-    color:#0b0d10;
-    min-width:72px;
+    color:var(--text);
+    min-width:54px;
     font-weight:700;
     cursor:pointer;
+    appearance:none;
+    outline:none;
 }
 
 .season option {
-    background:#fff;
-    color:#111;
+    background:#171b20;
+    color:var(--text);
+}
+
+.refresh {
+    background:#d92533;
+    border-color:#e54450;
+    color:#fff;
+    justify-content:center;
+}
+
+.refresh:hover:not(:disabled) {
+    background:#ed3442;
+    border-color:#fa5762;
+}
+
+.refresh:focus-visible,.calendar-export:focus-visible {
+    outline:2px solid #fff;
+    outline-offset:3px;
 }
 
 .refresh .icon {
-    filter:none;
+    width:16px;
+    height:16px;
+    filter:invert(1);
 }
 
 .updated,.data-status {
@@ -686,6 +727,62 @@ td strong,.points {
     padding:8px 12px;
 }
 
+.load-error {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin:18px 0;
+    padding:16px 18px;
+    border:1px solid #873842;
+    border-left:3px solid #ff4857;
+    border-radius:8px;
+    background:#231318;
+    color:var(--text);
+}
+
+.load-error-mark {
+    display:grid;
+    place-items:center;
+    flex:0 0 28px;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#ff4857;
+    color:#180c0e;
+    font-weight:800;
+}
+
+.load-error-copy {
+    flex:1;
+    min-width:0;
+}
+
+.load-error-copy strong {
+    display:block;
+    margin-bottom:3px;
+    font-size:14px;
+}
+
+.load-error-copy p {
+    margin:0;
+    color:#d9bdc3;
+    font-size:13px;
+}
+
+.load-error-retry {
+    flex-shrink:0;
+    padding:8px 12px;
+    border:1px solid #a74b55;
+    border-radius:6px;
+    background:#392026;
+    color:#fff;
+    font-weight:600;
+}
+
+.load-error-retry:hover {
+    background:#51272f;
+}
+
 .skeletons>div {
     height:210px;
     border-radius:8px;
@@ -853,6 +950,13 @@ td strong,.points {
     .season,.refresh {
         padding:0 10px;
         font-size:12px;
+    }
+    .load-error {
+        align-items:flex-start;
+        flex-wrap:wrap;
+    }
+    .load-error-retry {
+        margin-left:42px;
     }
     .data-status {
         border:0;

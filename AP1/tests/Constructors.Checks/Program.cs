@@ -2,10 +2,12 @@ using System.Net;
 using System.Reflection;
 using System.Text.Json;
 using AP1.Components.Pages;
+using AP1.Components.Layout;
 using AP1.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
 static void Check(bool condition, string message)
@@ -26,6 +28,63 @@ Check(mercedes.Podiums == 3 && ferrari.Podiums == 1, "Double podiums count twice
 Check(mercedes.RecentResults.Select(r => r.Label).SequenceEqual(["1", "2"]), "Recent team finishes are chronological and use the best classified car.");
 Check(ferrari.RecentResults[0].Label == "DSQ", "Disqualification is preserved in recent results.");
 Check(result.NextRace?.Location == "Future", "Next race is populated.");
+
+using var cacheMemory = new MemoryCache(new MemoryCacheOptions());
+var cache = new ApiResultCache(cacheMemory);
+var cachedFixture = new Fixture();
+var cachedClient = new HttpClient(cachedFixture) { BaseAddress = new Uri("https://example.test/") };
+var firstTab = new OpenF1Service(cachedClient, cache);
+var secondTab = new OpenF1Service(cachedClient, cache);
+var firstResult = await firstTab.GetCurrentTeamChampionshipAsync(2023);
+var requestsAfterFirstTab = cachedFixture.RequestCount;
+var secondResult = await secondTab.GetCurrentTeamChampionshipAsync(2023);
+Check(ReferenceEquals(firstResult, secondResult) && cachedFixture.RequestCount == requestsAfterFirstTab,
+    "Opening the same season in another tab reuses the result without API requests.");
+var refreshedResult = await secondTab.GetCurrentTeamChampionshipAsync(2023, forceRefresh: true);
+Check(!ReferenceEquals(firstResult, refreshedResult) && cachedFixture.RequestCount > requestsAfterFirstTab,
+    "Manual refresh fetches fresh API data.");
+var requestsAfterRefresh = cachedFixture.RequestCount;
+Check(ReferenceEquals(refreshedResult, await firstTab.GetCurrentTeamChampionshipAsync(2023))
+    && cachedFixture.RequestCount == requestsAfterRefresh,
+    "The refreshed result is shared with other tabs.");
+var firstCalendarTab = new RaceCalendarService(cachedClient, cache);
+var secondCalendarTab = new RaceCalendarService(cachedClient, cache);
+var calendar = await firstCalendarTab.GetSeasonMeetingsAsync(2023);
+var requestsAfterCalendar = cachedFixture.RequestCount;
+Check(calendar.Count == 1 && ReferenceEquals(calendar, await secondCalendarTab.GetSeasonMeetingsAsync(2023))
+    && cachedFixture.RequestCount == requestsAfterCalendar,
+    "The race calendar is reused after returning to its tab.");
+Check(!ReferenceEquals(calendar, await secondCalendarTab.GetSeasonMeetingsAsync(2023, forceRefresh: true))
+    && cachedFixture.RequestCount == requestsAfterCalendar + 1,
+    "Refreshing the race calendar bypasses the cached result.");
+
+var concurrentFixture = new Fixture();
+var concurrentClient = new HttpClient(concurrentFixture) { BaseAddress = new Uri("https://example.test/") };
+using var concurrentMemory = new MemoryCache(new MemoryCacheOptions());
+var concurrentCache = new ApiResultCache(concurrentMemory);
+var concurrentService = new OpenF1Service(concurrentClient, concurrentCache);
+var concurrentResults = await Task.WhenAll(
+    concurrentService.GetCurrentTeamChampionshipAsync(2023),
+    concurrentService.GetCurrentTeamChampionshipAsync(2023));
+Check(ReferenceEquals(concurrentResults[0], concurrentResults[1]) && concurrentFixture.RequestCount == requestsAfterFirstTab,
+    "Concurrent loads of the same season share one API request sequence.");
+
+var attempts = 0;
+try
+{
+    await cache.GetOrLoadAsync<int>("retry-check", TimeSpan.FromMinutes(1), _ =>
+    {
+        attempts++;
+        throw new HttpRequestException("Temporary failure");
+    });
+}
+catch (HttpRequestException) { }
+var retried = await cache.GetOrLoadAsync("retry-check", TimeSpan.FromMinutes(1), _ =>
+{
+    attempts++;
+    return Task.FromResult(42);
+});
+Check(retried == 42 && attempts == 2, "Failed loads are not cached.");
 
 fixture.MissingResults = true;
 var incomplete = await service.GetCurrentTeamChampionshipAsync(2023);
@@ -57,6 +116,16 @@ foreach (var team in result.Standings)
 
 var services = new ServiceCollection().AddLogging().AddSingleton(service).BuildServiceProvider();
 await using var renderer = new HtmlRenderer(services, services.GetRequiredService<ILoggerFactory>());
+var rateLimitError = ApiLoadError.FromException(
+    new HttpRequestException("Rate limited", null, HttpStatusCode.TooManyRequests), "Daten der Fahrerwertung");
+var errorHtml = await renderer.Dispatcher.InvokeAsync(async () =>
+{
+    var panel = await renderer.RenderComponentAsync<ApiErrorPanel>(ParameterView.FromDictionary(
+        new Dictionary<string, object?> { ["Error"] = rateLimitError }));
+    return panel.ToHtmlString();
+});
+Check(errorHtml.Contains("Zu viele Anfragen") && errorHtml.Contains("Erneut versuchen")
+    && errorHtml.Contains("role=\"alert\""), "API errors render a visible retry panel.");
 SeededConstructors.Result = result;
 var html = await renderer.Dispatcher.InvokeAsync(async () =>
 {
@@ -93,11 +162,17 @@ public sealed class Fixture : HttpMessageHandler
 {
     public bool MissingResults { get; set; }
     public bool EmptySeason { get; set; }
+    public int RequestCount => _requestCount;
+    private int _requestCount;
     protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
+        Interlocked.Increment(ref _requestCount);
         var path = request.RequestUri!.PathAndQuery;
         object data = path switch
         {
+            var p when p.StartsWith("/v1/meetings") => new object[] {
+                new { meeting_name="First Grand Prix", location="First", country_name="Austria",
+                    circuit_short_name="First Circuit", date_start="2023-03-01T12:00:00Z", is_cancelled=false } },
             var p when p.StartsWith("/sessions") => EmptySeason ? Array.Empty<object>() : new object[] {
                 new { session_key=10, session_name="Race", date_start="2023-03-01T12:00:00Z", date_end="2023-03-01T14:00:00Z", location="First" },
                 new { session_key=20, session_name="Race", date_start="2023-03-08T12:00:00Z", date_end="2023-03-08T14:00:00Z", location="Second" },

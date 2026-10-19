@@ -5,20 +5,35 @@ using System.Text.Json.Serialization;
 
 namespace AP1.Services;
 
-public sealed class RaceCalendarService(HttpClient httpClient)
+public sealed class RaceCalendarService(HttpClient httpClient, ApiResultCache? cache = null)
 {
     private const string OpenF1MeetingsUrl = "https://api.openf1.org/v1/meetings";
     private const string OpenF1SessionsUrl = "https://api.openf1.org/v1/sessions";
 
-    public async Task<IReadOnlyList<RaceCalendarMeeting>> GetSeasonMeetingsAsync(
+    public Task<IReadOnlyList<RaceCalendarMeeting>> GetSeasonMeetingsAsync(
         int year,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default,
+        bool forceRefresh = false)
     {
         if (year < 2023 || year > DateTime.UtcNow.Year)
         {
             throw new ArgumentOutOfRangeException(nameof(year));
         }
 
+        if (cache is not null && forceRefresh)
+            return cache.RefreshAsync<IReadOnlyList<RaceCalendarMeeting>>($"race-calendar:{year}",
+                ApiResultCache.LifetimeForSeason(year),
+                token => LoadSeasonMeetingsAsync(year, token), cancellationToken);
+
+        return cache is null
+            ? LoadSeasonMeetingsAsync(year, cancellationToken)
+            : cache.GetOrLoadAsync<IReadOnlyList<RaceCalendarMeeting>>($"race-calendar:{year}",
+                ApiResultCache.LifetimeForSeason(year),
+                token => LoadSeasonMeetingsAsync(year, token), cancellationToken);
+    }
+
+    private async Task<IReadOnlyList<RaceCalendarMeeting>> LoadSeasonMeetingsAsync(int year, CancellationToken cancellationToken)
+    {
         var meetings = await httpClient.GetFromJsonAsync<List<OpenF1Meeting>>(
             $"{OpenF1MeetingsUrl}?year={year}",
             cancellationToken) ?? [];

@@ -4,6 +4,8 @@ using AP1.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient();
+builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<ApiResultCache>();
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();

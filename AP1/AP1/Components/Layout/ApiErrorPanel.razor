@@ -1,0 +1,13 @@
+<div class="load-error" role="alert">
+    <span class="load-error-mark" aria-hidden="true">!</span>
+    <div class="load-error-copy">
+        <strong>@Error.Title</strong>
+        <p>@Error.Message</p>
+    </div>
+    <button type="button" class="load-error-retry" @onclick="OnRetry">Erneut versuchen</button>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public ApiLoadError Error { get; set; } = default!;
+    [Parameter] public EventCallback OnRetry { get; set; }
+}
