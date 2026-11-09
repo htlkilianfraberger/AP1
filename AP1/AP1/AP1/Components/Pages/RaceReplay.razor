@@ -1,0 +1,334 @@
+@page "/developer/race-replay"
+@rendermode InteractiveServer
+@using System.Globalization
+@implements IAsyncDisposable
+@inject RaceReplayService ReplayService
+
+<PageTitle>Race Replay | F1 Dashboard</PageTitle>
+
+<div class="race-replay">
+    <header class="page-heading">
+        <div>
+            <p class="eyebrow">ENTWICKLERWERKZEUG</p>
+            <h1>Race Replay</h1>
+            <p>Historische OpenF1-Renndaten zeitversetzt als Live-Stream abspielen.</p>
+        </div>
+    </header>
+
+    <section class="replay-controls" aria-label="Replay-Einstellungen">
+        <label>
+            Saison
+            <select @bind="_year" @bind:after="LoadSessionsAsync" disabled="@_loadingSessions">
+                @foreach (var year in Enumerable.Range(2023, DateTime.UtcNow.Year - 2022).Reverse())
+                {
+                    <option value="@year">@year</option>
+                }
+            </select>
+        </label>
+
+        <label class="race-picker">
+            Rennen
+            <select @bind="_selectedSessionKey" @bind:after="OnSessionChanged" disabled="@(_loadingSessions || _sessions.Count == 0)">
+                @foreach (var session in _sessions)
+                {
+                    <option value="@session.SessionKey">@session.Location · @session.DateStart.ToLocalTime().ToString("dd.MM.yyyy")</option>
+                }
+            </select>
+        </label>
+
+        <label>
+            Geschwindigkeit
+            <select @bind="_speedMultiplier" disabled="@_playing">
+                <option value="1">1× · Echtzeit</option>
+                <option value="10">10×</option>
+                <option value="60">60×</option>
+                <option value="300">300×</option>
+            </select>
+        </label>
+
+        @if (_playing)
+        {
+            <button class="replay-button secondary" @onclick="Pause">Pause</button>
+        }
+        else
+        {
+            <button class="replay-button" @onclick="PlayAsync" disabled="@(_selectedSessionKey is null || _loadingSessions || _loadingFrames || (_frames.Count > 0 && _nextFrameIndex >= _frames.Count))">
+                @(_nextFrameIndex > 0 && _nextFrameIndex < _frames.Count ? "Fortsetzen" : _nextFrameIndex == _frames.Count && _frames.Count > 0 ? "Replay beendet" : "Replay starten")
+            </button>
+        }
+        <button class="replay-button secondary" @onclick="RestartAsync" disabled="@(_selectedSessionKey is null || _playing || _loadingSessions)">Von vorn</button>
+    </section>
+
+    @if (_loadingSessions)
+    {
+        <p class="replay-status" role="status">Rennen für @(_year) werden geladen …</p>
+    }
+    else if (!string.IsNullOrWhiteSpace(_error))
+    {
+        <div class="replay-error" role="alert">@_error</div>
+    }
+    else if (_selectedSessionKey is null)
+    {
+        <div class="replay-empty">Für @(_year) wurden keine Rennsessions gefunden.</div>
+    }
+    else
+    {
+        <div class="replay-meta">
+            <span>@_frames.Count Zeitpunkte</span>
+            <span>@_nextFrameIndex / @_frames.Count abgespielt</span>
+            @if (_currentFrame is not null)
+            {
+                <strong>Simulierte Zeit: @_currentFrame.Timestamp.ToLocalTime().ToString("dd.MM.yyyy HH:mm:ss", CultureInfo.GetCultureInfo("de-AT"))</strong>
+            }
+        </div>
+
+        @if (_loadingFrames)
+        {
+            <p class="replay-status" role="status">Historische Positionen, Abstände und Rennkontrollmeldungen werden geladen …</p>
+        }
+        else if (_currentFrame is null)
+        {
+            <div class="replay-empty">Replay bereit. Wähle eine Geschwindigkeit und starte die Wiedergabe.</div>
+        }
+        else
+        {
+            <div class="replay-grid">
+                <section class="replay-panel">
+                    <h2>Aktueller Rennstand</h2>
+                    @if (_positions.Count == 0)
+                    {
+                        <p class="replay-empty">Noch keine Positionsdaten für diesen Zeitpunkt.</p>
+                    }
+                    else
+                    {
+                        <div class="replay-table-scroll">
+                            <table class="replay-table">
+                                <thead><tr><th>Pos.</th><th>Fahrer</th><th>Team</th><th>Abstand zum Führenden</th></tr></thead>
+                                <tbody>
+                                    @foreach (var entry in _positions.OrderBy(pair => pair.Value))
+                                    {
+                                        var driver = _drivers.GetValueOrDefault(entry.Key);
+                                        <tr style="--team-color: #@(driver?.TeamColour ?? "777777")">
+                                            <td class="position">@entry.Value</td>
+            <td>@(driver?.NameAcronym ?? driver?.FullName ?? $"#{entry.Key}")</td>
+                                            <td>@(driver?.TeamName ?? "–")</td>
+                                            <td>@_gaps.GetValueOrDefault(entry.Key, "–")</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </section>
+
+                <section class="replay-panel event-panel">
+                    <h2>Letzte Ereignisse</h2>
+                    <ol class="event-list">
+                        @foreach (var item in _recentEvents)
+                        {
+                            <li>
+                                <time>@item.Timestamp.ToLocalTime().ToString("HH:mm:ss")</time>
+                                <span class="event-kind">@EventLabel(item.Kind)</span>
+                                <span>@EventDescription(item)</span>
+                            </li>
+                        }
+                    </ol>
+                </section>
+            </div>
+        }
+    }
+</div>
+
+@code {
+    private int _year = 2025;
+    private int? _selectedSessionKey;
+    private int _speedMultiplier = 60;
+    private bool _loadingSessions;
+    private bool _loadingFrames;
+    private bool _playing;
+    private string? _error;
+    private IReadOnlyList<RaceReplaySession> _sessions = [];
+    private IReadOnlyList<RaceReplayFrame> _frames = [];
+    private readonly Dictionary<int, RaceReplayDriver> _drivers = [];
+    private readonly Dictionary<int, int> _positions = [];
+    private readonly Dictionary<int, string> _gaps = [];
+    private readonly List<RaceReplayEvent> _recentEvents = [];
+    private RaceReplayFrame? _currentFrame;
+    private int _nextFrameIndex;
+    private CancellationTokenSource? _playbackCancellation;
+
+    protected override async Task OnInitializedAsync() => await LoadSessionsAsync();
+
+    private async Task LoadSessionsAsync()
+    {
+        StopPlayback();
+        _loadingSessions = true;
+        _error = null;
+        _sessions = [];
+        _selectedSessionKey = null;
+        ResetReplay();
+
+        try
+        {
+            _sessions = await ReplayService.GetRaceSessionsAsync(_year);
+            _selectedSessionKey = _sessions.FirstOrDefault()?.SessionKey;
+        }
+        catch (Exception exception)
+        {
+            _error = $"Rennsessions konnten nicht geladen werden: {exception.Message}";
+        }
+        finally
+        {
+            _loadingSessions = false;
+        }
+    }
+
+    private Task OnSessionChanged()
+    {
+        StopPlayback();
+        ResetReplay();
+        return Task.CompletedTask;
+    }
+
+    private async Task PlayAsync()
+    {
+        if (_selectedSessionKey is null || _playing)
+        {
+            return;
+        }
+
+        _error = null;
+        _loadingFrames = _frames.Count == 0;
+        _playbackCancellation = new CancellationTokenSource();
+
+        try
+        {
+            if (_frames.Count == 0)
+            {
+                var sessionKey = _selectedSessionKey.Value;
+                var drivers = await ReplayService.GetDriversAsync(sessionKey, _playbackCancellation.Token);
+                _drivers.Clear();
+                foreach (var driver in drivers)
+                {
+                    _drivers[driver.DriverNumber] = driver;
+                }
+
+                _frames = await ReplayService.LoadFramesAsync(sessionKey, _playbackCancellation.Token);
+                if (_frames.Count == 0)
+                {
+                    _error = "Für diese Session wurden keine Positions-, Intervall- oder Rennkontrolldaten gefunden.";
+                    return;
+                }
+            }
+
+            _playing = true;
+            _loadingFrames = false;
+            await foreach (var frame in ReplayService.ReplayAsync(
+                               _frames,
+                               _nextFrameIndex,
+                               _currentFrame?.Timestamp,
+                               _speedMultiplier,
+                               _playbackCancellation.Token))
+            {
+                ApplyFrame(frame);
+                _nextFrameIndex++;
+                await InvokeAsync(StateHasChanged);
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            // Pause and session changes cancel the replay delay.
+        }
+        catch (Exception exception)
+        {
+            _error = $"Replay konnte nicht gestartet werden: {exception.Message}";
+        }
+        finally
+        {
+            _playing = false;
+            _loadingFrames = false;
+            _playbackCancellation?.Dispose();
+            _playbackCancellation = null;
+        }
+    }
+
+    private async Task RestartAsync()
+    {
+        StopPlayback();
+        ResetReplay();
+        await PlayAsync();
+    }
+
+    private void Pause() => _playbackCancellation?.Cancel();
+
+    private void ApplyFrame(RaceReplayFrame frame)
+    {
+        _currentFrame = frame;
+        foreach (var item in frame.Events)
+        {
+            if (item.Kind == "position" && item.DriverNumber is { } number && item.Position is { } position)
+            {
+                _positions[number] = position;
+            }
+            else if (item.Kind == "interval" && item.DriverNumber is { } intervalDriver && item.GapToLeader is { } gap)
+            {
+                _gaps[intervalDriver] = gap;
+            }
+
+            _recentEvents.Insert(0, item);
+        }
+
+        if (_recentEvents.Count > 80)
+        {
+            _recentEvents.RemoveRange(80, _recentEvents.Count - 80);
+        }
+    }
+
+    private void StopPlayback() => _playbackCancellation?.Cancel();
+
+    private void ResetReplay()
+    {
+        _frames = [];
+        _nextFrameIndex = 0;
+        _currentFrame = null;
+        _positions.Clear();
+        _gaps.Clear();
+        _recentEvents.Clear();
+        _drivers.Clear();
+    }
+
+    private static string EventLabel(string kind) => kind switch
+    {
+        "position" => "Position",
+        "interval" => "Abstand",
+        "race_control" => "Rennleitung",
+        _ => kind
+    };
+
+    private static string EventDescription(RaceReplayEvent item)
+    {
+        if (!string.IsNullOrWhiteSpace(item.Message))
+        {
+            return item.DriverNumber is { } driver ? $"#{driver}: {item.Message}" : item.Message;
+        }
+
+        if (item.Kind == "position")
+        {
+            return $"#{item.DriverNumber} auf Position {item.Position}";
+        }
+
+        if (item.Kind == "interval")
+        {
+            return $"#{item.DriverNumber} · {item.GapToLeader ?? item.Interval ?? "–"} s zum Führenden";
+        }
+
+        return item.Flag ?? item.Category ?? "Ereignis";
+    }
+
+    public ValueTask DisposeAsync()
+    {
+        _playbackCancellation?.Cancel();
+        _playbackCancellation?.Dispose();
+        return ValueTask.CompletedTask;
+    }
+}

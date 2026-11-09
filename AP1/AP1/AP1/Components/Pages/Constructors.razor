@@ -1,0 +1,157 @@
+@page "/konstrukteurs-wm"
+@rendermode InteractiveServer
+@using System.Globalization
+@inject OpenF1Service OpenF1Service
+@inject ILogger<Constructors> Logger
+
+<PageTitle>Konstrukteurs-WM | F1 Dashboard</PageTitle>
+<header class="page-heading">
+    <div><p class="eyebrow">FORMULA 1</p><h1>Konstrukteurs-WM</h1><p>Aktuelle Konstrukteurswertung der Formel-1-Saison @_year.</p></div>
+    <label class="search"><Icon Name="search" /><input aria-label="Team oder Fahrer suchen" placeholder="Team oder Fahrer suchen ..." @bind="_search" @bind:event="oninput" /></label>
+</header>
+<div class="toolbar">
+    <label class="season">Saison <select aria-label="Saison" @bind="_year" @bind:after="LoadAsync" disabled="@_loading">@foreach (var year in Enumerable.Range(2023, DateTime.UtcNow.Year - 2022).Reverse()) { <option value="@year">@year</option> }</select></label>
+    <button class="refresh" @onclick="LoadAsync" disabled="@_loading"><Icon Name="refresh-cw" /> Aktualisieren</button>
+    @if (_updated is not null) { <span class="updated">Zuletzt aktualisiert: @_updated.Value.ToString("dd. MMM yyyy, HH:mm", CultureInfo.GetCultureInfo("de-AT")) UTC</span> }
+    <span class="data-status"><i></i> OpenF1-Daten</span>
+</div>
+@if (_loading)
+{
+    <div class="loading-state" role="status"><span class="spinner-border spinner-border-sm"></span> Konstrukteurswertung und Rennergebnisse werden geladen ...</div>
+    <div class="podium skeletons" aria-hidden="true"><div></div><div></div><div></div></div>
+}
+else if (_error is not null)
+{
+    <div class="notice" role="alert">@_error <button @onclick="LoadAsync">Erneut versuchen</button></div>
+}
+else if (_result is null || _result.Standings.Count == 0)
+{
+    <div class="notice">Für @_year ist noch keine Konstrukteurswertung verfügbar.</div>
+}
+else
+{
+    <section class="podium" aria-label="Die drei führenden Konstrukteure">
+        @foreach (var team in _result.Standings.Take(3))
+        {
+            <article class="podium-card constructor-card" style="--team: @team.TeamColour">
+                <div class="podium-copy">
+                    <span class="podium-rank rank-@team.Position">@team.Position.</span>
+                    <h2>@team.TeamName</h2><p>@team.Drivers</p>
+                    <div class="podium-points">@Points(team.Points) <small>Pkt.</small></div>
+                    <span class="muted">@(team.Wins?.ToString() ?? "–") Siege</span>
+                </div>
+                <TeamLogo TeamName="@team.TeamName" Large="true" />
+                <span class="car-number" aria-hidden="true">@team.Position</span>
+            </article>
+        }
+    </section>
+    <div class="dashboard-grid">
+        <section class="classification">
+            <h2 class="section-heading"><Icon Name="shield" /> Konstrukteurswertung @_year <span>@_result.Standings.Count Teams</span></h2>
+            <div class="table-scroll"><table>
+                <thead><tr><th>Pos.</th><th>Team</th><th>Fahrer</th><th><button class="sort" @onclick="() => _ascending = !_ascending" title="Nach Punkten sortieren">Punkte <Icon Name="arrow-up-down" /></button></th><th>Siege</th><th>Podien</th><th title="Bestes Fahrergebnis des Teams je Grand Prix">Letzte 5 Rennen</th><th>Trend</th></tr></thead>
+                <tbody>
+                    @foreach (var team in FilteredTeams)
+                    {
+                        <tr style="--team: @team.TeamColour">
+                            <td class="position">@team.Position</td>
+                            <td><div class="driver-cell"><TeamLogo TeamName="@team.TeamName" /><strong>@team.TeamName</strong></div></td>
+                            <td><span class="team-dot" style="background: @team.TeamColour"></span>@team.Drivers</td>
+                            <td class="points" title="@($"Punkte-Änderung: {Points(team.PointsGained)}")">@Points(team.Points)</td>
+                            <td>@(team.Wins?.ToString() ?? "–")</td>
+                            <td>@(team.Podiums?.ToString() ?? "–")</td>
+                            <td><div class="race-results">
+                                @foreach (var result in team.RecentResults)
+                                {
+                                    <span class="result result-@result.Label" title="@result.Description">@result.Label</span>
+                                }
+                            </div></td>
+                            <td><span class="@(team.PositionsGained > 0 ? "positive" : team.PositionsGained < 0 ? "negative" : "muted")" title="Positionsänderung im letzten Rennen">@(team.PositionsGained > 0 ? $"↑ +{team.PositionsGained}" : team.PositionsGained < 0 ? $"↓ {team.PositionsGained}" : "–")</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table></div>
+            @if (!FilteredTeams.Any()) { <p class="empty-search">Kein Team für „@_search“ gefunden.</p> }
+            <footer class="table-footer">
+                <span>Stand: @_result.Session?.Location · @_result.Session?.DateStart.ToString("dd.MM.yyyy")</span>
+                <span>Letzte 5 Rennen: bestes Fahrergebnis · Podien: beide Autos</span>
+                @if (!_result.StatisticsAvailable) { <span>Rennstatistiken teilweise nicht verfügbar.</span> }
+            </footer>
+        </section>
+        <aside class="season-aside">
+            <section class="summary"><h2 class="section-heading"><Icon Name="chart-no-axes-column-increasing" /> Saison-Überblick</h2>
+                @foreach (var item in SummaryItems)
+                {
+                    <div class="summary-item"><p>@item.Label</p><div class="summary-driver">
+                        <TeamLogo TeamName="@item.Team.TeamName" />
+                        <div><strong>@item.Team.TeamName</strong><span>@item.Detail</span></div>
+                        <span class="team-dot" style="background: @item.Team.TeamColour"></span>
+                    </div></div>
+                }
+            </section>
+            <section class="summary"><h2 class="section-heading"><Icon Name="calendar-days" /> Saison-Details</h2>
+                <dl class="details">
+                    <div><dt>Rennen (Stand)</dt><dd>@_result.CompletedRaces / @_result.TotalRaces</dd></div>
+                    <div><dt>Nächstes Rennen</dt><dd>@(_result.NextRace?.Location ?? "–")<small>@_result.NextRace?.DateStart.ToString("dd.MM.yyyy")</small></dd></div>
+                    <div><dt>Verbleibende Rennen</dt><dd>@Math.Max(0, _result.TotalRaces - _result.CompletedRaces)</dd></div>
+                    <div><dt>Letztes Rennen</dt><dd>@_result.Session?.Location</dd></div>
+                </dl>
+            </section>
+            <a class="source-link" href="https://openf1.org" target="_blank" rel="noopener noreferrer">Daten von OpenF1 <Icon Name="arrow-up-right" /></a>
+        </aside>
+    </div>
+}
+
+@code {
+    private int _year = DateTime.UtcNow.Year;
+    private TeamChampionshipStandingResult? _result;
+    private bool _loading = true, _ascending;
+    private string _search = "";
+    private string? _error;
+    private DateTime? _updated;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender) { await LoadAsync(); StateHasChanged(); }
+    }
+
+    private async Task LoadAsync()
+    {
+        if (_requestActive) return;
+        _requestActive = true;
+        _loading = true; _error = null; _result = null;
+        try { _result = await OpenF1Service.GetCurrentTeamChampionshipAsync(_year); _updated = DateTime.UtcNow; }
+        catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException or System.Text.Json.JsonException)
+        {
+            Logger.LogWarning(ex, "Could not load team standings for {Year}", _year);
+            _error = "Die Konstrukteurswertung konnte nicht geladen werden. Bitte versuche es in Kürze erneut.";
+        }
+        finally { _loading = false; _requestActive = false; }
+    }
+
+    private bool _requestActive;
+    private IEnumerable<TeamChampionshipStanding> FilteredTeams => (_result?.Standings ?? [])
+        .Where(t => string.IsNullOrWhiteSpace(_search) || $"{t.TeamName} {t.Drivers}".Contains(_search, StringComparison.OrdinalIgnoreCase))
+        .OrderBy(t => _ascending ? t.Points : -t.Points).ThenBy(t => t.Position);
+    private static string Points(decimal points) => points.ToString("0.#", CultureInfo.GetCultureInfo("de-AT"));
+
+    private IEnumerable<(string Label, TeamChampionshipStanding Team, string Detail)> SummaryItems
+    {
+        get
+        {
+            if (_result is null || _result.Standings.Count == 0) yield break;
+            var leader = _result.Standings[0];
+            yield return ("Aktueller Führender", leader, $"{Points(leader.Points)} Punkte");
+            if (_result.Standings.Count > 1)
+            {
+                var second = _result.Standings[1];
+                yield return ("Engster Verfolger", second, $"{Points(leader.Points - second.Points)} Punkte Rückstand");
+            }
+            var mover = _result.Standings.OrderByDescending(t => t.PositionsGained).First();
+            if (mover.PositionsGained > 0) yield return ("Größter Aufsteiger", mover, $"+{mover.PositionsGained} Positionen");
+            var winner = _result.Standings.OrderByDescending(t => t.Wins).First();
+            if (winner.Wins is > 0) yield return ("Meiste Siege", winner, $"{winner.Wins} Siege");
+        }
+    }
+}
+

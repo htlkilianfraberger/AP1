@@ -1,0 +1,242 @@
+@page "/kalender"
+
+@rendermode InteractiveServer
+@using System.Globalization
+
+@inject RaceCalendarService CalendarService
+
+<PageTitle>Rennkalender | F1 Dashboard</PageTitle>
+
+<div class="race-calendar">
+    <header class="page-heading">
+        <div>
+            <p class="eyebrow">FORMULA 1 · SAISON @selectedYear</p>
+            <h1>Rennkalender</h1>
+            <p>Alle Grand Prix der ausgewählten Saison im Überblick.</p>
+        </div>
+    </header>
+
+    <div class="toolbar calendar-toolbar">
+        <label class="season">
+            Saison
+            <select aria-label="Saison auswählen"
+                    @bind="selectedYear"
+                    @bind:after="OnYearChanged"
+                    disabled="@loading">
+                @foreach (var year in availableYears)
+                {
+                    <option value="@year">@year</option>
+                }
+            </select>
+        </label>
+        <a class="refresh calendar-export" href="/rennkalender/export" download>
+            Kalenderdatei exportieren
+        </a>
+        <span class="data-status"><i></i> OpenF1-Daten</span>
+    </div>
+
+
+    @if (loading)
+    {
+        <div class="loading-state" role="status">
+            <span class="spinner-border spinner-border-sm"></span>
+            Rennkalender für @selectedYear wird geladen ...
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="notice" role="alert">
+            @errorMessage
+            <button @onclick="LoadRaces">Erneut versuchen</button>
+        </div>
+    }
+    else if (races.Count == 0)
+    {
+        <div class="notice">
+            Für @selectedYear wurden keine Rennen gefunden.
+        </div>
+    }
+    else
+    {
+        <section class="months" aria-label="Rennen nach Monaten">
+
+            @foreach (var month in racesByMonth)
+            {
+                <div class="month-card">
+
+                    <div class="month-header">
+
+                        <h2>@month.Name</h2>
+
+                        <span>
+                            @month.Races.Count
+                            @(month.Races.Count == 1 ? "Rennen" : "Rennen")
+                        </span>
+
+                    </div>
+
+
+                    <div class="month-races">
+
+                        @foreach (var race in month.Races)
+                        {
+                            <div class="race">
+
+                                <div class="race-date">
+
+                                    <span class="day">
+                                        @race.DateStart.ToString("dd")
+                                    </span>
+
+                                    <span class="weekday">
+                                        @race.DateStart.ToString("ddd", CultureInfo.GetCultureInfo("de-AT"))
+                                    </span>
+
+                                </div>
+
+
+                                <div class="race-info">
+
+                                    <h3>
+                                        @race.MeetingName
+                                    </h3>
+
+                                    <p>
+                                        @race.Location, @race.CountryName
+                                    </p>
+
+                                    <span class="circuit">
+                                        @race.CircuitShortName
+                                    </span>
+
+                                </div>
+
+
+                                <div class="race-type">
+                                    <span>Grand Prix</span>
+                                </div>
+
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            }
+
+        </section>
+    }
+
+</div>
+
+
+@code {
+
+    // Currently selected season
+    private int selectedYear = DateTime.UtcNow.Year;
+
+
+    // Available seasons
+    private List<int> availableYears =
+        Enumerable
+            .Range(
+                2023,
+                DateTime.UtcNow.Year - 2023 + 1
+            )
+            .Reverse()
+            .ToList();
+
+
+    // Race data
+    private List<RaceCalendarMeeting> races = new();
+
+    private List<MonthGroup> racesByMonth = new();
+
+
+    // Loading / error state
+    private bool loading = true;
+
+    private string? errorMessage;
+
+
+    // Initial page load
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRaces();
+    }
+
+
+    // Called when the selected season changes
+    private Task OnYearChanged()
+    {
+        return LoadRaces();
+    }
+
+
+    // Load races from OpenF1
+    private async Task LoadRaces()
+    {
+        var yearToLoad = selectedYear;
+        loading = true;
+        errorMessage = null;
+
+        // Remove old season data
+        races.Clear();
+        racesByMonth.Clear();
+
+        try
+        {
+            var result = await CalendarService.GetSeasonMeetingsAsync(yearToLoad);
+
+            // Ignore a slower response if the user selected another season
+            // while this request was still in flight.
+            if (yearToLoad != selectedYear)
+            {
+                return;
+            }
+
+
+            races = result.ToList();
+
+            // Group races by month
+            racesByMonth = races
+                .GroupBy(r => r.DateStart.Month)
+                .OrderBy(g => g.Key)
+                .Select(g => new MonthGroup
+                {
+                    Name = new DateTime(yearToLoad, g.Key, 1)
+                        .ToString("MMMM", CultureInfo.GetCultureInfo("de-AT")),
+
+                    Races = g.ToList()
+                })
+                .ToList();
+        }
+        catch (Exception ex)
+        {
+            if (yearToLoad != selectedYear)
+            {
+                return;
+            }
+
+            errorMessage = "Der Rennkalender konnte nicht geladen werden. Bitte versuche es erneut.";
+
+            Console.WriteLine(ex);
+        }
+        finally
+        {
+            if (yearToLoad == selectedYear)
+            {
+                loading = false;
+            }
+        }
+    }
+
+    
+    // Month grouping
+    public class MonthGroup
+    {
+        public string Name { get; set; } = "";
+
+        public List<RaceCalendarMeeting> Races { get; set; } = new();
+    }
+}
