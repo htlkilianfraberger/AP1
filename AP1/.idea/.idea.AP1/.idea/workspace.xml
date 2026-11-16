@@ -24,6 +24,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="2" />
   </component>
@@ -225,6 +228,7 @@
       <workItem from="1790662338368" duration="155000" />
       <workItem from="1791352464387" duration="370000" />
       <workItem from="1792394671843" duration="737000" />
+      <workItem from="1793776166304" duration="4535000" />
       <workItem from="1794218925768" duration="2182000" />
     </task>
     <task id="LOCAL-00001" summary="driver standings">

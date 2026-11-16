@@ -1,0 +1,52 @@
+.race-details { max-width: 1600px; }
+.back-link { display: inline-block; color: #86d5f8; margin-bottom: 22px; }
+.detail-toolbar { margin: 20px 0; }
+.time-toggle { display: flex; align-items: center; gap: 8px; }
+.time-toggle input { width: 17px; height: 17px; accent-color: #86d5f8; }
+.weekend-overview { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
+.detail-panel { border: 1px solid var(--line); border-radius: 9px; background: var(--surface); padding: 22px; min-width: 0; }
+.detail-panel h2, .history-section h2 { font-size: 19px; font-weight: 700; margin: 0 0 16px; }
+.track-panel { display: flex; flex-direction: column; }
+.track-image { display: block; width: 100%; height: 260px; object-fit: contain; margin: auto; }
+.map-empty { min-height: 200px; display: grid; place-content: center; color: var(--muted); text-align: center; }
+.session-list { margin: 18px 0; }
+.session-list div { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.session-list dt { font-weight: 500; }
+.session-list dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.session-list .main-session { color: #86d5f8; font-weight: 700; }
+.source-note { font-size: 12px; color: var(--muted); line-height: 1.7; margin: 12px 0 0; }
+.source-note a { color: #86d5f8; text-decoration: underline; }
+.results-panel { margin-bottom: 28px; }
+.result-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.result-tabs button { background: #171b20; border: 1px solid var(--line); border-radius: 6px; padding: 9px 16px; color: var(--text); }
+.result-tabs button.selected { background: #163245; border-color: #86d5f8; color: #bde8ff; }
+caption { color: var(--muted); font-size: 12px; caption-side: top; padding: 0 0 10px; }
+.fastest-lap { color: #d79bff; font-weight: bold; }
+.record-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.record h3 { color: var(--muted); font-size: 13px; font-weight: 500; margin: 0 0 20px; }
+.record-value { font-size: 29px; color: #86d5f8; font-variant-numeric: tabular-nums; }
+.record p { margin: 12px 0 4px; }
+.record .muted { font-size: 12px; }
+.record details { margin-top: 20px; font-size: 12px; }
+.record summary { cursor: pointer; color: #86d5f8; }
+.record-leaders { padding-left: 18px; margin-bottom: 0; }
+.record-leaders li { padding: 6px 0; }
+.record-leaders strong { float: right; margin-left: 8px; }
+.coverage { margin: 18px 0 24px; max-width: 1100px; }
+@media (max-width: 1150px) { .record-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 750px) {
+    .weekend-overview { grid-template-columns: 1fr; }
+    .detail-panel { padding: 16px; }
+    .track-image { height: 220px; }
+    .session-list div { gap: 12px; font-size: 12px; }
+}
+@media (max-width: 420px) { .record-grid { grid-template-columns: 1fr; } }
+.race-details .detail-panel { border-radius:18px; background:#111917; border-color:#2b3b33; }
+.track-panel .track-image { background-color:#13221c; background-image:radial-gradient(#7e9f8b40 1px,transparent 1px); background-size:12px 12px; border-radius:12px; }
+.detail-panel.record { border-block-start:3px solid #72bc93; }
+.record .record-value { color:#b5f4d5; font-weight:800; letter-spacing:-.045em; }
+.record h3 { color:#becdc3; }
+.record details summary,.session-list .main-session,.back-link { color:#b5f4d5; }
+.result-tabs button { border-radius:100px; padding:9px 20px; }
+.result-tabs button.selected { background:#b5f4d5; border-color:#b5f4d5; color:#102919; font-weight:700; }
+.results-panel tbody tr:hover { background:#1b2b23; }

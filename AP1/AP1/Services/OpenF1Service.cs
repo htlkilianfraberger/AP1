@@ -31,38 +31,24 @@ public sealed class OpenF1Service(HttpClient httpClient, ApiResultCache? cache =
                 var championship = await httpClient.GetFromJsonAsync<List<OpenF1DriverChampionship>>($"championship_drivers?session_key={latestRaceSession.SessionKey}", cancellationToken) ?? [];
                 if (championship.Count == 0) continue;
 
-                var drivers = await httpClient.GetFromJsonAsync<List<OpenF1Driver>>(
-                    $"drivers?session_key={latestRaceSession.SessionKey}",
-                    cancellationToken) ?? [];
+                var races = completed.Where(s => s.DateStart <= latestRaceSession.DateStart).ToList();
+                var raceKeys = races.Select(r => r.SessionKey).ToHashSet();
+                var raceOrder = races.Select((race, index) => (race.SessionKey, index))
+                    .ToDictionary(item => item.SessionKey, item => item.index);
+                var sessionQuery = string.Join("&", races.Select(r => $"session_key={r.SessionKey}"));
+                var drivers = await GetSeasonDataAsync<OpenF1Driver>($"drivers?{sessionQuery}", cancellationToken, raceKeys);
 
                 var driverDetailsByNumber = drivers
+                    .OrderByDescending(driver => raceOrder[driver.SessionKey])
                     .GroupBy(driver => driver.DriverNumber)
                     .ToDictionary(group => group.Key, group => group.First());
 
-                // Substitute drivers can retain championship points without entering the latest race.
-                foreach (var previous in completed.Where(s => s.DateStart < latestRaceSession.DateStart).Reverse())
-                {
-                    if (championship.All(d => driverDetailsByNumber.ContainsKey(d.DriverNumber))) break;
-                    await Task.Delay(350, cancellationToken);
-                    var previousDrivers = await httpClient.GetFromJsonAsync<List<OpenF1Driver>>($"drivers?session_key={previous.SessionKey}", cancellationToken) ?? [];
-                    foreach (var driver in previousDrivers) driverDetailsByNumber.TryAdd(driver.DriverNumber, driver);
-                }
-
-                var history = new Dictionary<int, List<OpenF1RaceResult>>();
-                var races = completed.Where(s => s.DateStart <= latestRaceSession.DateStart).ToList();
-                var statisticsAvailable = true;
-                foreach (var race in races)
-                {
-                    try
-                    {
-                        // Pace requests to stay below OpenF1's public rate limit.
-                        await Task.Delay(350, cancellationToken);
-                        var results = await httpClient.GetFromJsonAsync<List<OpenF1RaceResult>>($"session_result?session_key={race.SessionKey}", cancellationToken) ?? [];
-                        history[race.SessionKey] = results;
-                        if (results.Count == 0) statisticsAvailable = false;
-                    }
-                    catch (HttpRequestException) { statisticsAvailable = false; }
-                }
+                // OpenF1 accepts duplicate query parameters, so all race results can be
+                // fetched in one request instead of issuing one request per Grand Prix.
+                var seasonResults = await GetSeasonDataAsync<OpenF1RaceResult>($"session_result?{sessionQuery}", cancellationToken, raceKeys);
+                var history = seasonResults.GroupBy(result => result.SessionKey)
+                    .ToDictionary(group => group.Key, group => group.ToList());
+                var statisticsAvailable = races.All(race => history.TryGetValue(race.SessionKey, out var results) && results.Count > 0);
                 var standings = championship
                     .OrderBy(driver => driver.PositionCurrent)
                     .Select(driver =>
@@ -119,8 +105,8 @@ public sealed class OpenF1Service(HttpClient httpClient, ApiResultCache? cache =
             var races = completed.Where(s => s.DateStart <= race.DateStart).ToList();
             var range = $"session_key%3E={races.Min(s => s.SessionKey)}&session_key%3C={races.Max(s => s.SessionKey)}";
             // Fetch the season in two batches; use session keys to exclude practice, qualifying and sprints.
-            var drivers = await GetTeamDataAsync<OpenF1Driver>($"drivers?{range}", cancellationToken);
-            var results = await GetTeamDataAsync<OpenF1RaceResult>($"session_result?{range}", cancellationToken, races.Select(r => r.SessionKey).ToHashSet());
+            var drivers = await GetSeasonDataAsync<OpenF1Driver>($"drivers?{range}", cancellationToken);
+            var results = await GetSeasonDataAsync<OpenF1RaceResult>($"session_result?{range}", cancellationToken, races.Select(r => r.SessionKey).ToHashSet());
             var driversByRace = drivers.GroupBy(d => d.SessionKey).ToDictionary(g => g.Key, g => g.ToList());
             var resultsByRace = results.GroupBy(r => r.SessionKey).ToDictionary(g => g.Key, g => g.ToList());
             var statsAvailable = races.All(r => resultsByRace.TryGetValue(r.SessionKey, out var finishers)
@@ -162,7 +148,7 @@ public sealed class OpenF1Service(HttpClient httpClient, ApiResultCache? cache =
         return new TeamChampionshipStandingResult(null, []);
     }
 
-    private async Task<List<T>> GetTeamDataAsync<T>(string path, CancellationToken cancellationToken, HashSet<int>? raceKeys = null)
+    private async Task<List<T>> GetSeasonDataAsync<T>(string path, CancellationToken cancellationToken, HashSet<int>? raceKeys = null)
     {
         try
         {
@@ -280,6 +266,8 @@ public sealed record OpenF1Driver
 
 public sealed record OpenF1Session
 {
+    [JsonPropertyName("circuit_key")]
+    public int CircuitKey { get; init; }
     [JsonPropertyName("date_end")]
     public DateTimeOffset? DateEnd { get; init; }
     [JsonPropertyName("session_key")]

@@ -1,0 +1,6 @@
+@if (Session is not null)
+{
+    <span class="session-venue"><VenueFlag Circuit="@CircuitArtwork.CircuitId(Session.CircuitKey)" Country="@(Session.CircuitKey == 12 ? "Malaysia" : Session.CountryName)" /> @Session.Location</span>
+}
+else { <span>–</span> }
+@code { [Parameter] public OpenF1Session? Session { get; set; } }

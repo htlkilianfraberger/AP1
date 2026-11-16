@@ -1,0 +1,21 @@
+.race-shell { --accent: #b5f4d5; }
+.race-shell .page-heading { position: relative; isolation: isolate; overflow: hidden; padding: clamp(22px,3vw,42px); border-radius: 18px; border: 1px solid #30453c; background: linear-gradient(115deg,#182b24,#101714 75%); }
+.race-shell .page-heading::after { content: ""; position: absolute; right: -7%; inset-block: 0; width: 35%; transform: skewX(-25deg); z-index: -1; background: repeating-linear-gradient(90deg,transparent 0 22px,#b2fbd410 22px 32px); }
+.race-shell .page-heading h1 { font-size: clamp(1.9rem,4vw,3.7rem); font-weight: 800; line-height: 1.04; letter-spacing: -.045em; margin-block: 10px; text-wrap: balance; }
+.race-shell .eyebrow { display:flex; gap:10px; align-items:center; color:var(--accent); font:700 .76rem/1.35 monospace; letter-spacing:.15em; }
+.venue-flag { display:inline-block; width:30px; height:22px; vertical-align:middle; object-fit:cover; border-radius:4px; box-shadow:0 0 0 1px #ffffff32,0 2px 6px #0004; }
+.toolbar .season,.toolbar .refresh { border-radius:13px; min-height:42px; }
+.toolbar .season { position:relative; padding:0 0 0 14px; background:#1a2221; }
+.toolbar .season::after { position:absolute; right:14px; }
+.toolbar .season select { padding:10px 34px 10px 6px; }
+.toolbar .season:focus-within { border-color:#9acbb1; box-shadow:0 0 0 3px #b6ffda25; }
+.race-shell .toolbar { gap:10px; padding:12px; border:1px solid #29342f; border-radius:16px; background:#101714; margin:18px 0 12px; }
+.race-shell .refresh { background:#20392e; color:#d2f8e3; border-color:#385644; }
+.race-shell .refresh:hover:not(:disabled) { background:#2d493b; }
+.race-shell .past-toggle,.race-shell .time-toggle { display:inline-flex; gap:9px; align-items:center; padding:9px 12px; background:#151d19; border-radius:12px; border:1px solid #354139; font-weight:600; cursor:pointer; }
+.race-shell input[role=switch] { appearance:none; flex:none; width:32px; height:18px; margin:0; border:1px solid #637068; border-radius:100px; background:radial-gradient(circle at 8px 50%,#e5ece7 0 5px,transparent 6px),#333f38; cursor:pointer; }
+.race-shell input[role=switch]:checked { border-color:#9fdeb9; background:radial-gradient(circle at 23px 50%,#163626 0 5px,transparent 6px),#a7e5c2; }
+.race-shell :where(a,button,input,summary):focus-visible { outline:2px solid #b5f4d5; outline-offset:2px; }
+.circuit-preview { border-top:1px solid #2b3931; padding:10px 16px; }
+.circuit-preview button { width:100%; display:flex; justify-content:space-between; align-items:center; color:#b5f4d5; background:transparent; border:0; padding:5px 0; text-align:left; font-weight:650; }
+.circuit-preview dl { margin:12px 0; }.circuit-preview dt,.circuit-preview small { font-size:.8rem; color:#a6b6ae; }.circuit-preview dd { margin:2px 0 10px; font-variant-numeric:tabular-nums; }

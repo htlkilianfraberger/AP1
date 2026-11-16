@@ -1,248 +1,107 @@
 @page "/kalender"
-
 @rendermode InteractiveServer
-@using System.Globalization
-
-@inject RaceCalendarService CalendarService
+@inject RaceWeekendService CalendarService
 @inject ILogger<RaceCalender> Logger
 
 <PageTitle>Rennkalender | F1 Dashboard</PageTitle>
-
-<div class="race-calendar">
-    <header class="page-heading">
-        <div>
-            <p class="eyebrow">FORMULA 1 · SAISON @selectedYear</p>
-            <h1>Rennkalender</h1>
-            <p>Alle Grand Prix der ausgewählten Saison im Überblick.</p>
-        </div>
-    </header>
-
+<div class="race-calendar race-shell">
+    <header class="page-heading"><div>
+        <p class="eyebrow">FORMULA 1 · SAISON @selectedYear</p>
+        <h1>Rennkalender</h1><p>@(Archive ? "Alle Rennwochenenden dieser Saison mit Zeitplan und Ergebnissen." : "Dein Fahrplan zum nächsten Grand Prix.")</p>
+    </div></header>
     <div class="toolbar calendar-toolbar">
-        <label class="season">
-            Saison
-            <select aria-label="Saison auswählen"
-                    @bind="selectedYear"
-                    @bind:after="OnYearChanged"
-                    disabled="@loading">
-                @foreach (var year in availableYears)
-                {
-                    <option value="@year">@year</option>
-                }
+        <label class="season">Saison
+            <select aria-label="Saison auswählen" @bind="selectedYear" @bind:after="OnYearChanged" disabled="@loading">
+                @foreach (var year in seasons)
+                { <option value="@year">@year</option> }
             </select>
         </label>
-        <button type="button" class="refresh" @onclick="RefreshRaces" disabled="@loading">
-            <Icon Name="refresh-cw" /> Aktualisieren
-        </button>
-        <a class="refresh calendar-export" href="/rennkalender/export" download>
-            <Icon Name="download" /> Kalender exportieren
-        </a>
-        <span class="data-status"><i></i> OpenF1-Daten</span>
+        @if (!Archive) { <label class="past-toggle"><input type="checkbox" role="switch" @bind="showPast" /> Vergangene Rennen</label> }
+        <label class="past-toggle"><input type="checkbox" role="switch" @bind="useTrackTime" /> Streckenzeit</label>
+        <button type="button" class="refresh" @onclick="RefreshRaces" disabled="@loading"><Icon Name="refresh-cw" /> Aktualisieren</button>
+        <a class="refresh calendar-export" href="@(Archive ? $"/rennkalender/export/{selectedYear}" : "/rennkalender/export")" download><Icon Name="download" /> Kalender exportieren</a>
+        <span class="data-status"><i></i> Jolpica-Daten</span>
     </div>
-
-
-    @if (errorMessage is not null)
-    {
-        <ApiErrorPanel Error="errorMessage" OnRetry="RefreshRaces" />
-    }
+    <p class="time-zone">@(useTrackTime ? "Alle Uhrzeiten: Ortszeit der jeweiligen Strecke. Die Zeitzone steht beim Rennwochenende." : "Alle Uhrzeiten: Österreich (Europe/Vienna), inklusive Sommer-/Winterzeit.")</p>
+    @if (error is not null) { <ApiErrorPanel Error="error" OnRetry="RefreshRaces" /> }
     @if (loading)
+    { <div class="loading-state" role="status"><span class="spinner-border spinner-border-sm"></span> Rennkalender für @selectedYear wird geladen …</div> }
+    else if (error is null && !VisibleRaces.Any())
     {
-        <div class="loading-state" role="status">
-            <span class="spinner-border spinner-border-sm"></span>
-            Rennkalender für @selectedYear wird geladen ...
+        <div class="notice">
+            @if (races.Count == 0) { <span>Für @selectedYear sind noch keine Rennen veröffentlicht.</span> }
+            else { <span>Für @selectedYear stehen keine weiteren Rennen an. Blende vergangene Rennen ein, um Ergebnisse anzusehen.</span> }
         </div>
     }
-    else if (races.Count == 0)
-    {
-        @if (errorMessage is null) { <div class="notice">Für @selectedYear wurden keine Rennen gefunden.</div> }
-    }
-    else
+    else if (error is null)
     {
         <section class="months" aria-label="Rennen nach Monaten">
-
-            @foreach (var month in racesByMonth)
+            @foreach (var month in VisibleRaces.GroupBy(r => RaceDisplay.RaceDate(r, useTrackTime).Month))
             {
-                <div class="month-card">
-
-                    <div class="month-header">
-
-                        <h2>@month.Name</h2>
-
-                        <span>
-                            @month.Races.Count
-                            @(month.Races.Count == 1 ? "Rennen" : "Rennen")
-                        </span>
-
-                    </div>
-
-
+                <section class="month-card">
+                    <div class="month-header"><h2>@(new DateTime(selectedYear, month.Key, 1).ToString("MMMM", RaceDisplay.Culture))</h2><span>@month.Count() Rennen</span></div>
                     <div class="month-races">
-
-                        @foreach (var race in month.Races)
+                        @foreach (var race in month)
                         {
-                            <div class="race">
-
-                                <div class="race-date">
-
-                                    <span class="day">
-                                        @race.DateStart.ToString("dd")
-                                    </span>
-
-                                    <span class="weekday">
-                                        @race.DateStart.ToString("ddd", CultureInfo.GetCultureInfo("de-AT"))
-                                    </span>
-
-                                </div>
-
-
-                                <div class="race-info">
-
-                                    <h3>
-                                        @race.MeetingName
-                                    </h3>
-
-                                    <p>
-                                        @race.Location, @race.CountryName
-                                    </p>
-
-                                    <span class="circuit">
-                                        @race.CircuitShortName
-                                    </span>
-
-                                </div>
-
-
-                                <div class="race-type">
-                                    <span>Grand Prix</span>
-                                </div>
-
-                            </div>
+                            <article class="weekend-card">
+                                <a class="race" href="@($"{race.Url}?vergangen={showPast.ToString().ToLowerInvariant()}&streckenzeit={useTrackTime.ToString().ToLowerInvariant()}")" aria-label="@($"Details zu {race.Name}")">
+                                    <div class="race-art"><span class="round-tag">RUNDE @race.Round.ToString("00")</span><VenueFlag Circuit="@race.CircuitId" Country="@race.Country" />
+                                        @if (ArchiveArtwork.Map(race) is { } outline) { <img class="outline" src="@outline" alt="@race.CircuitName" loading="lazy" /> }
+                                    </div><div class="race-copy"><div class="race-date"><span class="day">@RaceDisplay.RaceDate(race, useTrackTime).Day.ToString("00")</span><span class="weekday">@RaceDisplay.RaceDate(race, useTrackTime).ToString("ddd", RaceDisplay.Culture)</span></div>
+                                    <div class="race-info"><h3>@race.Name</h3><p>@race.Location, @race.Country</p><span class="circuit">@race.CircuitName</span></div>
+                                    </div><div class="race-type"><span>@(race.IsPast(DateTimeOffset.UtcNow) ? "Ergebnisse ansehen" : "Rennwochenende öffnen")</span><b aria-hidden="true">↗</b></div>
+                                </a>
+                                <dl class="weekend-times">
+                                    @if (useTrackTime) { <div><dt>Streckenzeit</dt><dd>@(race.TrackZone ?? RaceDisplay.OffsetLabel(race.TrackOffset))</dd></div> }
+                                    @foreach (var session in race.Sessions)
+                                    { <div class="@(session.Key == "Race" ? "main-session" : null)"><dt>@session.Name</dt><dd>@RaceDisplay.SessionTime(session, useTrackTime, race.TrackOffset, race.TrackZone)</dd></div> }
+                                </dl>
+                                @if (!race.IsPast(DateTimeOffset.UtcNow)) { <CircuitPreview @key="race.CircuitId" Race="race" /> }
+                            </article>
                         }
-
                     </div>
-
-                </div>
+                </section>
             }
-
         </section>
     }
-
 </div>
 
-
 @code {
-
-    // Currently selected season
+    [SupplyParameterFromQuery(Name = "saison")] public int? Season { get; set; }
+    [SupplyParameterFromQuery(Name = "vergangen")] public bool Past { get; set; }
+    [SupplyParameterFromQuery(Name = "streckenzeit")] public bool TrackTime { get; set; }
     private int selectedYear = DateTime.UtcNow.Year;
-
-
-    // Available seasons
-    private List<int> availableYears =
-        Enumerable
-            .Range(
-                2023,
-                DateTime.UtcNow.Year - 2023 + 1
-            )
-            .Reverse()
-            .ToList();
-
-
-    // Race data
-    private List<RaceCalendarMeeting> races = new();
-
-    private List<MonthGroup> racesByMonth = new();
-
-
-    // Loading / error state
+    private IReadOnlyList<int> seasons = [];
+    private bool showPast;
+    private bool useTrackTime;
     private bool loading = true;
+    private ApiLoadError? error;
+    private IReadOnlyList<RaceWeekend> races = [];
+    private bool Archive => selectedYear < DateTime.UtcNow.Year;
+    private IEnumerable<RaceWeekend> VisibleRaces => races.Where(r => Archive || showPast || !r.IsPast(DateTimeOffset.UtcNow));
 
-    private ApiLoadError? errorMessage;
-    private int? loadedYear;
-
-
-    // Initial page load
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
-        await LoadRaces();
+        selectedYear = Season ?? DateTime.UtcNow.Year;
+        showPast = Past;
+        useTrackTime = TrackTime;
+        await LoadRaces(false);
     }
-
-
-    // Called when the selected season changes
-    private Task OnYearChanged()
-    {
-        return LoadRaces();
-    }
-
+    private Task OnYearChanged() => LoadRaces(false);
     private Task RefreshRaces() => LoadRaces(true);
-
-    private Task LoadRaces() => LoadRaces(false);
-
-
-    // Load races from OpenF1
-    private async Task LoadRaces(bool forceRefresh)
+    private async Task LoadRaces(bool refresh)
     {
-        var yearToLoad = selectedYear;
         loading = true;
-        errorMessage = null;
-
-        if (loadedYear != yearToLoad)
-        {
-            races.Clear();
-            racesByMonth.Clear();
-        }
-
+        error = null;
+        races = [];
         try
         {
-            var result = await CalendarService.GetSeasonMeetingsAsync(yearToLoad, forceRefresh: forceRefresh);
-
-            // Ignore a slower response if the user selected another season
-            // while this request was still in flight.
-            if (yearToLoad != selectedYear)
-            {
-                return;
-            }
-
-
-            races = result.ToList();
-            loadedYear = yearToLoad;
-
-            // Group races by month
-            racesByMonth = races
-                .GroupBy(r => r.DateStart.Month)
-                .OrderBy(g => g.Key)
-                .Select(g => new MonthGroup
-                {
-                    Name = new DateTime(yearToLoad, g.Key, 1)
-                        .ToString("MMMM", CultureInfo.GetCultureInfo("de-AT")),
-
-                    Races = g.ToList()
-                })
-                .ToList();
+            seasons = await CalendarService.GetSeasonsAsync();
+            if (seasons.Count == 0) return;
+            if (!seasons.Contains(selectedYear)) selectedYear = seasons[0];
+            races = await CalendarService.GetSeasonAsync(selectedYear, refresh);
         }
-        catch (Exception ex)
-        {
-            if (yearToLoad != selectedYear)
-            {
-                return;
-            }
-
-            Logger.LogWarning(ex, "Could not load race calendar for {Year}", yearToLoad);
-            errorMessage = ApiLoadError.FromException(ex, "Daten des Rennkalenders");
-        }
-        finally
-        {
-            if (yearToLoad == selectedYear)
-            {
-                loading = false;
-            }
-        }
-    }
-
-    
-    // Month grouping
-    public class MonthGroup
-    {
-        public string Name { get; set; } = "";
-
-        public List<RaceCalendarMeeting> Races { get; set; } = new();
+        catch (Exception ex) { Logger.LogWarning(ex, "Could not load calendar for {Year}", selectedYear); error = RaceDisplay.Error(ex); }
+        finally { loading = false; }
     }
 }
