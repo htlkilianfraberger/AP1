@@ -52,7 +52,7 @@ else
                 }</tbody>
             </table></div>
             @if (!FilteredDrivers.Any()) { <p class="empty-search">Keine Fahrer für „@_search“ gefunden.</p> }
-            <footer class="table-footer">Stand: @_result.Session?.Location · @_result.Session?.DateStart.ToString("dd.MM.yyyy") @if (!_result.StatisticsAvailable) { <span>Rennstatistiken teilweise nicht verfügbar.</span> }</footer>
+            <footer class="table-footer">Stand: <SessionVenue Session="_result.Session" /> · @_result.Session?.DateStart.ToString("dd.MM.yyyy") @if (!_result.StatisticsAvailable) { <span>Rennstatistiken teilweise nicht verfügbar.</span> }</footer>
         </section>
         <aside class="season-aside">
             <section class="summary"><h2 class="section-heading"><Icon Name="chart-no-axes-column-increasing" /> Saison-Überblick</h2>
@@ -61,7 +61,7 @@ else
                     <div class="summary-item"><p>@item.Label</p><div class="summary-driver"><DriverPortrait Driver="item.Driver" /><div><strong>@Name(item.Driver.DriverName)</strong><span>@item.Detail</span></div><span class="team-dot" style="background: @item.Driver.TeamColour"></span></div></div>
                 }
             </section>
-            <section class="summary"><h2 class="section-heading"><Icon Name="calendar-days" /> Saison-Details</h2><dl class="details"><div><dt>Rennen (Stand)</dt><dd>@_result.CompletedRaces / @_result.TotalRaces</dd></div><div><dt>Nächstes Rennen</dt><dd>@(_result.NextRace?.Location ?? "–")<small>@_result.NextRace?.DateStart.ToString("dd.MM.yyyy")</small></dd></div><div><dt>Verbleibende Rennen</dt><dd>@Math.Max(0, _result.TotalRaces - _result.CompletedRaces)</dd></div><div><dt>Letztes Rennen</dt><dd>@_result.Session?.Location</dd></div></dl></section>
+            <section class="summary"><h2 class="section-heading"><Icon Name="calendar-days" /> Saison-Details</h2><dl class="details"><div><dt>Rennen (Stand)</dt><dd>@_result.CompletedRaces / @_result.TotalRaces</dd></div><div><dt>Nächstes Rennen</dt><dd><SessionVenue Session="_result.NextRace" /><small>@_result.NextRace?.DateStart.ToString("dd.MM.yyyy")</small></dd></div><div><dt>Verbleibende Rennen</dt><dd>@Math.Max(0, _result.TotalRaces - _result.CompletedRaces)</dd></div><div><dt>Letztes Rennen</dt><dd><SessionVenue Session="_result.Session" /></dd></div></dl></section>
             <a class="source-link" href="https://openf1.org" target="_blank" rel="noopener noreferrer">Daten von OpenF1 <Icon Name="arrow-up-right" /></a>
         </aside>
     </div>
