@@ -95,6 +95,29 @@ public sealed class RaceCalendarService(HttpClient httpClient, ApiResultCache? c
         return Encoding.UTF8.GetBytes(calendar.ToString());
     }
 
+    public static byte[] CreateArchiveCalendar(int year, IReadOnlyList<RaceWeekend> races)
+    {
+        var calendar = new StringBuilder();
+        AppendLine(calendar, "BEGIN:VCALENDAR");
+        AppendLine(calendar, "VERSION:2.0");
+        AppendLine(calendar, "PRODID:-//AP1//Rennkalender//DE");
+        AppendLine(calendar, $"X-WR-CALNAME:Formel 1 Rennkalender {year}");
+        foreach (var race in races)
+        foreach (var session in race.Sessions)
+        {
+            AppendLine(calendar, "BEGIN:VEVENT");
+            AppendLine(calendar, $"UID:ap1-{year}-{race.Round}-{session.Key}@ap1");
+            AppendLine(calendar, $"DTSTAMP:{FormatDate(DateTime.UtcNow)}");
+            AppendLine(calendar, session.Start is { } start ? $"DTSTART:{FormatDate(start.UtcDateTime)}"
+                : $"DTSTART;VALUE=DATE:{session.Date:yyyyMMdd}");
+            AppendLine(calendar, $"SUMMARY:{Escape($"{race.Name} - {session.Name}")}");
+            AppendLine(calendar, $"LOCATION:{Escape(race.CircuitName)}");
+            AppendLine(calendar, "END:VEVENT");
+        }
+        AppendLine(calendar, "END:VCALENDAR");
+        return Encoding.UTF8.GetBytes(calendar.ToString());
+    }
+
     private static bool IsRaceWeekendSession(string sessionName) =>
         sessionName is "Practice 1" or "Practice 2" or "Practice 3" or "Qualifying" or "Sprint Qualifying" or "Sprint" or "Race";
 

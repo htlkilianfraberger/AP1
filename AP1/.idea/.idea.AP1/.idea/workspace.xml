@@ -17,6 +17,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ba3c0d7c-9e94-4164-88f2-aa04b81e2288" name="Changes" comment="driver standings v2">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AP1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AP1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AP1/Components/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Components/App.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AP1/Components/Pages/Constructors.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Components/Pages/Constructors.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AP1/Components/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Components/Pages/Home.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AP1/Components/Pages/RaceCalender.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Components/Pages/RaceCalender.razor" afterDir="false" />
@@ -24,13 +25,15 @@
       <change beforePath="$PROJECT_DIR$/AP1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AP1/Services/OpenF1Service.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Services/OpenF1Service.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AP1/Services/RaceCalendarService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/Services/RaceCalendarService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AP1/wwwroot/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/AP1/wwwroot/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Constructors.Checks/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Constructors.Checks/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="2" />
@@ -49,22 +52,22 @@
     &quot;assignee&quot;: &quot;htlkilianfraberger&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/htlkilianfraberger/AP1.git",
-    "accountId": "81b0e294-f2bf-4d93-8a7d-9d2799144f7f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/htlkilianfraberger/AP1.git&quot;,
+    &quot;accountId&quot;: &quot;81b0e294-f2bf-4d93-8a7d-9d2799144f7f&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "htlkilianfraberger",
-    "repository": "AP1"
+    &quot;owner&quot;: &quot;htlkilianfraberger&quot;,
+    &quot;repository&quot;: &quot;AP1&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/Manuel Gruber/Documents/GitHub/AP1/AP1/AP1/Components/Pages/Home.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
@@ -95,7 +98,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "SCRUM-25-Cache-Service",
+    "git-widget-placeholder": "SCRUM-8-Streckendetails",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -169,7 +172,8 @@
       <workItem from="1790585418661" duration="1997000" />
       <workItem from="1790662338368" duration="155000" />
       <workItem from="1791352464387" duration="370000" />
-      <workItem from="1792394671843" duration="737000" />
+      <workItem from="1792394671843" duration="1338000" />
+      <workItem from="1793776166304" duration="4535000" />
     </task>
     <task id="LOCAL-00001" summary="driver standings">
       <option name="closed" value="true" />

@@ -1,0 +1,209 @@
+@page "/kalender/{Year:int}/{Round:int}"
+@rendermode InteractiveServer
+@attribute [StreamRendering]
+@inject RaceWeekendService WeekendService
+@inject ILogger<RaceDetails> Logger
+
+<PageTitle>@(race?.Name ?? "Renndetails") | F1 Dashboard</PageTitle>
+<div class="race-details race-shell">
+    <a class="back-link" href="@($"/kalender?saison={Year}&vergangen={Past.ToString().ToLowerInvariant()}&streckenzeit={useTrackTime.ToString().ToLowerInvariant()}")">← Zurück zum Rennkalender</a>
+    @if (pageError is not null) { <ApiErrorPanel Error="pageError" OnRetry="RefreshAsync" /> }
+    @if (loading)
+    { <div class="loading-state" role="status">Rennwochenende wird geladen …</div> }
+    else if (race is null && pageError is null)
+    { <div class="notice">Dieses Rennen wurde für die ausgewählte Saison nicht gefunden.</div> }
+    else if (race is not null)
+    {
+        <header class="page-heading"><div>
+            <p class="eyebrow"><VenueFlag Circuit="@race.CircuitId" Country="@race.Country" /> FORMULA 1 · @race.Year · RUNDE @race.Round</p>
+            <h1>@race.Name</h1><p>@race.CircuitName · @race.Location, @race.Country · @RaceDisplay.RaceDate(race, useTrackTime).ToString("dd. MMMM yyyy", RaceDisplay.Culture)</p>
+        </div></header>
+        <div class="toolbar detail-toolbar">
+            <label class="time-toggle"><input type="checkbox" role="switch" @bind="useTrackTime" /> Streckenzeit</label>
+            <button class="refresh" @onclick="RefreshAsync" disabled="@(resultsLoading || historyLoading)"><Icon Name="refresh-cw" /> Aktualisieren</button>
+        </div>
+        <div class="weekend-overview">
+            <section class="detail-panel track-panel">
+                <h2>Die Strecke</h2>
+                @if (ArchiveArtwork.Map(race) is { } localMap)
+                { <img class="track-image" src="@localMap" alt="@($"Streckenverlauf: {race.CircuitName}")" /> }
+                else if (imageUrl is not null && !imageFailed)
+                { <img class="track-image" src="@imageUrl" alt="@($"Streckenverlauf: {race.CircuitName}")" @onerror="() => imageFailed = true" /> }
+                else
+                { <p class="map-empty">Für diese Strecke ist derzeit keine Streckenkarte verfügbar.</p> }
+                <p class="muted">@race.CircuitName</p>
+                <span class="source-note">Streckenübersicht · @race.Country</span>
+            </section>
+            <section class="detail-panel schedule-panel">
+                <h2>Das Rennwochenende</h2>
+                <p class="muted">@(useTrackTime ? $"Ortszeit der Strecke · {race.TrackZone ?? RaceDisplay.OffsetLabel(race.TrackOffset)}" : "Österreichische Zeit · Europe/Vienna (MEZ/MESZ)")</p>
+                <dl class="session-list">
+                    @foreach (var session in race.Sessions)
+                    {
+                        <div class="@(session.Key == "Race" ? "main-session" : null)">
+                            <dt>@session.Name</dt><dd>@RaceDisplay.SessionTime(session, useTrackTime, race.TrackOffset, race.TrackZone)</dd>
+                        </div>
+                    }
+                </dl>
+                <p class="source-note">Veröffentlichter Zeitplan; Änderungen sind möglich. Noch offene Uhrzeiten werden nach Bekanntgabe ergänzt.</p>
+            </section>
+        </div>
+
+        @if (classifications.Count > 0 || resultsError is not null || resultsLoading || race.IsPast(DateTimeOffset.UtcNow))
+        {
+        <section class="detail-panel results-panel" aria-label="Ergebnisse des Rennwochenendes">
+            <h2>Ergebnisse @race.Year</h2>
+            @if (resultsLoading) { <p role="status" class="muted">Ergebnisse werden geladen …</p> }
+            else if (resultsError is not null) { <ApiErrorPanel Error="resultsError" OnRetry="RetryResultsAsync" /> }
+            else if (classifications.Count == 0)
+            { <p class="muted">Dieses Rennwochenende steht noch bevor. Ergebnisse erscheinen nach Veröffentlichung.</p> }
+            else
+            {
+                <div class="result-tabs" aria-label="Ergebnis auswählen">
+                    @foreach (var classification in classifications)
+                    { <button type="button" class="@(selectedResult == classification.Name ? "selected" : null)" aria-pressed="@(selectedResult == classification.Name)" @onclick="() => selectedResult = classification.Name">@classification.Name</button> }
+                </div>
+                var selected = classifications.FirstOrDefault(c => c.Name == selectedResult) ?? classifications[0];
+                @if (selected.Results.Count == 0)
+                { <p class="muted">Die Ergebnisse für @selected.Name sind noch nicht veröffentlicht.</p> }
+                else
+                {
+                    <div class="table-scroll"><table>
+                        <caption>@selected.Name · @race.Name @race.Year</caption>
+                        <thead><tr><th>Pos.</th><th>Fahrer</th><th>Team</th>
+                            @if (selected.IsQualifying) { <th>Q1</th><th>Q2</th><th>Q3</th> }
+                            else { <th>Start</th><th>Runden</th><th>Zeit / Rückstand</th><th>Status</th><th>Schnellste Runde</th><th>Punkte</th> }
+                        </tr></thead>
+                        <tbody>
+                            @foreach (var row in selected.Results)
+                            {
+                                <tr><td class="position">@Position(row)</td><td><strong>@row.Driver</strong></td><td>@row.Team</td>
+                                    @if (selected.IsQualifying) { <td>@Value(row.Q1)</td><td>@Value(row.Q2)</td><td>@Value(row.Q3)</td> }
+                                    else
+                                    {
+                                        <td>@(row.Grid == "0" ? "Box" : Value(row.Grid))</td><td>@Value(row.Laps)</td><td>@Value(row.Time)</td><td>@Value(row.Status)</td>
+                                        <td class="@(row.IsFastestLap ? "fastest-lap" : null)">@Value(row.FastestLap) @(row.IsFastestLap ? "★" : "")</td><td>@Value(row.Points)</td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table></div>
+                    <p class="source-note">Offizielle Klassifikation der Datenquelle, inklusive Ausfällen und Disqualifikationen. ★ Schnellste Rennrunde.</p>
+                }
+            }
+        </section>
+
+        }
+        <section class="history-section" aria-label="Historische Streckenstatistiken">
+            <h2>Streckenrekorde &amp; Statistik</h2>
+            @if (historyLoading) { <p role="status" class="muted">Historische Streckendaten werden geladen …</p> }
+            else if (historyError is not null) { <ApiErrorPanel Error="historyError" OnRetry="RetryHistoryAsync" /> }
+            else if (history is not null)
+            {
+                <div class="record-grid">
+                    <article class="detail-panel record"><h3>Schnellste erfasste Runde</h3>
+                        <strong class="record-value">@(history.FastestLap?.Time ?? "–")</strong>
+                        <p>@(history.FastestLap?.Driver ?? "Noch keine Daten")</p><span class="muted">@history.FastestLap?.Year · @history.FastestLap?.Session</span>
+                    </article>
+                    <article class="detail-panel record"><h3>Schnellste Rennrunde</h3>
+                        <strong class="record-value">@(history.FastestRaceLap?.Time ?? "–")</strong>
+                        <p>@(history.FastestRaceLap?.Driver ?? "Noch keine Daten")</p><span class="muted">@history.FastestRaceLap?.Year</span>
+                    </article>
+                    @foreach (var entry in new[] { (Title: "Meiste Siege", Leaders: history.Wins), (Title: "Meiste Pole-Starts", Leaders: history.Poles) })
+                    {
+                        <article class="detail-panel record"><h3>@entry.Title</h3>
+                            <strong class="record-value">@(entry.Leaders.FirstOrDefault()?.Count.ToString() ?? "–")</strong>
+                            @foreach (var leader in entry.Leaders.TakeWhile(l => l.Count == entry.Leaders[0].Count))
+                            { <p title="@leader.Years">@leader.Driver</p> }
+                            @if (entry.Leaders.Count == 0) { <p>Noch keine Daten</p> }
+                            <details><summary>Rangliste ansehen</summary><ol class="record-leaders">
+                                @foreach (var leader in entry.Leaders.Take(10))
+                                { <li title="@leader.Years"><span>@leader.Driver</span><strong>@leader.Count</strong></li> }
+                            </ol></details>
+                        </article>
+                    }
+                </div>
+                <p class="source-note coverage">Datenabdeckung: Siege und P1-Starts ab @(history.FirstYear ?? "dem ersten verfügbaren Rennen"); Qualifying-Zeiten ab 1994, schnellste Rennrunden ab 2004, jeweils soweit erfasst.
+                    Die schnellste erfasste Runde vergleicht Qualifying- und Rennzeiten; Trainings- und Testrunden sind nicht enthalten.
+                    Pole-Starts zählen Startplatz 1 im Hauptrennen; die offizielle Pole-Zuordnung bei historischen Sprintformaten kann davon abweichen.
+                    Zeiten unterschiedlicher Streckenlayouts sind enthalten und nicht direkt vergleichbar.</p>
+            }
+        </section>
+        <p class="source-note">Ergebnisse &amp; Statistik: <a href="https://api.jolpi.ca/" target="_blank" rel="noopener noreferrer">Jolpica F1</a> · Streckenverläufe: <a href="https://github.com/bacinger/f1-circuits">F1 Circuits</a> · Ortszeit: <a href="https://openf1.org/" target="_blank" rel="noopener noreferrer">OpenF1</a></p>
+    }
+</div>
+
+@code {
+    [SupplyParameterFromQuery(Name = "vergangen")] public bool Past { get; set; }
+    [Parameter] public int Year { get; set; }
+    [Parameter] public int Round { get; set; }
+    [SupplyParameterFromQuery(Name = "streckenzeit")] public bool TrackTime { get; set; }
+    private RaceWeekend? race;
+    private CircuitHistory? history;
+    private IReadOnlyList<WeekendClassification> classifications = [];
+    private bool loading = true, resultsLoading, historyLoading, useTrackTime, imageFailed;
+    private string? imageUrl;
+    private string selectedResult = "Rennen";
+    private ApiLoadError? pageError, resultsError, historyError;
+    private int version;
+    protected override Task OnParametersSetAsync() { useTrackTime = TrackTime; return LoadAsync(false); }
+    private Task RefreshAsync() => LoadAsync(true);
+    private Task RetryResultsAsync() => race is null ? Task.CompletedTask : LoadResultsAsync(race, version, true);
+    private Task RetryHistoryAsync() => race is null ? Task.CompletedTask : LoadHistoryAsync(race, version, true);
+    private async Task LoadAsync(bool refresh)
+    {
+        var requestVersion = ++version;
+        loading = true;
+        pageError = null;
+        race = null;
+        history = null;
+        classifications = [];
+        imageFailed = false;
+        imageUrl = null;
+        if (Year is < 1 or > 9999 || Round < 1) { loading = false; return; }
+        try
+        {
+            var season = await WeekendService.GetSeasonAsync(Year, refresh);
+            if (requestVersion != version) return;
+            race = season.FirstOrDefault(r => r.Round == Round);
+            loading = false;
+            if (race is null) return;
+            if (Uri.TryCreate(race.CircuitImage, UriKind.Absolute, out var image) && image.Scheme == "https" && image.Host == "media.formula1.com") imageUrl = image.AbsoluteUri;
+            await Task.WhenAll(LoadResultsAsync(race, requestVersion, refresh), LoadHistoryAsync(race, requestVersion, refresh));
+        }
+        catch (Exception ex)
+        {
+            if (requestVersion != version) return;
+            Logger.LogWarning(ex, "Could not load weekend {Year}/{Round}", Year, Round);
+            pageError = RaceDisplay.Error(ex);
+        }
+        finally { if (requestVersion == version) loading = false; }
+    }
+    private async Task LoadResultsAsync(RaceWeekend currentRace, int requestVersion, bool refresh)
+    {
+        resultsLoading = true; resultsError = null;
+        try
+        {
+            var result = await WeekendService.GetResultsAsync(currentRace, refresh);
+            if (requestVersion != version) return;
+            classifications = result;
+            selectedResult = result.LastOrDefault()?.Name ?? "Rennen";
+        }
+        catch (Exception ex) { if (requestVersion == version) { resultsError = RaceDisplay.Error(ex); Logger.LogWarning(ex, "Could not load weekend results"); } }
+        finally { if (requestVersion == version) { resultsLoading = false; StateHasChanged(); } }
+    }
+    private async Task LoadHistoryAsync(RaceWeekend currentRace, int requestVersion, bool refresh)
+    {
+        historyLoading = true; historyError = null;
+        try
+        {
+            var result = await WeekendService.GetHistoryAsync(currentRace.CircuitId, refresh);
+            if (requestVersion == version) history = result;
+        }
+        catch (Exception ex) { if (requestVersion == version) { historyError = RaceDisplay.Error(ex); Logger.LogWarning(ex, "Could not load circuit history"); } }
+        finally { if (requestVersion == version) { historyLoading = false; StateHasChanged(); } }
+    }
+    private static string Value(string value) => string.IsNullOrWhiteSpace(value) ? "–" : value;
+    private static string Position(WeekendResult row) => row.PositionText is "D" or "E" or "W" or "F" or "N" or "R"
+        ? row.PositionText : row.Position > 0 ? row.Position.ToString() : "–";
+}
