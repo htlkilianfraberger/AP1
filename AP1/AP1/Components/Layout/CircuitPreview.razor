@@ -1,0 +1,32 @@
+@inject RaceWeekendService Service
+<div class="circuit-preview">
+    <button aria-expanded="@open" @onclick="Toggle">@(!open ? "Streckenrekorde anzeigen" : "Streckenrekorde schließen") <span aria-hidden="true">@(open ? "−" : "+")</span></button>
+    @if (open)
+    {
+        @if (busy) { <p role="status">Rekorde werden geladen …</p> }
+        else if (history is not null)
+        {
+            <dl><dt>Meiste Siege</dt><dd>@Leaders(history.Wins)</dd>
+                <dt>Meiste Pole-Starts</dt><dd>@Leaders(history.Poles)</dd>
+                <dt>Schnellste erfasste Runde</dt><dd>@Lap(history.FastestLap)</dd>
+                <dt>Schnellste Rennrunde</dt><dd>@Lap(history.FastestRaceLap)</dd></dl>
+            <small>Erfasste Qualifying- und Rennzeiten; alle Layouts.</small>
+        }
+        else { <p>Rekorde derzeit nicht verfügbar. <button @onclick="Load">Erneut laden</button></p> }
+    }
+</div>
+@code {
+    [Parameter, EditorRequired] public RaceWeekend Race { get; set; } = default!;
+    private bool open, busy;
+    private CircuitHistory? history;
+    private async Task Toggle() { open = !open; if (open && history is null && !busy) await Load(); }
+    private async Task Load() {
+        busy = true;
+        try { history = await Service.GetHistoryAsync(Race.CircuitId); }
+        catch (Exception) { history = null; }
+        finally { busy = false; }
+    }
+    private static string Leaders(IReadOnlyList<CircuitLeader> rows) => rows.Count == 0 ? "Noch keine Daten" :
+        $"{string.Join(" / ", rows.TakeWhile(r => r.Count == rows[0].Count).Select(r => r.Driver))} · {rows[0].Count}";
+    private static string Lap(CircuitLap? lap) => lap is null ? "Noch keine Daten" : $"{lap.Time} · {lap.Driver} ({lap.Year})";
+}

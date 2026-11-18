@@ -10,6 +10,12 @@ builder.Services.AddSingleton<ApiResultCache>();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddHttpClient<RaceCalendarService>();
+builder.Services.AddHttpClient<RaceWeekendService>(client => client.Timeout = TimeSpan.FromSeconds(30));
+builder.Services.AddHttpClient<RaceReplayService>(client =>
+{
+    client.BaseAddress = new Uri("https://api.openf1.org/v1/");
+    client.Timeout = TimeSpan.FromSeconds(60);
+});
 
 builder.Services.AddHttpClient<OpenF1Service>(client =>
 {
@@ -44,6 +50,13 @@ app.MapGet("/rennkalender/export", async (RaceCalendarService raceCalendarServic
     var fileName = $"f1-rennkalender-{DateTime.UtcNow.Year}.ics";
 
     return Results.File(calendar, "text/calendar; charset=utf-8", fileName);
+});
+
+app.MapGet("/rennkalender/export/{year:int}", async (int year, RaceWeekendService service) =>
+{
+    if (!(await service.GetSeasonsAsync()).Contains(year)) return Results.NotFound();
+    var races = await service.GetSeasonAsync(year);
+    return Results.File(RaceCalendarService.CreateArchiveCalendar(year, races), "text/calendar; charset=utf-8", $"f1-rennkalender-{year}.ics");
 });
 
 app.MapRazorComponents<App>()

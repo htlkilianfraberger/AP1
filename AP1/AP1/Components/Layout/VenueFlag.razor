@@ -1,0 +1,8 @@
+@if ((CircuitArtwork.CountryCode(Circuit) ?? ArchiveArtwork.CountryCode(Country)) is { } code)
+{
+    <img class="venue-flag" src="@($"/flags/{code}.svg")" alt="@Country" title="@Country" width="32" height="24" />
+}
+@code {
+    [Parameter, EditorRequired] public string Circuit { get; set; } = "";
+    [Parameter, EditorRequired] public string Country { get; set; } = "";
+}

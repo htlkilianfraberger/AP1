@@ -1,9 +1,0 @@
-**/bin/
-**/obj/
-**/.idea/
-**/.vs/
-**/.git/
-**/TestResults/
-**/node_modules/
-**/*.user
-**/*.suo

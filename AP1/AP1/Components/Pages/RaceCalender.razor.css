@@ -1,173 +1,32 @@
-.race-calendar {
-    max-width: 1600px;
-}
-
-.calendar-toolbar {
-    margin: 20px 0 18px;
-}
-
-.calendar-export {
-    min-height: 39px;
-    text-decoration: none;
-    background: #171b20;
-    border-color: #3a414b;
-    color: var(--text);
-}
-
-.calendar-export:hover {
-    background: #232a32;
-    border-color: #697280;
-    color: #fff;
-}
-
-.months {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-}
-
-.month-card {
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 9px;
-    background: var(--surface);
-}
-
-.month-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 15px 17px;
-    border-bottom: 1px solid var(--line);
-}
-
-.month-header h2 {
-    margin: 0;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.month-header span {
-    color: var(--muted);
-    font-size: 12px;
-    white-space: nowrap;
-}
-
-.race {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-height: 86px;
-    padding: 13px 15px;
-    border-bottom: 1px solid var(--line);
-    transition: background-color .15s ease;
-}
-
-.race:last-child {
-    border-bottom: 0;
-}
-
-.race:hover {
-    background: #15191e;
-}
-
-.race-date {
-    width: 42px;
-    flex: 0 0 42px;
-    text-align: center;
-}
-
-.race-date .day {
-    display: block;
-    font-size: 23px;
-    font-weight: 750;
-    line-height: 1.05;
-}
-
-.race-date .weekday {
-    display: block;
-    margin-top: 4px;
-    color: var(--muted);
-    font-size: 10px;
-    text-transform: uppercase;
-}
-
-.race-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.race-info h3 {
-    overflow: hidden;
-    margin: 0 0 4px;
-    font-size: 13px;
-    font-weight: 700;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.race-info p {
-    overflow: hidden;
-    margin: 0;
-    color: #bdc3cf;
-    font-size: 11px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.race-info .circuit {
-    display: block;
-    overflow: hidden;
-    margin-top: 3px;
-    color: var(--muted);
-    font-size: 10px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.race-type {
-    flex: 0 0 auto;
-    margin-left: 3px;
-}
-
-.race-type span {
-    display: inline-block;
-    padding: 5px 7px;
-    border: 1px solid #333a43;
-    border-radius: 5px;
-    background: #171b20;
-    color: #c3c9d2;
-    font-size: 10px;
-    white-space: nowrap;
-}
-
-@media (max-width: 1100px) {
-    .months {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 700px) {
-    .months {
-        grid-template-columns: 1fr;
-    }
-
-    .calendar-toolbar {
-        align-items: stretch;
-    }
-
-    .calendar-export {
-        justify-content: center;
-    }
-
-    .race {
-        gap: 9px;
-        padding-inline: 12px;
-    }
-
-    .race-type {
-        display: none;
-    }
-}
+.race-calendar { max-width: 1540px; margin-inline: auto; }
+.time-zone { font-size: .84rem; color: var(--muted); }
+.month-card { margin-block: 32px 48px; }
+.month-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.month-header::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.month-header h2 { margin: 0; font-size: 1.5rem; letter-spacing: -.03em; }
+.month-header span { color: var(--muted); font-size: .8rem; }
+.month-races { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(270px,100%),1fr)); gap: 18px; align-items: start; }
+.weekend-card { min-width: 0; overflow: hidden; background: #111719; border: 1px solid #2c3738; border-radius: 18px; }
+.weekend-card:focus-within, .weekend-card:hover { border-color: #668479; }
+.race { display: block; color: inherit; text-decoration: none; }
+.race:focus-visible { outline: 2px solid #a0ffce; outline-offset: -3px; }
+.race-art { height: 138px; overflow: hidden; position: relative; border-bottom: 1px solid #2c3738;
+  background-color: #172824; background-image: radial-gradient(#6c918942 1px,transparent 1px),linear-gradient(125deg,#192b28,#111c1b); background-size: 12px 12px, auto; }
+.race-art .outline { position: absolute; inset: 16% 6% 4%; width: 88%; height: 80%; filter: drop-shadow(0 2px 7px #74ffd133); }
+.round-tag { position: absolute; top: 12px; left: 14px; font: 700 .7rem/1.2 monospace; letter-spacing: .12em; color: #c1e1d7; }
+.race-art ::deep .venue-flag { position: absolute; right: 14px; top: 12px; z-index: 1; }
+.race-copy { padding: 18px 16px 10px; display: flex; align-items: center; gap: 14px; }
+.race-date { display: grid; text-align: center; flex: 0 0 40px; border-right: 1px solid #33433e; padding-right: 10px; }
+.day { font-size: 1.6rem; font-weight: 800; line-height: 1; }
+.weekday { color: #a6b6af; font-size: .7rem; text-transform: uppercase; }
+.race-info h3 { font-size: 1.1rem; font-weight: 750; margin: 0 0 4px; text-wrap: balance; }
+.race-info p,.circuit { color: #b9c7c1; font-size: .82rem; margin: 0; }
+.circuit { color: #91a69b; }
+.race-type { margin: 4px 16px 12px; display: flex; justify-content: space-between; color: #b6f1d4; font-weight: 650; font-size: .84rem; }
+.weekend-times { padding: 6px 16px 13px; margin: 0; border-top: 1px solid #263230; }
+.weekend-times div { display:flex; justify-content:space-between; gap:10px; padding:6px 0; font-size:.82rem; }
+.weekend-times dt { font-weight:500; color:#a4b5ae; }
+.weekend-times dd { margin:0; text-align:right; font-variant-numeric:tabular-nums; }
+.weekend-times .main-session { border-top:1px dashed #35483f; margin-top:4px; font-weight:750; }
+.weekend-times .main-session dt { color:#b6f1d4; }
+@media (max-width:600px) { .month-card { margin-block:22px 32px; } }

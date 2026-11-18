@@ -1,4 +1,5 @@
 using System.Net;
+using System.Collections.Concurrent;
 using System.Reflection;
 using System.Text.Json;
 using AP1.Components.Pages;
@@ -28,6 +29,18 @@ Check(mercedes.Podiums == 3 && ferrari.Podiums == 1, "Double podiums count twice
 Check(mercedes.RecentResults.Select(r => r.Label).SequenceEqual(["1", "2"]), "Recent team finishes are chronological and use the best classified car.");
 Check(ferrari.RecentResults[0].Label == "DSQ", "Disqualification is preserved in recent results.");
 Check(result.NextRace?.Location == "Future", "Next race is populated.");
+
+var driverFixture = new Fixture();
+var driverService = new OpenF1Service(new HttpClient(driverFixture) { BaseAddress = new Uri("https://example.test/") });
+var driverResult = await driverService.GetCurrentDriverChampionshipAsync(2023);
+Check(driverResult.Standings.Count == 3 && driverResult.StatisticsAvailable,
+    "Driver standings include current and substitute drivers with complete statistics.");
+Check(driverFixture.RequestPaths.Count(path => path.StartsWith("/drivers")) == 1
+    && driverFixture.RequestPaths.Count(path => path.StartsWith("/session_result")) == 1,
+    "Driver standings batch all race drivers and results into two requests.");
+Check(driverFixture.RequestPaths.Single(path => path.StartsWith("/drivers")).Contains("session_key=10&session_key=20")
+    && driverFixture.RequestPaths.Single(path => path.StartsWith("/session_result")).Contains("session_key=10&session_key=20"),
+    "Driver batch requests contain every published race session.");
 
 using var cacheMemory = new MemoryCache(new MemoryCacheOptions());
 var cache = new ApiResultCache(cacheMemory);
@@ -163,11 +176,13 @@ public sealed class Fixture : HttpMessageHandler
     public bool MissingResults { get; set; }
     public bool EmptySeason { get; set; }
     public int RequestCount => _requestCount;
+    public ConcurrentQueue<string> RequestPaths { get; } = new();
     private int _requestCount;
     protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
         Interlocked.Increment(ref _requestCount);
         var path = request.RequestUri!.PathAndQuery;
+        RequestPaths.Enqueue(path);
         object data = path switch
         {
             var p when p.StartsWith("/v1/meetings") => new object[] {
@@ -179,6 +194,11 @@ public sealed class Fixture : HttpMessageHandler
                 new { session_key=30, session_name="Race", date_start="2023-03-15T12:00:00Z", date_end="2023-03-15T14:00:00Z", location="Unpublished" },
                 new { session_key=40, session_name="Race", date_start="2099-03-01T12:00:00Z", date_end="2099-03-01T14:00:00Z", location="Future" } },
             var p when p.Contains("championship_teams?session_key=30") => Array.Empty<object>(),
+            var p when p.Contains("championship_drivers?session_key=30") => Array.Empty<object>(),
+            var p when p.StartsWith("/championship_drivers") => new object[] {
+                new {driver_number=1, position_current=1, position_start=1, points_current=50, points_start=25},
+                new {driver_number=2, position_current=2, position_start=2, points_current=40, points_start=22},
+                new {driver_number=3, position_current=3, position_start=3, points_current=25, points_start=25} },
             var p when p.StartsWith("/championship_teams") => new object[] {
                 new {team_name="Mercedes", position_current=1, position_start=1, points_current=58, points_start=43},
                 new {team_name="Ferrari", position_current=2, position_start=2, points_current=25, points_start=0} },
