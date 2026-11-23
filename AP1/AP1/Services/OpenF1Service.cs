@@ -154,7 +154,7 @@ public sealed class OpenF1Service(HttpClient httpClient, ApiResultCache? cache =
         {
             for (var attempt = 0; ; attempt++)
             {
-                await Task.Delay(400, cancellationToken);
+            await Task.Delay(100, cancellationToken);
                 using var response = await httpClient.GetAsync(path, cancellationToken);
                 if (response.StatusCode == System.Net.HttpStatusCode.TooManyRequests && attempt < 2)
                 {

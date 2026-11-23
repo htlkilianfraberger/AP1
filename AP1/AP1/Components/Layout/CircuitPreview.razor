@@ -22,7 +22,7 @@
     private async Task Toggle() { open = !open; if (open && history is null && !busy) await Load(); }
     private async Task Load() {
         busy = true;
-        try { history = await Service.GetHistoryAsync(Race.CircuitId); }
+        try { history = await Service.GetHistoryAsync(Race); }
         catch (Exception) { history = null; }
         finally { busy = false; }
     }

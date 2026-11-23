@@ -20,7 +20,6 @@
         <label class="past-toggle"><input type="checkbox" role="switch" @bind="useTrackTime" /> Streckenzeit</label>
         <button type="button" class="refresh" @onclick="RefreshRaces" disabled="@loading"><Icon Name="refresh-cw" /> Aktualisieren</button>
         <a class="refresh calendar-export" href="@(Archive ? $"/rennkalender/export/{selectedYear}" : "/rennkalender/export")" download><Icon Name="download" /> Kalender exportieren</a>
-        <span class="data-status"><i></i> Jolpica-Daten</span>
     </div>
     <p class="time-zone">@(useTrackTime ? "Alle Uhrzeiten: Ortszeit der jeweiligen Strecke. Die Zeitzone steht beim Rennwochenende." : "Alle Uhrzeiten: Österreich (Europe/Vienna), inklusive Sommer-/Winterzeit.")</p>
     @if (error is not null) { <ApiErrorPanel Error="error" OnRetry="RefreshRaces" /> }
