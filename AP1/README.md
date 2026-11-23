@@ -2,6 +2,8 @@
 
 AP1 ist ein Blazor-Webprojekt auf Basis von .NET 10.
 
+Entwicklung einer F1-Webanwendung zur Anzeige von Rennkalendern, Live-Daten, Ergebnissen und WM-Ständen. Mithilfe von KI werden Gewinnwahrscheinlichkeiten für Fahrer und Teams berechnet und mit Polymarket-Prognosen verglichen.
+
 ## Voraussetzungen
 
 - .NET SDK 10.0 oder neuer
@@ -37,6 +39,12 @@ docker compose down
 ```
 
 Docker baut die Anwendung im SDK-Container und startet das veröffentlichte Ergebnis in einem ASP.NET-Runtime-Container. Lokale `bin`- und `obj`-Ordner werden nicht in das Image übernommen.
+
+## Historische Renndaten abspielen
+
+Das versteckte Entwicklerwerkzeug ist unter `/developer/race-replay` erreichbar und erscheint nicht in der Navigation. Es lädt historische Rennen aus OpenF1 und spielt Positionen, Abstände und Rennkontrollmeldungen anhand ihrer ursprünglichen Zeitstempel ab. Die Wiedergabe kann pausiert, fortgesetzt und mit bis zu 300-facher Geschwindigkeit abgespielt werden. Standardmäßig ist die Saison 2025 ausgewählt.
+
+OpenF1 stellt historische Daten ab 2023 ohne API-Schlüssel bereit. Die Replay-Seite fragt die Daten beim Start einer Wiedergabe ab; dafür ist eine Internetverbindung erforderlich. Details zu den verfügbaren Daten stehen in der [OpenF1-Dokumentation](https://openf1.org/docs/).
 
 ## Start in Rider
 

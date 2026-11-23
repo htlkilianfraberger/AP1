@@ -1,0 +1,187 @@
+.race-replay {
+    max-width: 1600px;
+}
+
+.replay-controls {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+}
+
+.replay-controls label {
+    display: grid;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.replay-controls select {
+    min-width: 125px;
+    max-width: 320px;
+    height: 39px;
+    padding: 0 10px;
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #15191e;
+}
+
+.replay-controls .race-picker select {
+    min-width: 245px;
+}
+
+.replay-button {
+    height: 39px;
+    padding: 0 16px;
+    color: #08100c;
+    font-weight: 700;
+    border: 1px solid #39dc90;
+    border-radius: 6px;
+    background: #39dc90;
+}
+
+.replay-button.secondary {
+    color: var(--text);
+    border-color: var(--line);
+    background: #171b20;
+}
+
+.replay-button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.replay-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 14px 2px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.replay-meta strong {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.replay-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.replay-panel {
+    min-width: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+}
+
+.replay-panel h2 {
+    margin: 0;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+}
+
+.replay-table-scroll {
+    max-height: 68vh;
+    overflow: auto;
+}
+
+.replay-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.replay-table th,
+.replay-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.replay-table th {
+    position: sticky;
+    top: 0;
+    color: var(--muted);
+    background: #101317;
+    font-size: 11px;
+}
+
+.replay-table tr {
+    border-left: 3px solid var(--team-color, transparent);
+}
+
+.replay-table .position {
+    width: 48px;
+    font-weight: 800;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 68vh;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.event-list li {
+    display: grid;
+    grid-template-columns: 60px 78px minmax(0, 1fr);
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+}
+
+.event-list time {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.event-kind {
+    color: #80d8fb;
+}
+
+.replay-status,
+.replay-empty,
+.replay-error {
+    margin-top: 16px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--muted);
+    background: var(--surface);
+}
+
+.replay-error {
+    color: #ff9da4;
+    border-color: #633b40;
+}
+
+@media (max-width: 900px) {
+    .replay-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .replay-controls .race-picker {
+        width: 100%;
+    }
+
+    .replay-controls .race-picker select {
+        max-width: none;
+    }
+}
