@@ -123,13 +123,13 @@
                         </article>
                     }
                 </div>
-                <p class="source-note coverage">Datenabdeckung: Siege und P1-Starts ab @(history.FirstYear ?? "dem ersten verfügbaren Rennen"); Qualifying-Zeiten ab 1994, schnellste Rennrunden ab 2004, jeweils soweit erfasst.
+                <p class="source-note coverage">Datenabdeckung: OpenF1 ab 2023; Siege, Pole-Positionen und Rundenzeiten jeweils soweit veröffentlicht.
                     Die schnellste erfasste Runde vergleicht Qualifying- und Rennzeiten; Trainings- und Testrunden sind nicht enthalten.
                     Pole-Starts zählen Startplatz 1 im Hauptrennen; die offizielle Pole-Zuordnung bei historischen Sprintformaten kann davon abweichen.
                     Zeiten unterschiedlicher Streckenlayouts sind enthalten und nicht direkt vergleichbar.</p>
             }
         </section>
-        <p class="source-note">Ergebnisse &amp; Statistik: <a href="https://api.jolpi.ca/" target="_blank" rel="noopener noreferrer">Jolpica F1</a> · Streckenverläufe: <a href="https://github.com/bacinger/f1-circuits">F1 Circuits</a> · Ortszeit: <a href="https://openf1.org/" target="_blank" rel="noopener noreferrer">OpenF1</a></p>
+        <p class="source-note">Ergebnisse, Statistik und Ortszeit: <a href="https://openf1.org/" target="_blank" rel="noopener noreferrer">OpenF1</a> · Streckenverläufe: <a href="https://github.com/bacinger/f1-circuits">F1 Circuits</a></p>
     }
 </div>
 
@@ -197,7 +197,7 @@
         historyLoading = true; historyError = null;
         try
         {
-            var result = await WeekendService.GetHistoryAsync(currentRace.CircuitId, refresh);
+            var result = await WeekendService.GetHistoryAsync(currentRace, refresh);
             if (requestVersion == version) history = result;
         }
         catch (Exception ex) { if (requestVersion == version) { historyError = RaceDisplay.Error(ex); Logger.LogWarning(ex, "Could not load circuit history"); } }

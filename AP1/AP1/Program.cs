@@ -10,17 +10,12 @@ builder.Services.AddSingleton<ApiResultCache>();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddHttpClient<RaceCalendarService>();
-builder.Services.AddHttpClient<RaceWeekendService>(client => client.Timeout = TimeSpan.FromSeconds(30));
-builder.Services.AddHttpClient<RaceReplayService>(client =>
-{
-    client.BaseAddress = new Uri("https://api.openf1.org/v1/");
-    client.Timeout = TimeSpan.FromSeconds(60);
-});
+builder.Services.AddHttpClient<RaceWeekendService>(client => client.Timeout = TimeSpan.FromSeconds(60));
 
 builder.Services.AddHttpClient<OpenF1Service>(client =>
 {
     client.BaseAddress = new Uri("https://api.openf1.org/v1/");
-    client.Timeout = TimeSpan.FromSeconds(20);
+    client.Timeout = TimeSpan.FromSeconds(60);
 });
 
 var app = builder.Build();
