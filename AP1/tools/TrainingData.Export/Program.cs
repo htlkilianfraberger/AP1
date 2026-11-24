@@ -5,9 +5,15 @@ using System.Reflection;
 using AP1.Services;
 using TrainingData.Export;
 
+if (args.Length == 2 && args[0] == "split")
+{
+    TrainingSplit.Create(Path.GetFullPath(args[1]));
+    return 0;
+}
+
 if (args.Length < 2 || !int.TryParse(args[0], out var year) || year < 2023 || year > DateTime.UtcNow.Year)
 {
-    Console.Error.WriteLine("Usage: dotnet run --project AP1/tools/TrainingData.Export -- <season> <output-directory>");
+    Console.Error.WriteLine("Usage: dotnet run --project AP1/tools/TrainingData.Export -- <season> <output-directory> | split <data-directory>");
     return 1;
 }
 var output = Path.GetFullPath(args[1]);
@@ -53,7 +59,7 @@ foreach (var race in races)
     }
     snapshots.Add(new RaceSnapshot(race, drivers, results, driverStandings, teamStandings));
 }
-var rows = TrainingRows.Build(snapshots, DateTimeOffset.UtcNow);
+var rows = TrainingRows.Build(snapshots);
 Directory.CreateDirectory(output);
 await WriteCsv(Path.Combine(output, $"drivers-{year}.csv"), rows.Drivers);
 await WriteCsv(Path.Combine(output, $"teams-{year}.csv"), rows.Teams);

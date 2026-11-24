@@ -1,0 +1,1733 @@
+Season,Round,Location,DriverNumber,TeamKey,PreviousStarts,PreviousAverageFinish,PointsBeforeRace,ChampionshipPositionBeforeRace
+2023,1,Sakhir,1,redbullracing,0,,0,
+2023,1,Sakhir,2,williams,0,,0,
+2023,1,Sakhir,4,mclaren,0,,0,
+2023,1,Sakhir,10,alpine,0,,0,
+2023,1,Sakhir,11,redbullracing,0,,0,
+2023,1,Sakhir,14,astonmartin,0,,0,
+2023,1,Sakhir,16,ferrari,0,,0,
+2023,1,Sakhir,18,astonmartin,0,,0,
+2023,1,Sakhir,20,haasf1team,0,,0,
+2023,1,Sakhir,21,alphatauri,0,,0,
+2023,1,Sakhir,22,alphatauri,0,,0,
+2023,1,Sakhir,23,williams,0,,0,
+2023,1,Sakhir,24,alfaromeo,0,,0,
+2023,1,Sakhir,27,haasf1team,0,,0,
+2023,1,Sakhir,31,alpine,0,,0,
+2023,1,Sakhir,44,mercedes,0,,0,
+2023,1,Sakhir,55,ferrari,0,,0,
+2023,1,Sakhir,63,mercedes,0,,0,
+2023,1,Sakhir,77,alfaromeo,0,,0,
+2023,1,Sakhir,81,mclaren,0,,0,
+2023,2,Jeddah,1,redbullracing,1,1,25.0,1
+2023,2,Jeddah,2,williams,1,12,0.0,12
+2023,2,Jeddah,4,mclaren,1,17,0.0,17
+2023,2,Jeddah,10,alpine,1,9,2.0,9
+2023,2,Jeddah,11,redbullracing,1,2,18.0,2
+2023,2,Jeddah,14,astonmartin,1,3,15.0,3
+2023,2,Jeddah,16,ferrari,0,,0,18
+2023,2,Jeddah,18,astonmartin,1,6,8.0,6
+2023,2,Jeddah,20,haasf1team,1,13,0.0,13
+2023,2,Jeddah,21,alphatauri,1,14,0.0,14
+2023,2,Jeddah,22,alphatauri,1,11,0.0,11
+2023,2,Jeddah,23,williams,1,10,1.0,10
+2023,2,Jeddah,24,alfaromeo,1,16,0.0,16
+2023,2,Jeddah,27,haasf1team,1,15,0.0,15
+2023,2,Jeddah,31,alpine,0,,0,19
+2023,2,Jeddah,44,mercedes,1,5,10.0,5
+2023,2,Jeddah,55,ferrari,1,4,12.0,4
+2023,2,Jeddah,63,mercedes,1,7,6.0,7
+2023,2,Jeddah,77,alfaromeo,1,8,4.0,8
+2023,2,Jeddah,81,mclaren,0,,0,20
+2023,3,Melbourne,1,redbullracing,2,1.5,44.0,1
+2023,3,Melbourne,2,williams,2,14,0.0,16
+2023,3,Melbourne,4,mclaren,2,17,0.0,20
+2023,3,Melbourne,10,alpine,2,9,4.0,11
+2023,3,Melbourne,11,redbullracing,2,1.5,43.0,2
+2023,3,Melbourne,14,astonmartin,2,3,30.0,3
+2023,3,Melbourne,16,ferrari,1,7,6.0,8
+2023,3,Melbourne,18,astonmartin,1,6,8.0,7
+2023,3,Melbourne,20,haasf1team,2,11.5,1.0,12
+2023,3,Melbourne,21,alphatauri,2,14,0.0,18
+2023,3,Melbourne,22,alphatauri,2,11,0.0,14
+2023,3,Melbourne,23,williams,1,10,1.0,13
+2023,3,Melbourne,24,alfaromeo,2,14.5,0.0,17
+2023,3,Melbourne,27,haasf1team,2,13.5,0.0,15
+2023,3,Melbourne,31,alpine,1,8,4.0,10
+2023,3,Melbourne,44,mercedes,2,5,20.0,5
+2023,3,Melbourne,55,ferrari,2,5,20.0,4
+2023,3,Melbourne,63,mercedes,2,5.5,18.0,6
+2023,3,Melbourne,77,alfaromeo,2,13,4.0,9
+2023,3,Melbourne,81,mclaren,1,15,0.0,19
+2023,4,Baku,1,redbullracing,3,1.3333333333333333,75.0,1
+2023,4,Baku,2,williams,3,14.666666666666666,0.0,19
+2023,4,Baku,4,mclaren,3,13.333333333333334,8.0,9
+2023,4,Baku,10,alpine,3,10.333333333333334,4.0,14
+2023,4,Baku,11,redbullracing,3,2.6666666666666665,62.0,2
+2023,4,Baku,14,astonmartin,3,3,48.0,3
+2023,4,Baku,16,ferrari,1,7,13.0,8
+2023,4,Baku,18,astonmartin,2,5,21.0,7
+2023,4,Baku,20,haasf1team,3,13.333333333333334,1.0,17
+2023,4,Baku,21,alphatauri,3,14.333333333333334,0.0,20
+2023,4,Baku,22,alphatauri,3,10.666666666666666,1.0,16
+2023,4,Baku,23,williams,1,10,1.0,18
+2023,4,Baku,24,alfaromeo,3,12.666666666666666,2.0,15
+2023,4,Baku,27,haasf1team,3,11.333333333333334,6.0,10
+2023,4,Baku,31,alpine,2,11,4.0,12
+2023,4,Baku,44,mercedes,3,4,40.0,4
+2023,4,Baku,55,ferrari,3,7.333333333333333,24.0,5
+2023,4,Baku,63,mercedes,2,5.5,23.0,6
+2023,4,Baku,77,alfaromeo,3,12.333333333333334,4.0,11
+2023,4,Baku,81,mclaren,2,11.5,4.0,13
+2023,5,Miami,1,redbullracing,4,1.5,93.0,1
+2023,5,Miami,2,williams,4,15,0.0,19
+2023,5,Miami,4,mclaren,4,12.25,10.0,9
+2023,5,Miami,10,alpine,4,11.25,4.0,14
+2023,5,Miami,11,redbullracing,4,2.25,87.0,2
+2023,5,Miami,14,astonmartin,4,3.25,60.0,3
+2023,5,Miami,16,ferrari,2,5,28.0,6
+2023,5,Miami,18,astonmartin,3,5.666666666666667,27.0,8
+2023,5,Miami,20,haasf1team,4,13.25,1.0,18
+2023,5,Miami,21,alphatauri,3,14.333333333333334,0.0,20
+2023,5,Miami,22,alphatauri,4,10.5,2.0,16
+2023,5,Miami,23,williams,2,11,1.0,17
+2023,5,Miami,24,alfaromeo,3,12.666666666666666,2.0,15
+2023,5,Miami,27,haasf1team,4,12.75,6.0,10
+2023,5,Miami,31,alpine,3,12.333333333333334,4.0,13
+2023,5,Miami,44,mercedes,4,4.5,48.0,4
+2023,5,Miami,55,ferrari,4,6.75,34.0,5
+2023,5,Miami,63,mercedes,3,6.333333333333333,28.0,7
+2023,5,Miami,77,alfaromeo,4,13.75,4.0,12
+2023,5,Miami,81,mclaren,3,11.333333333333334,4.0,11
+2023,6,Monaco,1,redbullracing,5,1.4,119.0,1
+2023,6,Monaco,2,williams,5,16,0.0,19
+2023,6,Monaco,4,mclaren,5,13.2,10.0,9
+2023,6,Monaco,10,alpine,5,10.6,8.0,10
+2023,6,Monaco,11,redbullracing,5,2.2,105.0,2
+2023,6,Monaco,14,astonmartin,5,3.2,75.0,3
+2023,6,Monaco,16,ferrari,3,5.666666666666667,34.0,7
+2023,6,Monaco,18,astonmartin,4,7.25,27.0,8
+2023,6,Monaco,20,haasf1team,5,12.6,2.0,17
+2023,6,Monaco,21,alphatauri,4,15.25,0.0,20
+2023,6,Monaco,22,alphatauri,5,10.6,2.0,16
+2023,6,Monaco,23,williams,3,12,1.0,18
+2023,6,Monaco,24,alfaromeo,4,13.5,2.0,15
+2023,6,Monaco,27,haasf1team,5,13.2,6.0,11
+2023,6,Monaco,31,alpine,4,11.5,6.0,12
+2023,6,Monaco,44,mercedes,5,4.8,56.0,4
+2023,6,Monaco,55,ferrari,5,6.4,44.0,5
+2023,6,Monaco,63,mercedes,4,5.75,40.0,6
+2023,6,Monaco,77,alfaromeo,5,13.6,4.0,13
+2023,6,Monaco,81,mclaren,4,13.25,4.0,14
+2023,7,Barcelona,1,redbullracing,6,1.3333333333333333,144.0,1
+2023,7,Barcelona,2,williams,6,16.333333333333332,0.0,20
+2023,7,Barcelona,4,mclaren,6,12.5,12.0,11
+2023,7,Barcelona,10,alpine,6,10,14.0,10
+2023,7,Barcelona,11,redbullracing,6,4.5,105.0,2
+2023,7,Barcelona,14,astonmartin,6,3,93.0,3
+2023,7,Barcelona,16,ferrari,4,5.75,42.0,7
+2023,7,Barcelona,18,astonmartin,4,7.25,27.0,8
+2023,7,Barcelona,20,haasf1team,6,13.666666666666666,2.0,17
+2023,7,Barcelona,21,alphatauri,5,14.6,0.0,19
+2023,7,Barcelona,22,alphatauri,6,11.333333333333334,2.0,16
+2023,7,Barcelona,23,williams,4,12.5,1.0,18
+2023,7,Barcelona,24,alfaromeo,5,13.4,2.0,15
+2023,7,Barcelona,27,haasf1team,6,13.833333333333334,6.0,12
+2023,7,Barcelona,31,alpine,5,9.8,21.0,9
+2023,7,Barcelona,44,mercedes,6,4.666666666666667,69.0,4
+2023,7,Barcelona,55,ferrari,6,6.666666666666667,48.0,6
+2023,7,Barcelona,63,mercedes,5,5.6,50.0,5
+2023,7,Barcelona,77,alfaromeo,6,13.166666666666666,4.0,14
+2023,7,Barcelona,81,mclaren,5,12.6,5.0,13
+2023,8,Montréal,1,redbullracing,7,1.2857142857142858,170.0,1
+2023,8,Montréal,2,williams,7,16.857142857142858,0.0,20
+2023,8,Montréal,4,mclaren,7,13.142857142857142,12.0,11
+2023,8,Montréal,10,alpine,7,10,15.0,10
+2023,8,Montréal,11,redbullracing,7,4.428571428571429,117.0,2
+2023,8,Montréal,14,astonmartin,7,3.5714285714285716,99.0,3
+2023,8,Montréal,16,ferrari,5,6.8,42.0,7
+2023,8,Montréal,18,astonmartin,5,7,35.0,8
+2023,8,Montréal,20,haasf1team,7,14.285714285714286,2.0,17
+2023,8,Montréal,21,alphatauri,6,14.5,0.0,19
+2023,8,Montréal,22,alphatauri,7,11.428571428571429,2.0,16
+2023,8,Montréal,23,williams,5,13.2,1.0,18
+2023,8,Montréal,24,alfaromeo,6,12.666666666666666,4.0,15
+2023,8,Montréal,27,haasf1team,7,14,6.0,12
+2023,8,Montréal,31,alpine,6,9.5,25.0,9
+2023,8,Montréal,44,mercedes,7,4.285714285714286,87.0,4
+2023,8,Montréal,55,ferrari,7,6.428571428571429,58.0,6
+2023,8,Montréal,63,mercedes,6,5.166666666666667,65.0,5
+2023,8,Montréal,77,alfaromeo,7,14,4.0,14
+2023,8,Montréal,81,mclaren,6,12.666666666666666,5.0,13
+2023,9,Spielberg,1,redbullracing,8,1.25,203.0,1
+2023,9,Spielberg,2,williams,7,16.857142857142858,0.0,20
+2023,9,Spielberg,4,mclaren,8,13.125,12.0,11
+2023,9,Spielberg,10,alpine,8,10.25,15.0,10
+2023,9,Spielberg,11,redbullracing,8,4.625,133.0,2
+2023,9,Spielberg,14,astonmartin,8,3.375,121.0,3
+2023,9,Spielberg,16,ferrari,6,6.333333333333333,54.0,7
+2023,9,Spielberg,18,astonmartin,6,7.333333333333333,42.0,8
+2023,9,Spielberg,20,haasf1team,8,14.625,2.0,18
+2023,9,Spielberg,21,alphatauri,7,15,0.0,19
+2023,9,Spielberg,22,alphatauri,8,11.75,2.0,17
+2023,9,Spielberg,23,williams,6,12.166666666666666,7.0,13
+2023,9,Spielberg,24,alfaromeo,7,13.142857142857142,4.0,16
+2023,9,Spielberg,27,haasf1team,8,14.125,9.0,12
+2023,9,Spielberg,31,alpine,7,9.285714285714286,31.0,9
+2023,9,Spielberg,44,mercedes,8,4.125,102.0,4
+2023,9,Spielberg,55,ferrari,8,6.25,74.0,5
+2023,9,Spielberg,63,mercedes,6,5.166666666666667,66.0,6
+2023,9,Spielberg,77,alfaromeo,8,13.5,5.0,15
+2023,9,Spielberg,81,mclaren,7,12.428571428571429,5.0,14
+2023,10,Silverstone,1,redbullracing,9,1.2222222222222223,229.0,1
+2023,10,Silverstone,2,williams,8,16.375,0.0,19
+2023,10,Silverstone,4,mclaren,9,12.11111111111111,24.0,10
+2023,10,Silverstone,10,alpine,9,10.222222222222221,16.0,11
+2023,10,Silverstone,11,redbullracing,9,4.444444444444445,148.0,2
+2023,10,Silverstone,14,astonmartin,9,3.5555555555555554,131.0,3
+2023,10,Silverstone,16,ferrari,7,5.714285714285714,72.0,6
+2023,10,Silverstone,18,astonmartin,7,7.571428571428571,44.0,8
+2023,10,Silverstone,20,haasf1team,9,15,2.0,18
+2023,10,Silverstone,21,alphatauri,8,15.25,0.0,20
+2023,10,Silverstone,22,alphatauri,9,12.555555555555555,2.0,17
+2023,10,Silverstone,23,williams,7,12,7.0,13
+2023,10,Silverstone,24,alfaromeo,8,13,4.0,16
+2023,10,Silverstone,27,haasf1team,8,14.125,9.0,12
+2023,10,Silverstone,31,alpine,8,9.875,31.0,9
+2023,10,Silverstone,44,mercedes,9,4.555555555555555,106.0,4
+2023,10,Silverstone,55,ferrari,9,6.222222222222222,82.0,5
+2023,10,Silverstone,63,mercedes,7,5.428571428571429,72.0,7
+2023,10,Silverstone,77,alfaromeo,9,13.666666666666666,5.0,15
+2023,10,Silverstone,81,mclaren,8,12.875,5.0,14
+2023,11,Budapest,1,redbullracing,10,1.2,255.0,1
+2023,11,Budapest,2,williams,9,15.777777777777779,0.0,19
+2023,11,Budapest,3,alphatauri,0,,0.0,20
+2023,11,Budapest,4,mclaren,10,11.1,42.0,9
+2023,11,Budapest,10,alpine,10,11,16.0,12
+2023,11,Budapest,11,redbullracing,10,4.6,156.0,2
+2023,11,Budapest,14,astonmartin,10,3.9,137.0,3
+2023,11,Budapest,16,ferrari,8,6.125,74.0,7
+2023,11,Budapest,18,astonmartin,8,8.375,44.0,8
+2023,11,Budapest,20,haasf1team,9,15,2.0,18
+2023,11,Budapest,22,alphatauri,10,12.9,2.0,17
+2023,11,Budapest,23,williams,8,11.5,11.0,13
+2023,11,Budapest,24,alfaromeo,9,13.222222222222221,4.0,16
+2023,11,Budapest,27,haasf1team,9,14,9.0,14
+2023,11,Budapest,31,alpine,8,9.875,31.0,10
+2023,11,Budapest,44,mercedes,10,4.4,121.0,4
+2023,11,Budapest,55,ferrari,10,6.6,83.0,5
+2023,11,Budapest,63,mercedes,8,5.375,82.0,6
+2023,11,Budapest,77,alfaromeo,10,13.5,5.0,15
+2023,11,Budapest,81,mclaren,9,11.88888888888889,17.0,11
+2023,12,Spa-Francorchamps,1,redbullracing,11,1.1818181818181819,289.0,1
+2023,12,Spa-Francorchamps,2,williams,10,16,0.0,19
+2023,12,Spa-Francorchamps,3,alphatauri,1,13,0,20
+2023,12,Spa-Francorchamps,4,mclaren,11,10.272727272727273,63.0,8
+2023,12,Spa-Francorchamps,10,alpine,10,11,22.0,12
+2023,12,Spa-Francorchamps,11,redbullracing,11,4.454545454545454,171.0,2
+2023,12,Spa-Francorchamps,14,astonmartin,11,4.363636363636363,139.0,3
+2023,12,Spa-Francorchamps,16,ferrari,9,6.222222222222222,84.0,7
+2023,12,Spa-Francorchamps,18,astonmartin,9,8.555555555555555,45.0,9
+2023,12,Spa-Francorchamps,20,haasf1team,10,15.2,2.0,18
+2023,12,Spa-Francorchamps,22,alphatauri,11,13.090909090909092,2.0,17
+2023,12,Spa-Francorchamps,23,williams,9,11.444444444444445,11.0,13
+2023,12,Spa-Francorchamps,24,alfaromeo,10,13.5,4.0,16
+2023,12,Spa-Francorchamps,27,haasf1team,10,14,9.0,14
+2023,12,Spa-Francorchamps,31,alpine,8,9.875,31.0,11
+2023,12,Spa-Francorchamps,44,mercedes,11,4.363636363636363,135.0,4
+2023,12,Spa-Francorchamps,55,ferrari,11,6.7272727272727275,92.0,5
+2023,12,Spa-Francorchamps,63,mercedes,9,5.444444444444445,91.0,6
+2023,12,Spa-Francorchamps,77,alfaromeo,11,13.363636363636363,5.0,15
+2023,12,Spa-Francorchamps,81,mclaren,10,11.2,34.0,10
+2023,13,Zandvoort,1,redbullracing,12,1.1666666666666667,314.0,1
+2023,13,Zandvoort,2,williams,11,16.09090909090909,0.0,19
+2023,13,Zandvoort,4,mclaren,12,10,69.0,8
+2023,13,Zandvoort,10,alpine,11,11,22.0,12
+2023,13,Zandvoort,11,redbullracing,12,4.25,189.0,2
+2023,13,Zandvoort,14,astonmartin,12,4.416666666666667,149.0,3
+2023,13,Zandvoort,16,ferrari,10,5.9,99.0,5
+2023,13,Zandvoort,18,astonmartin,10,8.6,47.0,9
+2023,13,Zandvoort,20,haasf1team,11,15.181818181818182,2.0,18
+2023,13,Zandvoort,22,alphatauri,12,12.833333333333334,3.0,17
+2023,13,Zandvoort,23,williams,10,11.7,11.0,13
+2023,13,Zandvoort,24,alfaromeo,11,13.454545454545455,4.0,16
+2023,13,Zandvoort,27,haasf1team,11,14.363636363636363,9.0,14
+2023,13,Zandvoort,31,alpine,9,9.666666666666666,35.0,10
+2023,13,Zandvoort,40,alphatauri,0,,0,20
+2023,13,Zandvoort,44,mercedes,12,4.333333333333333,148.0,4
+2023,13,Zandvoort,55,ferrari,11,6.7272727272727275,92.0,7
+2023,13,Zandvoort,63,mercedes,10,5.5,99.0,6
+2023,13,Zandvoort,77,alfaromeo,12,13.25,5.0,15
+2023,13,Zandvoort,81,mclaren,10,11.2,34.0,11
+2023,14,Monza,1,redbullracing,13,1.1538461538461537,339.0,1
+2023,14,Monza,2,williams,11,16.09090909090909,0.0,19
+2023,14,Monza,4,mclaren,13,9.76923076923077,75.0,8
+2023,14,Monza,10,alpine,12,10.333333333333334,37.0,10
+2023,14,Monza,11,redbullracing,13,4.230769230769231,201.0,2
+2023,14,Monza,14,astonmartin,13,4.230769230769231,168.0,3
+2023,14,Monza,16,ferrari,10,5.9,99.0,6
+2023,14,Monza,18,astonmartin,11,8.818181818181818,47.0,9
+2023,14,Monza,20,haasf1team,12,15.25,2.0,18
+2023,14,Monza,23,williams,11,11.363636363636363,15.0,13
+2023,14,Monza,24,alfaromeo,11,13.454545454545455,4.0,16
+2023,14,Monza,27,haasf1team,12,14.166666666666666,9.0,14
+2023,14,Monza,31,alpine,10,9.7,36.0,11
+2023,14,Monza,40,alphatauri,1,13,0,20
+2023,14,Monza,44,mercedes,13,4.461538461538462,156.0,4
+2023,14,Monza,55,ferrari,12,6.583333333333333,102.0,5
+2023,14,Monza,63,mercedes,11,6.545454545454546,99.0,7
+2023,14,Monza,77,alfaromeo,13,13.307692307692308,5.0,15
+2023,14,Monza,81,mclaren,11,11,36.0,12
+2023,15,Marina Bay,1,redbullracing,14,1.1428571428571428,364.0,1
+2023,15,Marina Bay,2,williams,12,15.833333333333334,0.0,19
+2023,15,Marina Bay,4,mclaren,14,9.642857142857142,79.0,8
+2023,15,Marina Bay,10,alpine,13,10.692307692307692,37.0,10
+2023,15,Marina Bay,11,redbullracing,14,4.071428571428571,219.0,2
+2023,15,Marina Bay,14,astonmartin,14,4.571428571428571,170.0,3
+2023,15,Marina Bay,16,ferrari,11,5.7272727272727275,111.0,6
+2023,15,Marina Bay,20,haasf1team,13,15.461538461538462,2.0,18
+2023,15,Marina Bay,22,alphatauri,13,13,3.0,17
+2023,15,Marina Bay,23,williams,12,11,21.0,13
+2023,15,Marina Bay,24,alfaromeo,12,13.5,4.0,16
+2023,15,Marina Bay,27,haasf1team,13,14.384615384615385,9.0,14
+2023,15,Marina Bay,31,alpine,10,9.7,36.0,11
+2023,15,Marina Bay,40,alphatauri,2,12,0.0,20
+2023,15,Marina Bay,44,mercedes,14,4.571428571428571,164.0,4
+2023,15,Marina Bay,55,ferrari,13,6.3076923076923075,117.0,5
+2023,15,Marina Bay,63,mercedes,12,6.416666666666667,109.0,7
+2023,15,Marina Bay,77,alfaromeo,14,13.071428571428571,6.0,15
+2023,15,Marina Bay,81,mclaren,12,11.083333333333334,36.0,12
+2023,16,Suzuka,1,redbullracing,15,1.4,374.0,1
+2023,16,Suzuka,2,williams,13,15.692307692307692,0.0,20
+2023,16,Suzuka,4,mclaren,15,9.133333333333333,97.0,8
+2023,16,Suzuka,10,alpine,14,10.357142857142858,45.0,10
+2023,16,Suzuka,11,redbullracing,15,4.333333333333333,223.0,2
+2023,16,Suzuka,14,astonmartin,15,5.266666666666667,170.0,4
+2023,16,Suzuka,16,ferrari,12,5.583333333333333,123.0,6
+2023,16,Suzuka,18,astonmartin,12,9.416666666666666,47.0,9
+2023,16,Suzuka,20,haasf1team,14,15.071428571428571,3.0,18
+2023,16,Suzuka,22,alphatauri,13,13,3.0,17
+2023,16,Suzuka,23,williams,13,11,21.0,13
+2023,16,Suzuka,24,alfaromeo,13,13.384615384615385,4.0,16
+2023,16,Suzuka,27,haasf1team,14,14.285714285714286,9.0,14
+2023,16,Suzuka,31,alpine,10,9.7,36.0,12
+2023,16,Suzuka,40,alphatauri,3,11,2.0,19
+2023,16,Suzuka,44,mercedes,15,4.466666666666667,180.0,3
+2023,16,Suzuka,55,ferrari,14,5.928571428571429,142.0,5
+2023,16,Suzuka,63,mercedes,13,7.153846153846154,109.0,7
+2023,16,Suzuka,77,alfaromeo,14,13.071428571428571,6.0,15
+2023,16,Suzuka,81,mclaren,13,10.76923076923077,42.0,11
+2023,17,Lusail,1,redbullracing,16,1.375,407.0,1
+2023,17,Lusail,2,williams,13,15.692307692307692,0.0,20
+2023,17,Lusail,4,mclaren,16,8.6875,121.0,7
+2023,17,Lusail,10,alpine,15,10.333333333333334,46.0,11
+2023,17,Lusail,11,redbullracing,15,4.333333333333333,223.0,2
+2023,17,Lusail,14,astonmartin,16,5.4375,175.0,4
+2023,17,Lusail,16,ferrari,13,5.461538461538462,135.0,6
+2023,17,Lusail,18,astonmartin,12,9.416666666666666,47.0,10
+2023,17,Lusail,20,haasf1team,15,15.066666666666666,3.0,18
+2023,17,Lusail,22,alphatauri,14,12.928571428571429,3.0,17
+2023,17,Lusail,23,williams,13,11,23.0,13
+2023,17,Lusail,24,alfaromeo,14,13.357142857142858,4.0,16
+2023,17,Lusail,27,haasf1team,15,14.266666666666667,9.0,14
+2023,17,Lusail,31,alpine,11,9.636363636363637,38.0,12
+2023,17,Lusail,40,alphatauri,4,11,2.0,19
+2023,17,Lusail,44,mercedes,16,4.5,194.0,3
+2023,17,Lusail,63,mercedes,14,7.142857142857143,120.0,8
+2023,17,Lusail,77,alfaromeo,14,13.071428571428571,6.0,15
+2023,17,Lusail,81,mclaren,14,10.214285714285714,65.0,9
+2023,18,Austin,1,redbullracing,17,1.3529411764705883,441.0,1
+2023,18,Austin,2,williams,13,15.692307692307692,0,19
+2023,18,Austin,3,alphatauri,2,14.5,0,20
+2023,18,Austin,4,mclaren,17,8.352941176470589,141.0,7
+2023,18,Austin,10,alpine,16,10.4375,48.0,10
+2023,18,Austin,11,redbullracing,16,4.6875,228.0,2
+2023,18,Austin,14,astonmartin,17,5.470588235294118,183.0,4
+2023,18,Austin,16,ferrari,14,5.428571428571429,151.0,6
+2023,18,Austin,18,astonmartin,13,9.538461538461538,47.0,11
+2023,18,Austin,20,haasf1team,16,15,3.0,18
+2023,18,Austin,22,alphatauri,15,13.066666666666666,3.0,17
+2023,18,Austin,23,williams,14,11.142857142857142,23.0,13
+2023,18,Austin,24,alfaromeo,15,13.066666666666666,6.0,16
+2023,18,Austin,27,haasf1team,16,14.375,9.0,15
+2023,18,Austin,31,alpine,12,9.416666666666666,44.0,12
+2023,18,Austin,44,mercedes,16,4.5,201.0,3
+2023,18,Austin,55,ferrari,15,5.933333333333334,156.0,5
+2023,18,Austin,63,mercedes,15,6.933333333333334,133.0,8
+2023,18,Austin,77,alfaromeo,15,12.733333333333333,10.0,14
+2023,18,Austin,81,mclaren,15,9.666666666666666,83.0,9
+2023,19,Mexico City,1,redbullracing,18,1.3333333333333333,466.0,1
+2023,19,Mexico City,2,williams,14,15.285714285714286,1,20
+2023,19,Mexico City,3,alphatauri,3,14.666666666666666,0,19
+2023,19,Mexico City,4,mclaren,18,8,159.0,6
+2023,19,Mexico City,10,alpine,17,10.176470588235293,56.0,10
+2023,19,Mexico City,11,redbullracing,17,4.647058823529412,240.0,2
+2023,19,Mexico City,14,astonmartin,17,5.470588235294118,183.0,4
+2023,19,Mexico City,16,ferrari,14,5.428571428571429,151.0,7
+2023,19,Mexico City,18,astonmartin,14,9.357142857142858,53.0,11
+2023,19,Mexico City,20,haasf1team,17,14.941176470588236,3.0,18
+2023,19,Mexico City,22,alphatauri,16,12.75,8.0,16
+2023,19,Mexico City,23,williams,15,11,25.0,13
+2023,19,Mexico City,24,alfaromeo,16,13.0625,6.0,17
+2023,19,Mexico City,27,haasf1team,17,14.176470588235293,9.0,15
+2023,19,Mexico City,31,alpine,12,9.416666666666666,44.0,12
+2023,19,Mexico City,44,mercedes,16,4.5,201.0,3
+2023,19,Mexico City,55,ferrari,16,5.75,171.0,5
+2023,19,Mexico City,63,mercedes,16,6.8125,143.0,8
+2023,19,Mexico City,77,alfaromeo,16,12.6875,10.0,14
+2023,19,Mexico City,81,mclaren,15,9.666666666666666,83.0,9
+2023,20,São Paulo,1,redbullracing,19,1.3157894736842106,499.0,1
+2023,20,São Paulo,2,williams,15,15.333333333333334,1,20
+2023,20,São Paulo,3,alphatauri,4,12.75,6.0,17
+2023,20,São Paulo,4,mclaren,19,7.842105263157895,176.0,6
+2023,20,São Paulo,10,alpine,18,10.222222222222221,56.0,10
+2023,20,São Paulo,11,redbullracing,17,4.647058823529412,246.0,2
+2023,20,São Paulo,14,astonmartin,17,5.470588235294118,183.0,5
+2023,20,São Paulo,18,astonmartin,15,9.866666666666667,53.0,11
+2023,20,São Paulo,20,haasf1team,17,14.941176470588236,3.0,19
+2023,20,São Paulo,22,alphatauri,17,12.705882352941176,11.0,14
+2023,20,São Paulo,23,williams,16,10.875,27.0,13
+2023,20,São Paulo,24,alfaromeo,17,13.117647058823529,6.0,18
+2023,20,São Paulo,27,haasf1team,18,14.11111111111111,9.0,16
+2023,20,São Paulo,31,alpine,13,9.461538461538462,45.0,12
+2023,20,São Paulo,44,mercedes,17,4.352941176470588,222.0,3
+2023,20,São Paulo,55,ferrari,17,5.647058823529412,184.0,4
+2023,20,São Paulo,63,mercedes,17,6.764705882352941,156.0,8
+2023,20,São Paulo,77,alfaromeo,17,12.823529411764707,10.0,15
+2023,20,São Paulo,81,mclaren,16,9.5625,87.0,9
+2023,21,Las Vegas,1,redbullracing,20,1.3,524.0,1
+2023,21,Las Vegas,2,williams,16,15.0625,1.0,21
+2023,21,Las Vegas,3,alphatauri,5,12.8,6.0,17
+2023,21,Las Vegas,4,mclaren,20,7.55,195.0,5
+2023,21,Las Vegas,10,alpine,19,10.052631578947368,62.0,11
+2023,21,Las Vegas,11,redbullracing,18,4.611111111111111,258.0,2
+2023,21,Las Vegas,14,astonmartin,18,5.333333333333333,198.0,4
+2023,21,Las Vegas,16,ferrari,15,5.266666666666667,170.0,7
+2023,21,Las Vegas,18,astonmartin,16,9.5625,63.0,10
+2023,21,Las Vegas,20,haasf1team,17,14.941176470588236,3.0,19
+2023,21,Las Vegas,22,alphatauri,18,12.5,13.0,14
+2023,21,Las Vegas,23,williams,16,10.875,27.0,13
+2023,21,Las Vegas,24,alfaromeo,17,13.117647058823529,6.0,18
+2023,21,Las Vegas,27,haasf1team,19,14,9.0,16
+2023,21,Las Vegas,31,alpine,14,9.5,46.0,12
+2023,21,Las Vegas,44,mercedes,18,4.555555555555555,226.0,3
+2023,21,Las Vegas,55,ferrari,18,5.666666666666667,192.0,6
+2023,21,Las Vegas,63,mercedes,17,6.764705882352941,156.0,8
+2023,21,Las Vegas,77,alfaromeo,17,12.823529411764707,10.0,15
+2023,21,Las Vegas,81,mclaren,17,9.823529411764707,87.0,9
+2023,22,Yas Island,1,redbullracing,21,1.2857142857142858,549.0,1
+2023,22,Yas Island,2,williams,17,15.117647058823529,1.0,21
+2023,22,Yas Island,3,alphatauri,6,13,6.0,17
+2023,22,Yas Island,4,mclaren,20,7.55,195.0,6
+2023,22,Yas Island,10,alpine,20,10.1,62.0,11
+2023,22,Yas Island,11,redbullracing,19,4.526315789473684,273.0,2
+2023,22,Yas Island,14,astonmartin,19,5.526315789473684,200.0,5
+2023,22,Yas Island,16,ferrari,16,5.0625,188.0,7
+2023,22,Yas Island,18,astonmartin,17,9.294117647058824,73.0,10
+2023,22,Yas Island,20,haasf1team,18,14.833333333333334,3.0,19
+2023,22,Yas Island,22,alphatauri,19,12.789473684210526,13.0,14
+2023,22,Yas Island,23,williams,17,10.941176470588236,27.0,13
+2023,22,Yas Island,24,alfaromeo,18,13.222222222222221,6.0,18
+2023,22,Yas Island,27,haasf1team,20,14.25,9.0,16
+2023,22,Yas Island,31,alpine,15,9.133333333333333,58.0,12
+2023,22,Yas Island,44,mercedes,19,4.684210526315789,232.0,3
+2023,22,Yas Island,55,ferrari,19,5.684210526315789,200.0,4
+2023,22,Yas Island,63,mercedes,18,6.833333333333333,160.0,8
+2023,22,Yas Island,77,alfaromeo,18,13.055555555555555,10.0,15
+2023,22,Yas Island,81,mclaren,18,9.833333333333334,89.0,9
+2024,1,Sakhir,1,redbullracing,0,,0.0,
+2024,1,Sakhir,2,williams,0,,0.0,
+2024,1,Sakhir,3,racingbulls,0,,0.0,
+2024,1,Sakhir,4,mclaren,0,,0.0,
+2024,1,Sakhir,10,alpine,0,,0.0,
+2024,1,Sakhir,11,redbullracing,0,,0.0,
+2024,1,Sakhir,14,astonmartin,0,,0.0,
+2024,1,Sakhir,16,ferrari,0,,0.0,
+2024,1,Sakhir,18,astonmartin,0,,0.0,
+2024,1,Sakhir,20,haasf1team,0,,0.0,
+2024,1,Sakhir,22,racingbulls,0,,0.0,
+2024,1,Sakhir,23,williams,0,,0.0,
+2024,1,Sakhir,24,kicksauber,0,,0.0,
+2024,1,Sakhir,27,haasf1team,0,,0.0,
+2024,1,Sakhir,31,alpine,0,,0.0,
+2024,1,Sakhir,44,mercedes,0,,0.0,
+2024,1,Sakhir,55,ferrari,0,,0.0,
+2024,1,Sakhir,63,mercedes,0,,0.0,
+2024,1,Sakhir,77,kicksauber,0,,0.0,
+2024,1,Sakhir,81,mclaren,0,,0.0,
+2024,2,Jeddah,1,redbullracing,1,1,26.0,1
+2024,2,Jeddah,2,williams,1,20,0.0,20
+2024,2,Jeddah,3,racingbulls,1,13,0.0,13
+2024,2,Jeddah,4,mclaren,1,6,8.0,6
+2024,2,Jeddah,10,alpine,1,18,0.0,18
+2024,2,Jeddah,11,redbullracing,1,2,18.0,2
+2024,2,Jeddah,14,astonmartin,1,9,2.0,9
+2024,2,Jeddah,16,ferrari,1,4,12.0,4
+2024,2,Jeddah,18,astonmartin,1,10,1.0,10
+2024,2,Jeddah,20,haasf1team,1,12,0.0,12
+2024,2,Jeddah,22,racingbulls,1,14,0.0,14
+2024,2,Jeddah,23,williams,1,15,0.0,15
+2024,2,Jeddah,24,kicksauber,1,11,0.0,11
+2024,2,Jeddah,27,haasf1team,1,16,0.0,16
+2024,2,Jeddah,31,alpine,1,17,0.0,17
+2024,2,Jeddah,38,ferrari,0,,0.0,21
+2024,2,Jeddah,44,mercedes,1,7,6.0,7
+2024,2,Jeddah,63,mercedes,1,5,10.0,5
+2024,2,Jeddah,77,kicksauber,1,19,0.0,19
+2024,2,Jeddah,81,mclaren,1,8,4.0,8
+2024,3,Melbourne,1,redbullracing,2,1,51.0,1
+2024,3,Melbourne,3,racingbulls,2,14.5,0.0,16
+2024,3,Melbourne,4,mclaren,2,7,12.0,8
+2024,3,Melbourne,10,alpine,1,18,0.0,21
+2024,3,Melbourne,11,redbullracing,2,2,36.0,2
+2024,3,Melbourne,14,astonmartin,2,7,12.0,7
+2024,3,Melbourne,16,ferrari,2,3.5,28.0,3
+2024,3,Melbourne,18,astonmartin,1,10,1.0,12
+2024,3,Melbourne,20,haasf1team,2,12,0.0,15
+2024,3,Melbourne,22,racingbulls,2,14.5,0.0,18
+2024,3,Melbourne,23,williams,2,13,0.0,13
+2024,3,Melbourne,24,kicksauber,2,14.5,0.0,14
+2024,3,Melbourne,27,haasf1team,2,13,1.0,11
+2024,3,Melbourne,31,alpine,2,15,0.0,17
+2024,3,Melbourne,44,mercedes,2,8,8.0,9
+2024,3,Melbourne,55,ferrari,1,3,15.0,6
+2024,3,Melbourne,63,mercedes,2,5.5,18.0,4
+2024,3,Melbourne,77,kicksauber,2,18,0.0,20
+2024,3,Melbourne,81,mclaren,2,6,16.0,5
+2024,4,Suzuka,1,redbullracing,2,1,51.0,1
+2024,4,Suzuka,2,williams,2,17,0.0,21
+2024,4,Suzuka,3,racingbulls,3,13.666666666666666,0.0,17
+2024,4,Suzuka,4,mclaren,3,5.666666666666667,27.0,6
+2024,4,Suzuka,10,alpine,2,15.5,0.0,19
+2024,4,Suzuka,11,redbullracing,3,3,46.0,3
+2024,4,Suzuka,14,astonmartin,3,7.333333333333333,16.0,8
+2024,4,Suzuka,16,ferrari,3,3,47.0,2
+2024,4,Suzuka,18,astonmartin,2,8,9.0,9
+2024,4,Suzuka,20,haasf1team,3,11.333333333333334,1.0,14
+2024,4,Suzuka,22,racingbulls,3,12,6.0,11
+2024,4,Suzuka,23,williams,3,12.333333333333334,0.0,15
+2024,4,Suzuka,24,kicksauber,3,14.666666666666666,0.0,16
+2024,4,Suzuka,27,haasf1team,3,11.666666666666666,3.0,13
+2024,4,Suzuka,31,alpine,3,15.333333333333334,0.0,18
+2024,4,Suzuka,44,mercedes,2,8,8.0,10
+2024,4,Suzuka,55,ferrari,2,2,40.0,4
+2024,4,Suzuka,63,mercedes,3,9.333333333333334,18.0,7
+2024,4,Suzuka,77,kicksauber,3,16.666666666666668,0.0,20
+2024,4,Suzuka,81,mclaren,3,5.333333333333333,28.0,5
+2024,5,Shanghai,1,redbullracing,3,1,85.0,1
+2024,5,Shanghai,2,williams,3,17,0.0,21
+2024,5,Shanghai,3,racingbulls,3,13.666666666666666,0.0,17
+2024,5,Shanghai,4,mclaren,4,5.5,40.0,5
+2024,5,Shanghai,10,alpine,3,15.666666666666666,0.0,19
+2024,5,Shanghai,11,redbullracing,4,2.75,70.0,2
+2024,5,Shanghai,14,astonmartin,4,7,24.0,8
+2024,5,Shanghai,16,ferrari,4,3.25,64.0,3
+2024,5,Shanghai,18,astonmartin,3,9.333333333333334,9.0,10
+2024,5,Shanghai,20,haasf1team,4,11.75,1.0,14
+2024,5,Shanghai,22,racingbulls,4,11.5,7.0,11
+2024,5,Shanghai,23,williams,3,12.333333333333334,0.0,15
+2024,5,Shanghai,24,kicksauber,3,14.666666666666666,0.0,16
+2024,5,Shanghai,27,haasf1team,4,11.5,3.0,13
+2024,5,Shanghai,31,alpine,4,15.25,0.0,18
+2024,5,Shanghai,44,mercedes,3,8.333333333333334,17.0,9
+2024,5,Shanghai,55,ferrari,3,2.3333333333333335,59.0,4
+2024,5,Shanghai,63,mercedes,4,8.75,25.0,7
+2024,5,Shanghai,77,kicksauber,4,16,0.0,20
+2024,5,Shanghai,81,mclaren,4,6,34.0,6
+2024,6,Miami,1,redbullracing,4,1,118.0,1
+2024,6,Miami,2,williams,4,17,0.0,21
+2024,6,Miami,3,racingbulls,3,13.666666666666666,5.0,14
+2024,6,Miami,4,mclaren,5,4.8,58.0,5
+2024,6,Miami,10,alpine,4,15,0.0,19
+2024,6,Miami,11,redbullracing,5,2.8,91.0,2
+2024,6,Miami,14,astonmartin,5,7,31.0,8
+2024,6,Miami,16,ferrari,5,3.4,83.0,3
+2024,6,Miami,18,astonmartin,4,10.75,9.0,10
+2024,6,Miami,20,haasf1team,5,12.6,1.0,15
+2024,6,Miami,22,racingbulls,4,11.5,8.0,11
+2024,6,Miami,23,williams,4,12.25,0.0,16
+2024,6,Miami,24,kicksauber,4,14.5,0.0,18
+2024,6,Miami,27,haasf1team,5,11.2,6.0,13
+2024,6,Miami,31,alpine,5,14.4,0.0,17
+2024,6,Miami,44,mercedes,4,8.5,19.0,9
+2024,6,Miami,55,ferrari,4,3,73.0,4
+2024,6,Miami,63,mercedes,5,8.2,33.0,7
+2024,6,Miami,77,kicksauber,4,16,0.0,20
+2024,6,Miami,81,mclaren,5,6.4,41.0,6
+2024,7,Imola,1,redbullracing,5,1.2,136.0,1
+2024,7,Imola,2,williams,4,17,0.0,21
+2024,7,Imola,3,racingbulls,4,14,5.0,14
+2024,7,Imola,4,mclaren,6,4.166666666666667,83.0,4
+2024,7,Imola,10,alpine,5,14.4,0.0,19
+2024,7,Imola,11,redbullracing,6,3,103.0,2
+2024,7,Imola,14,astonmartin,6,7.333333333333333,33.0,8
+2024,7,Imola,16,ferrari,6,3.3333333333333335,98.0,3
+2024,7,Imola,18,astonmartin,5,12,9.0,11
+2024,7,Imola,20,haasf1team,6,13.666666666666666,1.0,16
+2024,7,Imola,22,racingbulls,5,10.6,14.0,10
+2024,7,Imola,23,williams,5,13.4,0.0,17
+2024,7,Imola,24,kicksauber,5,14.4,0.0,18
+2024,7,Imola,27,haasf1team,6,11.166666666666666,6.0,13
+2024,7,Imola,31,alpine,6,13.666666666666666,1.0,15
+2024,7,Imola,44,mercedes,5,8,27.0,9
+2024,7,Imola,55,ferrari,5,3.4,83.0,5
+2024,7,Imola,63,mercedes,6,8.166666666666666,37.0,7
+2024,7,Imola,77,kicksauber,5,16,0.0,20
+2024,7,Imola,81,mclaren,6,7.5,41.0,6
+2024,8,Monaco,1,redbullracing,6,1.1666666666666667,161.0,1
+2024,8,Monaco,2,williams,5,17,0.0,21
+2024,8,Monaco,3,racingbulls,5,13.8,5.0,14
+2024,8,Monaco,4,mclaren,7,3.857142857142857,101.0,4
+2024,8,Monaco,10,alpine,6,14.666666666666666,0.0,19
+2024,8,Monaco,11,redbullracing,7,3.7142857142857144,107.0,3
+2024,8,Monaco,14,astonmartin,7,9,33.0,9
+2024,8,Monaco,16,ferrari,7,3.2857142857142856,113.0,2
+2024,8,Monaco,18,astonmartin,6,11.5,11.0,11
+2024,8,Monaco,20,haasf1team,7,13.428571428571429,1.0,16
+2024,8,Monaco,22,racingbulls,6,10.5,15.0,10
+2024,8,Monaco,23,williams,5,13.4,0.0,17
+2024,8,Monaco,24,kicksauber,6,14.5,0.0,18
+2024,8,Monaco,27,haasf1team,7,11.142857142857142,6.0,13
+2024,8,Monaco,31,alpine,7,13.714285714285714,1.0,15
+2024,8,Monaco,44,mercedes,6,7.666666666666667,35.0,8
+2024,8,Monaco,55,ferrari,6,3.6666666666666665,93.0,5
+2024,8,Monaco,63,mercedes,7,8,44.0,7
+2024,8,Monaco,77,kicksauber,6,16.333333333333332,0.0,20
+2024,8,Monaco,81,mclaren,7,7,53.0,6
+2024,9,Montréal,1,redbullracing,7,1.8571428571428572,169.0,1
+2024,9,Montréal,2,williams,6,16.666666666666668,0.0,21
+2024,9,Montréal,3,racingbulls,6,13.5,5.0,14
+2024,9,Montréal,4,mclaren,8,3.875,113.0,3
+2024,9,Montréal,10,alpine,7,14,1.0,18
+2024,9,Montréal,11,redbullracing,7,3.7142857142857144,107.0,5
+2024,9,Montréal,14,astonmartin,8,9.25,33.0,9
+2024,9,Montréal,16,ferrari,8,3,138.0,2
+2024,9,Montréal,18,astonmartin,7,11.857142857142858,11.0,11
+2024,9,Montréal,20,haasf1team,7,13.428571428571429,1.0,17
+2024,9,Montréal,22,racingbulls,7,10.142857142857142,19.0,10
+2024,9,Montréal,23,williams,6,12.666666666666666,2.0,15
+2024,9,Montréal,24,kicksauber,7,14.714285714285714,0.0,19
+2024,9,Montréal,27,haasf1team,7,11.142857142857142,6.0,13
+2024,9,Montréal,31,alpine,7,13.714285714285714,1.0,16
+2024,9,Montréal,44,mercedes,7,7.571428571428571,42.0,8
+2024,9,Montréal,55,ferrari,7,3.5714285714285716,108.0,4
+2024,9,Montréal,63,mercedes,8,7.625,54.0,7
+2024,9,Montréal,77,kicksauber,7,15.857142857142858,0.0,20
+2024,9,Montréal,81,mclaren,8,6.375,71.0,6
+2024,10,Barcelona,1,redbullracing,8,1.75,194.0,1
+2024,10,Barcelona,2,williams,6,16.666666666666668,0.0,21
+2024,10,Barcelona,3,racingbulls,7,12.714285714285714,9.0,12
+2024,10,Barcelona,4,mclaren,9,3.6666666666666665,131.0,3
+2024,10,Barcelona,10,alpine,8,13.375,3.0,15
+2024,10,Barcelona,11,redbullracing,7,3.7142857142857144,107.0,5
+2024,10,Barcelona,14,astonmartin,9,8.88888888888889,41.0,9
+2024,10,Barcelona,16,ferrari,8,3,138.0,2
+2024,10,Barcelona,18,astonmartin,8,11.25,17.0,11
+2024,10,Barcelona,20,haasf1team,8,13.25,1.0,18
+2024,10,Barcelona,22,racingbulls,8,10.625,19.0,10
+2024,10,Barcelona,23,williams,6,12.666666666666666,2.0,16
+2024,10,Barcelona,24,kicksauber,8,14.75,0.0,19
+2024,10,Barcelona,27,haasf1team,8,11.125,6.0,14
+2024,10,Barcelona,31,alpine,8,13.25,2.0,17
+2024,10,Barcelona,44,mercedes,8,7.125,55.0,8
+2024,10,Barcelona,55,ferrari,7,3.5714285714285716,108.0,4
+2024,10,Barcelona,63,mercedes,9,7.111111111111111,69.0,7
+2024,10,Barcelona,77,kicksauber,8,15.5,0.0,20
+2024,10,Barcelona,81,mclaren,9,6.222222222222222,81.0,6
+2024,11,Spielberg,1,redbullracing,9,1.6666666666666667,227.0,1
+2024,11,Spielberg,2,williams,7,17.142857142857142,0.0,21
+2024,11,Spielberg,3,racingbulls,8,13,9.0,12
+2024,11,Spielberg,4,mclaren,10,3.5,156.0,2
+2024,11,Spielberg,10,alpine,9,12.88888888888889,5.0,15
+2024,11,Spielberg,11,redbullracing,8,4.25,112.0,5
+2024,11,Spielberg,14,astonmartin,10,9.2,41.0,9
+2024,11,Spielberg,16,ferrari,9,3.2222222222222223,150.0,3
+2024,11,Spielberg,18,astonmartin,9,11.555555555555555,17.0,11
+2024,11,Spielberg,20,haasf1team,9,13.666666666666666,1.0,18
+2024,11,Spielberg,22,racingbulls,9,11.555555555555555,19.0,10
+2024,11,Spielberg,23,williams,7,13.428571428571429,2.0,17
+2024,11,Spielberg,24,kicksauber,9,14.555555555555555,0.0,19
+2024,11,Spielberg,27,haasf1team,9,11.11111111111111,6.0,14
+2024,11,Spielberg,31,alpine,9,12.88888888888889,3.0,16
+2024,11,Spielberg,44,mercedes,9,6.666666666666667,73.0,8
+2024,11,Spielberg,55,ferrari,8,3.875,120.0,4
+2024,11,Spielberg,63,mercedes,10,6.8,86.0,7
+2024,11,Spielberg,77,kicksauber,9,15.555555555555555,0.0,20
+2024,11,Spielberg,81,mclaren,10,6.3,94.0,6
+2024,12,Silverstone,1,redbullracing,10,2,237.0,1
+2024,12,Silverstone,2,williams,8,17.375,0.0,21
+2024,12,Silverstone,3,racingbulls,9,12.555555555555555,11.0,13
+2024,12,Silverstone,4,mclaren,11,5,156.0,2
+2024,12,Silverstone,11,redbullracing,9,4.555555555555555,118.0,5
+2024,12,Silverstone,14,astonmartin,11,10,41.0,9
+2024,12,Silverstone,16,ferrari,10,4,150.0,3
+2024,12,Silverstone,18,astonmartin,10,11.7,17.0,11
+2024,12,Silverstone,20,haasf1team,10,13.1,5.0,16
+2024,12,Silverstone,22,racingbulls,10,11.8,19.0,10
+2024,12,Silverstone,23,williams,8,13.625,2.0,18
+2024,12,Silverstone,24,kicksauber,10,14.8,0.0,19
+2024,12,Silverstone,27,haasf1team,10,10.6,14.0,12
+2024,12,Silverstone,31,alpine,10,12.8,3.0,17
+2024,12,Silverstone,44,mercedes,10,6.4,85.0,8
+2024,12,Silverstone,55,ferrari,9,3.7777777777777777,135.0,4
+2024,12,Silverstone,63,mercedes,11,6.2727272727272725,111.0,7
+2024,12,Silverstone,77,kicksauber,10,15.6,0.0,20
+2024,12,Silverstone,81,mclaren,11,5.909090909090909,112.0,6
+2024,13,Budapest,1,redbullracing,11,2,255.0,1
+2024,13,Budapest,2,williams,9,16.666666666666668,0.0,20
+2024,13,Budapest,3,racingbulls,10,12.6,11.0,13
+2024,13,Budapest,4,mclaren,12,4.833333333333333,171.0,2
+2024,13,Budapest,10,alpine,10,12.6,6.0,15
+2024,13,Budapest,11,redbullracing,10,5.8,118.0,6
+2024,13,Budapest,14,astonmartin,12,9.833333333333334,45.0,9
+2024,13,Budapest,16,ferrari,11,4.909090909090909,150.0,3
+2024,13,Budapest,18,astonmartin,11,11.272727272727273,23.0,10
+2024,13,Budapest,20,haasf1team,11,13,5.0,16
+2024,13,Budapest,22,racingbulls,11,11.636363636363637,20.0,12
+2024,13,Budapest,23,williams,9,13.11111111111111,4.0,17
+2024,13,Budapest,24,kicksauber,11,15.090909090909092,0.0,19
+2024,13,Budapest,27,haasf1team,11,10.181818181818182,22.0,11
+2024,13,Budapest,31,alpine,11,13.090909090909092,3.0,18
+2024,13,Budapest,44,mercedes,11,5.909090909090909,110.0,8
+2024,13,Budapest,55,ferrari,10,3.9,146.0,4
+2024,13,Budapest,63,mercedes,11,6.2727272727272725,111.0,7
+2024,13,Budapest,77,kicksauber,11,15.545454545454545,0.0,21
+2024,13,Budapest,81,mclaren,12,5.75,124.0,5
+2024,14,Spa-Francorchamps,1,redbullracing,12,2.25,265.0,1
+2024,14,Spa-Francorchamps,2,williams,10,16.7,0.0,20
+2024,14,Spa-Francorchamps,3,racingbulls,11,12.545454545454545,11.0,13
+2024,14,Spa-Francorchamps,4,mclaren,13,4.615384615384615,189.0,2
+2024,14,Spa-Francorchamps,10,alpine,10,12.6,6.0,15
+2024,14,Spa-Francorchamps,11,redbullracing,11,5.909090909090909,124.0,7
+2024,14,Spa-Francorchamps,14,astonmartin,13,9.923076923076923,45.0,9
+2024,14,Spa-Francorchamps,16,ferrari,12,4.833333333333333,162.0,3
+2024,14,Spa-Francorchamps,18,astonmartin,12,11.166666666666666,24.0,10
+2024,14,Spa-Francorchamps,20,haasf1team,12,13.166666666666666,5.0,16
+2024,14,Spa-Francorchamps,22,racingbulls,12,11.416666666666666,22.0,12
+2024,14,Spa-Francorchamps,23,williams,10,13.2,4.0,17
+2024,14,Spa-Francorchamps,24,kicksauber,12,15.416666666666666,0.0,19
+2024,14,Spa-Francorchamps,27,haasf1team,12,10.416666666666666,22.0,11
+2024,14,Spa-Francorchamps,31,alpine,12,13.5,3.0,18
+2024,14,Spa-Francorchamps,44,mercedes,12,5.666666666666667,125.0,6
+2024,14,Spa-Francorchamps,55,ferrari,11,4.090909090909091,154.0,4
+2024,14,Spa-Francorchamps,63,mercedes,12,6.416666666666667,116.0,8
+2024,14,Spa-Francorchamps,77,kicksauber,12,15.583333333333334,0.0,21
+2024,14,Spa-Francorchamps,81,mclaren,13,5.384615384615385,149.0,5
+2024,15,Zandvoort,1,redbullracing,13,2.3846153846153846,277.0,1
+2024,15,Zandvoort,2,williams,11,16.727272727272727,0.0,20
+2024,15,Zandvoort,3,racingbulls,12,12.333333333333334,12.0,13
+2024,15,Zandvoort,4,mclaren,14,4.642857142857143,199.0,2
+2024,15,Zandvoort,10,alpine,11,12.636363636363637,6.0,15
+2024,15,Zandvoort,11,redbullracing,12,6,131.0,7
+2024,15,Zandvoort,14,astonmartin,14,9.785714285714286,49.0,9
+2024,15,Zandvoort,16,ferrari,13,4.6923076923076925,177.0,3
+2024,15,Zandvoort,18,astonmartin,13,11.153846153846153,24.0,10
+2024,15,Zandvoort,20,haasf1team,13,13.23076923076923,5.0,16
+2024,15,Zandvoort,22,racingbulls,13,11.76923076923077,22.0,12
+2024,15,Zandvoort,23,williams,11,13.090909090909092,4.0,18
+2024,15,Zandvoort,24,kicksauber,12,15.416666666666666,0.0,19
+2024,15,Zandvoort,27,haasf1team,13,11,22.0,11
+2024,15,Zandvoort,31,alpine,13,13.153846153846153,5.0,17
+2024,15,Zandvoort,44,mercedes,13,5.3076923076923075,150.0,6
+2024,15,Zandvoort,55,ferrari,12,4.25,162.0,5
+2024,15,Zandvoort,63,mercedes,12,6.416666666666667,116.0,8
+2024,15,Zandvoort,77,kicksauber,13,15.538461538461538,0.0,21
+2024,15,Zandvoort,81,mclaren,14,5.142857142857143,167.0,4
+2024,16,Monza,1,redbullracing,14,2.357142857142857,295.0,1
+2024,16,Monza,3,racingbulls,13,12.307692307692308,12.0,13
+2024,16,Monza,4,mclaren,15,4.4,225.0,2
+2024,16,Monza,10,alpine,12,12.333333333333334,8.0,14
+2024,16,Monza,11,redbullracing,13,6,139.0,7
+2024,16,Monza,14,astonmartin,15,9.8,50.0,9
+2024,16,Monza,16,ferrari,14,4.571428571428571,192.0,3
+2024,16,Monza,18,astonmartin,14,11.285714285714286,24.0,10
+2024,16,Monza,20,haasf1team,14,13.571428571428571,5.0,16
+2024,16,Monza,22,racingbulls,14,12.142857142857142,22.0,12
+2024,16,Monza,23,williams,12,13.166666666666666,4.0,18
+2024,16,Monza,24,kicksauber,13,15.76923076923077,0.0,19
+2024,16,Monza,27,haasf1team,14,11,22.0,11
+2024,16,Monza,31,alpine,14,13.285714285714286,5.0,17
+2024,16,Monza,43,williams,0,,0,22
+2024,16,Monza,44,mercedes,14,5.5,154.0,6
+2024,16,Monza,55,ferrari,13,4.3076923076923075,172.0,5
+2024,16,Monza,63,mercedes,13,6.461538461538462,122.0,8
+2024,16,Monza,77,kicksauber,14,15.785714285714286,0.0,21
+2024,16,Monza,81,mclaren,15,5.066666666666666,179.0,4
+2024,17,Baku,1,redbullracing,15,2.6,303.0,1
+2024,17,Baku,3,racingbulls,14,12.357142857142858,12.0,13
+2024,17,Baku,4,mclaren,16,4.3125,241.0,2
+2024,17,Baku,10,alpine,13,12.538461538461538,8.0,14
+2024,17,Baku,11,redbullracing,14,6.142857142857143,143.0,7
+2024,17,Baku,14,astonmartin,16,9.875,50.0,9
+2024,17,Baku,16,ferrari,15,4.333333333333333,217.0,3
+2024,17,Baku,18,astonmartin,15,11.8,24.0,10
+2024,17,Baku,22,racingbulls,14,12.142857142857142,22.0,12
+2024,17,Baku,23,williams,13,12.846153846153847,6.0,17
+2024,17,Baku,24,kicksauber,14,15.928571428571429,0.0,19
+2024,17,Baku,27,haasf1team,15,11.4,22.0,11
+2024,17,Baku,31,alpine,15,13.333333333333334,5.0,18
+2024,17,Baku,43,williams,1,12,0.0,21
+2024,17,Baku,44,mercedes,15,5.466666666666667,164.0,6
+2024,17,Baku,50,haasf1team,0,,6.0,15
+2024,17,Baku,55,ferrari,14,4.285714285714286,184.0,5
+2024,17,Baku,63,mercedes,14,6.5,128.0,8
+2024,17,Baku,77,kicksauber,15,15.8,0.0,22
+2024,17,Baku,81,mclaren,16,4.875,197.0,4
+2024,18,Marina Bay,1,redbullracing,16,2.75,313.0,1
+2024,18,Marina Bay,3,racingbulls,15,12.4,12.0,14
+2024,18,Marina Bay,4,mclaren,17,4.294117647058823,254.0,2
+2024,18,Marina Bay,10,alpine,14,12.5,8.0,15
+2024,18,Marina Bay,11,redbullracing,15,6.866666666666666,143.0,8
+2024,18,Marina Bay,14,astonmartin,17,9.647058823529411,58.0,9
+2024,18,Marina Bay,16,ferrari,16,4.1875,235.0,3
+2024,18,Marina Bay,18,astonmartin,16,12.25,24.0,10
+2024,18,Marina Bay,20,haasf1team,15,13.333333333333334,6.0,17
+2024,18,Marina Bay,22,racingbulls,14,12.142857142857142,22.0,12
+2024,18,Marina Bay,23,williams,14,12.428571428571429,12.0,13
+2024,18,Marina Bay,24,kicksauber,15,15.8,0.0,20
+2024,18,Marina Bay,27,haasf1team,16,11.375,22.0,11
+2024,18,Marina Bay,31,alpine,16,13.4375,5.0,18
+2024,18,Marina Bay,43,williams,2,10,4.0,19
+2024,18,Marina Bay,44,mercedes,16,5.6875,166.0,6
+2024,18,Marina Bay,55,ferrari,15,5.2,184.0,5
+2024,18,Marina Bay,63,mercedes,15,6.266666666666667,143.0,7
+2024,18,Marina Bay,77,kicksauber,16,15.8125,0.0,22
+2024,18,Marina Bay,81,mclaren,17,4.647058823529412,222.0,4
+2024,19,Austin,1,redbullracing,17,2.7058823529411766,339.0,1
+2024,19,Austin,4,mclaren,18,4.111111111111111,285.0,2
+2024,19,Austin,10,alpine,15,12.8,8.0,16
+2024,19,Austin,11,redbullracing,16,7.0625,144.0,8
+2024,19,Austin,14,astonmartin,18,9.555555555555555,62.0,9
+2024,19,Austin,16,ferrari,17,4.235294117647059,250.0,3
+2024,19,Austin,18,astonmartin,17,12.352941176470589,24.0,11
+2024,19,Austin,20,haasf1team,16,13.6875,8.0,15
+2024,19,Austin,22,racingbulls,15,12.133333333333333,22.0,12
+2024,19,Austin,23,williams,14,12.428571428571429,12.0,13
+2024,19,Austin,24,kicksauber,16,15.75,0.0,20
+2024,19,Austin,27,haasf1team,17,11.235294117647058,25.0,10
+2024,19,Austin,30,racingbulls,0,,0.0,23
+2024,19,Austin,31,alpine,17,13.411764705882353,5.0,18
+2024,19,Austin,43,williams,3,10.333333333333334,4.0,19
+2024,19,Austin,44,mercedes,17,5.705882352941177,177.0,6
+2024,19,Austin,55,ferrari,16,5.3125,197.0,5
+2024,19,Austin,63,mercedes,16,6.125,159.0,7
+2024,19,Austin,77,kicksauber,17,15.823529411764707,0.0,22
+2024,19,Austin,81,mclaren,18,4.555555555555555,237.0,4
+2024,20,Mexico City,1,redbullracing,18,2.7222222222222223,354.0,1
+2024,20,Mexico City,4,mclaren,19,4.105263157894737,297.0,2
+2024,20,Mexico City,10,alpine,16,12.75,8.0,16
+2024,20,Mexico City,11,redbullracing,17,7.0588235294117645,150.0,8
+2024,20,Mexico City,14,astonmartin,19,9.736842105263158,62.0,9
+2024,20,Mexico City,16,ferrari,18,4.055555555555555,275.0,3
+2024,20,Mexico City,18,astonmartin,18,12.5,24.0,11
+2024,20,Mexico City,20,haasf1team,17,13.529411764705882,8.0,15
+2024,20,Mexico City,22,racingbulls,16,12.25,22.0,12
+2024,20,Mexico City,23,williams,15,12.666666666666666,12.0,13
+2024,20,Mexico City,24,kicksauber,17,15.941176470588236,0.0,21
+2024,20,Mexico City,27,haasf1team,18,11.055555555555555,29.0,10
+2024,20,Mexico City,30,racingbulls,1,9,2.0,20
+2024,20,Mexico City,31,alpine,18,13.666666666666666,5.0,19
+2024,20,Mexico City,43,williams,4,10.25,5.0,18
+2024,20,Mexico City,44,mercedes,17,5.705882352941177,177.0,6
+2024,20,Mexico City,55,ferrari,17,5.117647058823529,215.0,5
+2024,20,Mexico City,63,mercedes,17,6.117647058823529,167.0,7
+2024,20,Mexico City,77,kicksauber,18,15.88888888888889,0.0,23
+2024,20,Mexico City,81,mclaren,19,4.578947368421052,247.0,4
+2024,21,São Paulo,1,redbullracing,19,2.8947368421052633,367.0,1
+2024,21,São Paulo,4,mclaren,20,4,323.0,2
+2024,21,São Paulo,10,alpine,17,12.588235294117647,11.0,16
+2024,21,São Paulo,11,redbullracing,18,7.611111111111111,151.0,8
+2024,21,São Paulo,14,astonmartin,19,9.736842105263158,62.0,9
+2024,21,São Paulo,16,ferrari,19,4,297.0,3
+2024,21,São Paulo,22,racingbulls,16,12.25,22.0,12
+2024,21,São Paulo,24,kicksauber,18,15.88888888888889,0.0,21
+2024,21,São Paulo,27,haasf1team,19,10.947368421052632,31.0,10
+2024,21,São Paulo,30,racingbulls,2,12.5,2.0,20
+2024,21,São Paulo,31,alpine,19,13.631578947368421,5.0,19
+2024,21,São Paulo,43,williams,5,10.6,5.0,18
+2024,21,São Paulo,44,mercedes,18,5.611111111111111,189.0,6
+2024,21,São Paulo,50,haasf1team,1,10,7.0,17
+2024,21,São Paulo,55,ferrari,18,4.888888888888889,244.0,5
+2024,21,São Paulo,63,mercedes,18,6.055555555555555,180.0,7
+2024,21,São Paulo,77,kicksauber,19,15.789473684210526,0.0,23
+2024,21,São Paulo,81,mclaren,20,4.75,258.0,4
+2024,22,Las Vegas,1,redbullracing,20,2.8,393.0,1
+2024,22,Las Vegas,4,mclaren,21,4.095238095238095,331.0,2
+2024,22,Las Vegas,10,alpine,18,12.055555555555555,26.0,12
+2024,22,Las Vegas,11,redbullracing,19,7.7894736842105265,151.0,8
+2024,22,Las Vegas,14,astonmartin,20,9.95,62.0,9
+2024,22,Las Vegas,16,ferrari,20,4.05,307.0,3
+2024,22,Las Vegas,18,astonmartin,19,12.421052631578947,24.0,13
+2024,22,Las Vegas,20,haasf1team,18,13.166666666666666,14.0,15
+2024,22,Las Vegas,22,racingbulls,17,11.941176470588236,28.0,11
+2024,22,Las Vegas,23,williams,15,12.666666666666666,12.0,16
+2024,22,Las Vegas,24,kicksauber,19,15.842105263157896,0.0,21
+2024,22,Las Vegas,27,haasf1team,19,10.947368421052632,31.0,10
+2024,22,Las Vegas,30,racingbulls,3,11.333333333333334,4.0,20
+2024,22,Las Vegas,31,alpine,20,13.05,23.0,14
+2024,22,Las Vegas,43,williams,5,10.6,5.0,19
+2024,22,Las Vegas,44,mercedes,19,5.842105263157895,190.0,7
+2024,22,Las Vegas,55,ferrari,18,4.888888888888889,244.0,5
+2024,22,Las Vegas,63,mercedes,19,5.947368421052632,192.0,6
+2024,22,Las Vegas,77,kicksauber,20,15.65,0.0,23
+2024,22,Las Vegas,81,mclaren,21,4.904761904761905,262.0,4
+2024,23,Lusail,1,redbullracing,21,2.9047619047619047,404.0,1
+2024,23,Lusail,4,mclaren,22,4.181818181818182,347.0,2
+2024,23,Lusail,10,alpine,18,12.055555555555555,26.0,12
+2024,23,Lusail,11,redbullracing,20,7.9,152.0,8
+2024,23,Lusail,14,astonmartin,21,10,62.0,9
+2024,23,Lusail,16,ferrari,21,4.0476190476190474,323.0,3
+2024,23,Lusail,18,astonmartin,20,12.55,24.0,13
+2024,23,Lusail,20,haasf1team,19,13.105263157894736,14.0,15
+2024,23,Lusail,22,racingbulls,18,11.777777777777779,30.0,11
+2024,23,Lusail,23,williams,15,12.666666666666666,12.0,16
+2024,23,Lusail,24,kicksauber,20,15.7,0.0,21
+2024,23,Lusail,27,haasf1team,20,10.8,37.0,10
+2024,23,Lusail,30,racingbulls,4,12.5,4.0,20
+2024,23,Lusail,31,alpine,21,13.238095238095237,23.0,14
+2024,23,Lusail,43,williams,6,11.166666666666666,5.0,19
+2024,23,Lusail,44,mercedes,20,5.65,211.0,7
+2024,23,Lusail,55,ferrari,19,4.7894736842105265,264.0,5
+2024,23,Lusail,63,mercedes,20,5.7,223.0,6
+2024,23,Lusail,77,kicksauber,21,15.761904761904763,0.0,23
+2024,23,Lusail,81,mclaren,22,5,276.0,4
+2024,24,Yas Island,1,redbullracing,22,2.8181818181818183,429.0,1
+2024,24,Yas Island,4,mclaren,23,4.434782608695652,349.0,2
+2024,24,Yas Island,10,alpine,19,11.68421052631579,36.0,11
+2024,24,Yas Island,11,redbullracing,20,7.9,152.0,8
+2024,24,Yas Island,14,astonmartin,22,9.863636363636363,68.0,9
+2024,24,Yas Island,16,ferrari,22,3.9545454545454546,341.0,3
+2024,24,Yas Island,18,astonmartin,20,12.55,24.0,13
+2024,24,Yas Island,20,haasf1team,20,12.9,16.0,15
+2024,24,Yas Island,22,racingbulls,19,11.842105263157896,30.0,12
+2024,24,Yas Island,23,williams,16,12.8125,12.0,16
+2024,24,Yas Island,24,kicksauber,21,15.333333333333334,4.0,20
+2024,24,Yas Island,27,haasf1team,20,10.8,37.0,10
+2024,24,Yas Island,30,racingbulls,5,12.8,4.0,21
+2024,24,Yas Island,43,williams,6,11.166666666666666,5.0,19
+2024,24,Yas Island,44,mercedes,21,5.9523809523809526,211.0,7
+2024,24,Yas Island,55,ferrari,20,4.85,272.0,5
+2024,24,Yas Island,61,alpine,0,,0.0,24
+2024,24,Yas Island,63,mercedes,21,5.619047619047619,235.0,6
+2024,24,Yas Island,77,kicksauber,22,15.545454545454545,0.0,22
+2024,24,Yas Island,81,mclaren,23,4.913043478260869,291.0,4
+2025,1,Melbourne,1,redbullracing,0,,0.0,
+2025,1,Melbourne,4,mclaren,0,,0.0,
+2025,1,Melbourne,5,kicksauber,0,,0.0,
+2025,1,Melbourne,7,alpine,0,,0.0,
+2025,1,Melbourne,10,alpine,0,,0.0,
+2025,1,Melbourne,12,mercedes,0,,0.0,
+2025,1,Melbourne,14,astonmartin,0,,0.0,
+2025,1,Melbourne,16,ferrari,0,,0.0,
+2025,1,Melbourne,18,astonmartin,0,,0.0,
+2025,1,Melbourne,22,racingbulls,0,,0.0,
+2025,1,Melbourne,23,williams,0,,0.0,
+2025,1,Melbourne,27,kicksauber,0,,0.0,
+2025,1,Melbourne,30,redbullracing,0,,0.0,
+2025,1,Melbourne,31,haasf1team,0,,0.0,
+2025,1,Melbourne,44,ferrari,0,,0.0,
+2025,1,Melbourne,55,williams,0,,0.0,
+2025,1,Melbourne,63,mercedes,0,,0.0,
+2025,1,Melbourne,81,mclaren,0,,0.0,
+2025,1,Melbourne,87,haasf1team,0,,0.0,
+2025,2,Shanghai,1,redbullracing,1,2,24.0,2
+2025,2,Shanghai,4,mclaren,1,1,26.0,1
+2025,2,Shanghai,5,kicksauber,0,,0.0,19
+2025,2,Shanghai,6,racingbulls,0,,0.0,16
+2025,2,Shanghai,7,alpine,0,,0.0,18
+2025,2,Shanghai,10,alpine,1,11,0.0,12
+2025,2,Shanghai,12,mercedes,1,4,14.0,4
+2025,2,Shanghai,14,astonmartin,0,,0.0,20
+2025,2,Shanghai,16,ferrari,1,8,8.0,9
+2025,2,Shanghai,18,astonmartin,1,6,8.0,8
+2025,2,Shanghai,22,racingbulls,1,12,3.0,11
+2025,2,Shanghai,23,williams,1,5,10.0,5
+2025,2,Shanghai,27,kicksauber,1,7,6.0,10
+2025,2,Shanghai,30,redbullracing,0,,0.0,17
+2025,2,Shanghai,31,haasf1team,1,13,0.0,13
+2025,2,Shanghai,44,ferrari,1,10,9.0,7
+2025,2,Shanghai,55,williams,0,,0.0,15
+2025,2,Shanghai,63,mercedes,1,3,20.0,3
+2025,2,Shanghai,81,mclaren,1,9,9.0,6
+2025,2,Shanghai,87,haasf1team,1,14,0.0,14
+2025,3,Suzuka,1,redbullracing,2,3,36.0,2
+2025,3,Suzuka,4,mclaren,2,1.5,44.0,1
+2025,3,Suzuka,5,kicksauber,1,14,0.0,19
+2025,3,Suzuka,6,racingbulls,1,11,0.0,15
+2025,3,Suzuka,7,alpine,1,13,0.0,18
+2025,3,Suzuka,10,alpine,1,11,0.0,16
+2025,3,Suzuka,12,mercedes,2,5,22.0,5
+2025,3,Suzuka,14,astonmartin,0,,0.0,20
+2025,3,Suzuka,16,ferrari,1,8,8.0,10
+2025,3,Suzuka,18,astonmartin,2,7.5,10.0,8
+2025,3,Suzuka,22,redbullracing,2,14,3.0,13
+2025,3,Suzuka,23,williams,2,6,16.0,6
+2025,3,Suzuka,27,kicksauber,2,11,6.0,11
+2025,3,Suzuka,30,racingbulls,1,12,0.0,17
+2025,3,Suzuka,31,haasf1team,2,9,10.0,7
+2025,3,Suzuka,44,ferrari,1,10,9.0,9
+2025,3,Suzuka,55,williams,1,10,1.0,14
+2025,3,Suzuka,63,mercedes,2,3,35.0,3
+2025,3,Suzuka,81,mclaren,2,5,34.0,4
+2025,3,Suzuka,87,haasf1team,2,11,4.0,12
+2025,4,Sakhir,1,redbullracing,3,2.3333333333333335,61.0,2
+2025,4,Sakhir,4,mclaren,3,1.6666666666666667,62.0,1
+2025,4,Sakhir,5,kicksauber,2,16.5,0.0,20
+2025,4,Sakhir,6,racingbulls,2,9.5,4.0,13
+2025,4,Sakhir,7,alpine,2,14,0.0,19
+2025,4,Sakhir,10,alpine,2,12,0.0,16
+2025,4,Sakhir,12,mercedes,3,5.333333333333333,30.0,5
+2025,4,Sakhir,14,astonmartin,1,11,0.0,17
+2025,4,Sakhir,16,ferrari,2,6,20.0,6
+2025,4,Sakhir,18,astonmartin,3,11.666666666666666,10.0,10
+2025,4,Sakhir,22,redbullracing,3,13.333333333333334,3.0,14
+2025,4,Sakhir,23,williams,3,7,18.0,7
+2025,4,Sakhir,27,kicksauber,3,12.666666666666666,6.0,11
+2025,4,Sakhir,30,racingbulls,2,14.5,0.0,18
+2025,4,Sakhir,31,haasf1team,3,12,10.0,9
+2025,4,Sakhir,44,ferrari,2,8.5,15.0,8
+2025,4,Sakhir,55,williams,2,12,1.0,15
+2025,4,Sakhir,63,mercedes,3,3.6666666666666665,45.0,4
+2025,4,Sakhir,81,mclaren,3,4.333333333333333,49.0,3
+2025,4,Sakhir,87,haasf1team,3,10.666666666666666,5.0,12
+2025,5,Jeddah,1,redbullracing,4,3.25,69.0,3
+2025,5,Jeddah,4,mclaren,4,2,77.0,1
+2025,5,Jeddah,5,kicksauber,3,17,0.0,20
+2025,5,Jeddah,6,racingbulls,3,10.666666666666666,4.0,15
+2025,5,Jeddah,7,alpine,3,14,0.0,19
+2025,5,Jeddah,10,alpine,3,10.333333333333334,6.0,11
+2025,5,Jeddah,12,mercedes,4,6.75,30.0,6
+2025,5,Jeddah,14,astonmartin,2,13,0.0,17
+2025,5,Jeddah,16,ferrari,3,5.333333333333333,32.0,5
+2025,5,Jeddah,18,astonmartin,4,13,10.0,10
+2025,5,Jeddah,22,redbullracing,4,12.25,5.0,14
+2025,5,Jeddah,23,williams,4,8.25,18.0,8
+2025,5,Jeddah,27,kicksauber,3,12.666666666666666,6.0,12
+2025,5,Jeddah,30,racingbulls,3,15,0.0,18
+2025,5,Jeddah,31,haasf1team,4,11,14.0,9
+2025,5,Jeddah,44,ferrari,3,7.333333333333333,25.0,7
+2025,5,Jeddah,55,williams,2,12,1.0,16
+2025,5,Jeddah,63,mercedes,4,3.25,63.0,4
+2025,5,Jeddah,81,mclaren,4,3.5,74.0,2
+2025,5,Jeddah,87,haasf1team,4,10.5,6.0,13
+2025,6,Miami Gardens,1,redbullracing,5,3,87.0,3
+2025,6,Miami Gardens,4,mclaren,5,2.4,97.0,2
+2025,6,Miami Gardens,5,kicksauber,4,17.25,0.0,20
+2025,6,Miami Gardens,6,racingbulls,4,10.5,5.0,15
+2025,6,Miami Gardens,7,alpine,4,14.75,0.0,19
+2025,6,Miami Gardens,10,alpine,3,10.333333333333334,7.0,12
+2025,6,Miami Gardens,12,mercedes,5,6.6,40.0,6
+2025,6,Miami Gardens,14,astonmartin,3,12.333333333333334,0.0,17
+2025,6,Miami Gardens,16,ferrari,4,4.75,47.0,5
+2025,6,Miami Gardens,18,astonmartin,5,13.6,14.0,10
+2025,6,Miami Gardens,22,redbullracing,4,12.25,8.0,11
+2025,6,Miami Gardens,23,williams,5,8.4,20.0,8
+2025,6,Miami Gardens,27,kicksauber,4,13.25,6.0,13
+2025,6,Miami Gardens,30,racingbulls,4,14.25,0.0,18
+2025,6,Miami Gardens,31,haasf1team,5,11.6,14.0,9
+2025,6,Miami Gardens,44,ferrari,4,7.25,37.0,7
+2025,6,Miami Gardens,55,williams,3,10.666666666666666,5.0,16
+2025,6,Miami Gardens,63,mercedes,5,3.6,78.0,4
+2025,6,Miami Gardens,81,mclaren,5,3,106.0,1
+2025,6,Miami Gardens,87,haasf1team,5,11,6.0,14
+2025,7,Imola,1,redbullracing,6,3.1666666666666665,99.0,3
+2025,7,Imola,4,mclaren,6,2.3333333333333335,115.0,2
+2025,7,Imola,5,kicksauber,4,17.25,0.0,20
+2025,7,Imola,6,racingbulls,5,10.6,5.0,16
+2025,7,Imola,10,alpine,4,11,7.0,12
+2025,7,Imola,12,mercedes,6,6.5,48.0,6
+2025,7,Imola,14,astonmartin,4,13,0.0,17
+2025,7,Imola,16,ferrari,5,5.2,53.0,5
+2025,7,Imola,18,astonmartin,6,14,14.0,10
+2025,7,Imola,22,redbullracing,5,11.8,9.0,11
+2025,7,Imola,23,williams,6,7.833333333333333,30.0,8
+2025,7,Imola,27,kicksauber,5,13.4,6.0,14
+2025,7,Imola,30,racingbulls,4,14.25,0.0,18
+2025,7,Imola,31,haasf1team,6,11.666666666666666,14.0,9
+2025,7,Imola,43,alpine,0,,0.0,21
+2025,7,Imola,44,ferrari,5,7.4,41.0,7
+2025,7,Imola,55,williams,4,10.25,7.0,13
+2025,7,Imola,63,mercedes,6,3.5,93.0,4
+2025,7,Imola,81,mclaren,6,2.6666666666666665,131.0,1
+2025,7,Imola,87,haasf1team,5,11,6.0,15
+2025,8,Monaco,1,redbullracing,7,2.857142857142857,124.0,3
+2025,8,Monaco,4,mclaren,7,2.2857142857142856,133.0,2
+2025,8,Monaco,5,kicksauber,5,17.4,0.0,20
+2025,8,Monaco,6,racingbulls,6,10.333333333333334,7.0,14
+2025,8,Monaco,10,alpine,5,11.4,7.0,13
+2025,8,Monaco,12,mercedes,6,6.5,48.0,7
+2025,8,Monaco,14,astonmartin,5,12.6,0.0,17
+2025,8,Monaco,16,ferrari,6,5.333333333333333,61.0,5
+2025,8,Monaco,18,astonmartin,7,14.142857142857142,14.0,10
+2025,8,Monaco,22,redbullracing,6,11.5,10.0,12
+2025,8,Monaco,23,williams,7,7.428571428571429,40.0,8
+2025,8,Monaco,27,kicksauber,6,13.166666666666666,6.0,15
+2025,8,Monaco,30,racingbulls,5,14.2,0.0,18
+2025,8,Monaco,31,haasf1team,6,11.666666666666666,14.0,9
+2025,8,Monaco,43,alpine,1,16,0.0,21
+2025,8,Monaco,44,ferrari,6,6.833333333333333,53.0,6
+2025,8,Monaco,55,williams,5,9.8,11.0,11
+2025,8,Monaco,63,mercedes,7,4,99.0,4
+2025,8,Monaco,81,mclaren,7,2.7142857142857144,146.0,1
+2025,8,Monaco,87,haasf1team,6,12,6.0,16
+2025,9,Barcelona,1,redbullracing,8,3,136.0,3
+2025,9,Barcelona,4,mclaren,8,2.125,158.0,2
+2025,9,Barcelona,5,kicksauber,6,16.833333333333332,0.0,21
+2025,9,Barcelona,6,racingbulls,7,9.714285714285714,15.0,10
+2025,9,Barcelona,10,alpine,5,11.4,7.0,14
+2025,9,Barcelona,12,mercedes,7,8.142857142857142,48.0,7
+2025,9,Barcelona,14,astonmartin,5,12.6,0.0,18
+2025,9,Barcelona,16,ferrari,7,4.857142857142857,79.0,5
+2025,9,Barcelona,22,redbullracing,7,12.285714285714286,10.0,13
+2025,9,Barcelona,23,williams,8,7.625,42.0,8
+2025,9,Barcelona,27,kicksauber,7,13.571428571428571,6.0,15
+2025,9,Barcelona,30,racingbulls,6,13.166666666666666,4.0,17
+2025,9,Barcelona,31,haasf1team,7,11,20.0,9
+2025,9,Barcelona,43,alpine,2,14.5,0.0,20
+2025,9,Barcelona,44,ferrari,7,6.571428571428571,63.0,6
+2025,9,Barcelona,55,williams,6,9.833333333333334,12.0,12
+2025,9,Barcelona,63,mercedes,8,4.875,99.0,4
+2025,9,Barcelona,81,mclaren,8,2.75,161.0,1
+2025,9,Barcelona,87,haasf1team,7,12,6.0,16
+2025,10,Montréal,1,redbullracing,9,3.7777777777777777,137.0,3
+2025,10,Montréal,4,mclaren,9,2.111111111111111,176.0,2
+2025,10,Montréal,5,kicksauber,7,16.142857142857142,0.0,19
+2025,10,Montréal,6,racingbulls,8,9.375,21.0,9
+2025,10,Montréal,10,alpine,6,10.833333333333334,11.0,14
+2025,10,Montréal,12,mercedes,7,8.142857142857142,48.0,7
+2025,10,Montréal,14,astonmartin,6,12,2.0,18
+2025,10,Montréal,16,ferrari,8,4.625,94.0,5
+2025,10,Montréal,18,astonmartin,8,14.25,14.0,12
+2025,10,Montréal,22,redbullracing,8,12.375,10.0,15
+2025,10,Montréal,23,williams,8,7.625,42.0,8
+2025,10,Montréal,27,kicksauber,8,12.5,16.0,11
+2025,10,Montréal,30,racingbulls,7,12.857142857142858,4.0,17
+2025,10,Montréal,31,haasf1team,8,11.625,20.0,10
+2025,10,Montréal,43,alpine,3,14.666666666666666,0.0,21
+2025,10,Montréal,44,ferrari,8,6.5,71.0,6
+2025,10,Montréal,55,williams,7,10.428571428571429,12.0,13
+2025,10,Montréal,63,mercedes,9,4.777777777777778,111.0,4
+2025,10,Montréal,81,mclaren,9,2.5555555555555554,186.0,1
+2025,10,Montréal,87,haasf1team,8,12.625,6.0,16
+2025,11,Spielberg,1,redbullracing,10,3.6,155.0,3
+2025,11,Spielberg,4,mclaren,10,3.7,176.0,2
+2025,11,Spielberg,5,kicksauber,8,15.875,0.0,19
+2025,11,Spielberg,6,racingbulls,9,10.11111111111111,21.0,10
+2025,11,Spielberg,10,alpine,7,11.428571428571429,11.0,14
+2025,11,Spielberg,12,mercedes,8,7.5,63.0,7
+2025,11,Spielberg,14,astonmartin,7,11.285714285714286,8.0,16
+2025,11,Spielberg,16,ferrari,9,4.666666666666667,104.0,5
+2025,11,Spielberg,18,astonmartin,9,14.555555555555555,14.0,12
+2025,11,Spielberg,22,redbullracing,9,12.333333333333334,10.0,15
+2025,11,Spielberg,23,williams,8,7.625,42.0,8
+2025,11,Spielberg,27,kicksauber,9,12,20.0,11
+2025,11,Spielberg,30,racingbulls,7,12.857142857142858,4.0,18
+2025,11,Spielberg,31,haasf1team,9,11.333333333333334,22.0,9
+2025,11,Spielberg,43,alpine,4,14.25,0.0,20
+2025,11,Spielberg,44,ferrari,9,6.444444444444445,79.0,6
+2025,11,Spielberg,63,mercedes,10,4.4,136.0,4
+2025,11,Spielberg,81,mclaren,10,2.7,198.0,1
+2025,11,Spielberg,87,haasf1team,9,12.444444444444445,6.0,17
+2025,12,Silverstone,1,redbullracing,10,3.6,155.0,3
+2025,12,Silverstone,4,mclaren,11,3.4545454545454546,201.0,2
+2025,12,Silverstone,5,kicksauber,9,15,4.0,19
+2025,12,Silverstone,6,racingbulls,10,10.3,21.0,11
+2025,12,Silverstone,10,alpine,8,11.625,11.0,16
+2025,12,Silverstone,12,mercedes,8,7.5,63.0,7
+2025,12,Silverstone,14,astonmartin,8,10.75,14.0,13
+2025,12,Silverstone,16,ferrari,10,4.5,119.0,5
+2025,12,Silverstone,18,astonmartin,10,14.5,14.0,12
+2025,12,Silverstone,22,redbullracing,10,12.7,10.0,17
+2025,12,Silverstone,23,williams,8,7.625,42.0,8
+2025,12,Silverstone,27,kicksauber,10,11.7,22.0,10
+2025,12,Silverstone,30,racingbulls,8,12,12.0,15
+2025,12,Silverstone,31,haasf1team,10,11.2,23.0,9
+2025,12,Silverstone,44,ferrari,10,6.2,91.0,6
+2025,12,Silverstone,55,williams,8,10.375,13.0,14
+2025,12,Silverstone,63,mercedes,11,4.454545454545454,146.0,4
+2025,12,Silverstone,81,mclaren,11,2.6363636363636362,216.0,1
+2025,12,Silverstone,87,haasf1team,10,12.3,6.0,18
+2025,13,Spa-Francorchamps,1,redbullracing,11,3.727272727272727,173.0,3
+2025,13,Spa-Francorchamps,4,mclaren,12,3.25,232.0,2
+2025,13,Spa-Francorchamps,5,kicksauber,9,15,4.0,19
+2025,13,Spa-Francorchamps,6,racingbulls,10,10.3,22.0,11
+2025,13,Spa-Francorchamps,10,alpine,9,11,19.0,13
+2025,13,Spa-Francorchamps,12,mercedes,8,7.5,63.0,7
+2025,13,Spa-Francorchamps,14,astonmartin,9,10.555555555555555,16.0,14
+2025,13,Spa-Francorchamps,16,ferrari,11,5.363636363636363,124.0,5
+2025,13,Spa-Francorchamps,18,astonmartin,11,13.818181818181818,20.0,12
+2025,13,Spa-Francorchamps,22,redbullracing,11,12.909090909090908,10.0,17
+2025,13,Spa-Francorchamps,23,williams,9,7.666666666666667,46.0,8
+2025,13,Spa-Francorchamps,27,kicksauber,11,10.909090909090908,37.0,9
+2025,13,Spa-Francorchamps,30,racingbulls,8,12,12.0,16
+2025,13,Spa-Francorchamps,31,haasf1team,11,11.363636363636363,27.0,10
+2025,13,Spa-Francorchamps,43,alpine,5,14.4,0.0,20
+2025,13,Spa-Francorchamps,44,ferrari,11,6,103.0,6
+2025,13,Spa-Francorchamps,55,williams,9,10.555555555555555,16.0,15
+2025,13,Spa-Francorchamps,63,mercedes,12,4.916666666666667,147.0,4
+2025,13,Spa-Francorchamps,81,mclaren,12,2.5833333333333335,241.0,1
+2025,13,Spa-Francorchamps,87,haasf1team,11,12.181818181818182,8.0,18
+2025,14,Budapest,1,redbullracing,12,3.75,185.0,3
+2025,14,Budapest,4,mclaren,13,3.1538461538461537,250.0,2
+2025,14,Budapest,5,kicksauber,10,14.4,6.0,19
+2025,14,Budapest,6,racingbulls,11,11.181818181818182,22.0,11
+2025,14,Budapest,10,alpine,10,10.9,20.0,12
+2025,14,Budapest,12,mercedes,9,8.444444444444445,63.0,7
+2025,14,Budapest,14,astonmartin,10,11.2,16.0,15
+2025,14,Budapest,16,ferrari,12,5.166666666666667,139.0,5
+2025,14,Budapest,18,astonmartin,12,13.833333333333334,20.0,13
+2025,14,Budapest,22,redbullracing,12,12.916666666666666,10.0,17
+2025,14,Budapest,23,williams,10,7.5,54.0,8
+2025,14,Budapest,27,kicksauber,12,11,37.0,9
+2025,14,Budapest,30,racingbulls,9,11.555555555555555,16.0,14
+2025,14,Budapest,31,haasf1team,12,11.666666666666666,27.0,10
+2025,14,Budapest,43,alpine,6,15.166666666666666,0.0,20
+2025,14,Budapest,44,ferrari,12,6.083333333333333,109.0,6
+2025,14,Budapest,55,williams,10,11.3,16.0,16
+2025,14,Budapest,63,mercedes,13,4.923076923076923,157.0,4
+2025,14,Budapest,81,mclaren,13,2.4615384615384617,266.0,1
+2025,14,Budapest,87,haasf1team,12,12.083333333333334,8.0,18
+2025,15,Zandvoort,1,redbullracing,13,4.153846153846154,187.0,3
+2025,15,Zandvoort,4,mclaren,14,3,275.0,2
+2025,15,Zandvoort,5,kicksauber,11,13.636363636363637,14.0,17
+2025,15,Zandvoort,6,racingbulls,12,11.166666666666666,22.0,13
+2025,15,Zandvoort,10,alpine,11,11.636363636363637,20.0,14
+2025,15,Zandvoort,12,mercedes,10,8.6,64.0,7
+2025,15,Zandvoort,14,astonmartin,11,10.636363636363637,26.0,11
+2025,15,Zandvoort,16,ferrari,13,5.076923076923077,151.0,5
+2025,15,Zandvoort,18,astonmartin,13,13.307692307692308,26.0,12
+2025,15,Zandvoort,22,redbullracing,13,13.23076923076923,10.0,18
+2025,15,Zandvoort,23,williams,11,8.181818181818182,54.0,8
+2025,15,Zandvoort,27,kicksauber,13,11.153846153846153,37.0,9
+2025,15,Zandvoort,30,racingbulls,10,11.2,20.0,15
+2025,15,Zandvoort,31,haasf1team,13,12,27.0,10
+2025,15,Zandvoort,43,alpine,7,15.571428571428571,0.0,20
+2025,15,Zandvoort,44,ferrari,13,6.538461538461538,109.0,6
+2025,15,Zandvoort,55,williams,11,11.545454545454545,16.0,16
+2025,15,Zandvoort,63,mercedes,14,4.785714285714286,172.0,4
+2025,15,Zandvoort,81,mclaren,14,2.4285714285714284,284.0,1
+2025,15,Zandvoort,87,haasf1team,12,12.083333333333334,8.0,19
+2025,16,Monza,1,redbullracing,14,4,205.0,3
+2025,16,Monza,4,mclaren,15,4,275.0,2
+2025,16,Monza,5,kicksauber,12,13.75,14.0,18
+2025,16,Monza,6,racingbulls,13,10.538461538461538,37.0,10
+2025,16,Monza,10,alpine,12,12.083333333333334,20.0,14
+2025,16,Monza,12,mercedes,11,9.272727272727273,64.0,7
+2025,16,Monza,14,astonmartin,12,10.416666666666666,30.0,12
+2025,16,Monza,16,ferrari,13,5.076923076923077,151.0,5
+2025,16,Monza,18,astonmartin,14,12.857142857142858,32.0,11
+2025,16,Monza,22,redbullracing,14,12.928571428571429,12.0,19
+2025,16,Monza,23,williams,12,7.916666666666667,64.0,8
+2025,16,Monza,30,racingbulls,11,11.272727272727273,20.0,15
+2025,16,Monza,31,haasf1team,14,11.857142857142858,28.0,13
+2025,16,Monza,43,alpine,8,15,0.0,20
+2025,16,Monza,44,ferrari,13,6.538461538461538,109.0,6
+2025,16,Monza,55,williams,12,11.666666666666666,16.0,17
+2025,16,Monza,63,mercedes,15,4.733333333333333,184.0,4
+2025,16,Monza,81,mclaren,15,2.3333333333333335,309.0,1
+2025,16,Monza,87,haasf1team,13,11.615384615384615,16.0,16
+2025,17,Baku,1,redbullracing,15,3.8,230.0,3
+2025,17,Baku,4,mclaren,16,3.875,293.0,2
+2025,17,Baku,5,kicksauber,13,13.307692307692308,18.0,16
+2025,17,Baku,6,racingbulls,14,10.5,38.0,9
+2025,17,Baku,10,alpine,13,12.384615384615385,20.0,14
+2025,17,Baku,12,mercedes,12,9.25,66.0,8
+2025,17,Baku,14,astonmartin,12,10.416666666666666,30.0,12
+2025,17,Baku,16,ferrari,14,5,163.0,5
+2025,17,Baku,18,astonmartin,15,13.2,32.0,11
+2025,17,Baku,22,redbullracing,15,12.933333333333334,12.0,19
+2025,17,Baku,23,williams,13,7.846153846153846,70.0,7
+2025,17,Baku,27,kicksauber,14,11.357142857142858,37.0,10
+2025,17,Baku,30,racingbulls,12,11.5,20.0,15
+2025,17,Baku,31,haasf1team,15,12.066666666666666,28.0,13
+2025,17,Baku,43,alpine,9,15.222222222222221,0.0,20
+2025,17,Baku,44,ferrari,14,6.5,117.0,6
+2025,17,Baku,55,williams,13,11.615384615384615,16.0,18
+2025,17,Baku,63,mercedes,16,4.75,194.0,4
+2025,17,Baku,81,mclaren,16,2.375,324.0,1
+2025,17,Baku,87,haasf1team,14,11.642857142857142,16.0,17
+2025,18,Marina Bay,1,redbullracing,16,3.625,255.0,3
+2025,18,Marina Bay,4,mclaren,17,4.0588235294117645,299.0,2
+2025,18,Marina Bay,5,kicksauber,14,13.142857142857142,18.0,18
+2025,18,Marina Bay,6,racingbulls,15,10.466666666666667,39.0,9
+2025,18,Marina Bay,10,alpine,14,12.785714285714286,20.0,16
+2025,18,Marina Bay,12,mercedes,13,8.846153846153847,78.0,7
+2025,18,Marina Bay,14,astonmartin,13,10.76923076923077,30.0,14
+2025,18,Marina Bay,16,ferrari,15,5.266666666666667,165.0,5
+2025,18,Marina Bay,18,astonmartin,16,13.4375,32.0,11
+2025,18,Marina Bay,22,redbullracing,16,12.5,20.0,17
+2025,18,Marina Bay,23,williams,14,8.214285714285714,70.0,8
+2025,18,Marina Bay,27,kicksauber,15,11.666666666666666,37.0,10
+2025,18,Marina Bay,30,racingbulls,13,11,30.0,13
+2025,18,Marina Bay,31,haasf1team,16,12.1875,28.0,15
+2025,18,Marina Bay,43,alpine,10,15.6,0.0,20
+2025,18,Marina Bay,44,ferrari,15,6.6,121.0,6
+2025,18,Marina Bay,55,williams,14,11,31.0,12
+2025,18,Marina Bay,63,mercedes,17,4.588235294117647,212.0,4
+2025,18,Marina Bay,81,mclaren,16,2.375,324.0,1
+2025,18,Marina Bay,87,haasf1team,15,11.666666666666666,16.0,19
+2025,19,Austin,1,redbullracing,17,3.5294117647058822,281.0,3
+2025,19,Austin,4,mclaren,18,4,314.0,2
+2025,19,Austin,5,kicksauber,15,13.4,18.0,18
+2025,19,Austin,6,racingbulls,16,10.5,39.0,9
+2025,19,Austin,10,alpine,15,13.2,20.0,17
+2025,19,Austin,12,mercedes,14,8.571428571428571,89.0,7
+2025,19,Austin,14,astonmartin,14,10.5,36.0,12
+2025,19,Austin,16,ferrari,16,5.3125,177.0,5
+2025,19,Austin,18,astonmartin,17,13.411764705882353,32.0,13
+2025,19,Austin,22,redbullracing,17,12.470588235294118,22.0,16
+2025,19,Austin,23,williams,15,8.6,73.0,8
+2025,19,Austin,27,kicksauber,16,12.1875,37.0,11
+2025,19,Austin,30,racingbulls,14,11.285714285714286,30.0,14
+2025,19,Austin,31,haasf1team,17,12.529411764705882,28.0,15
+2025,19,Austin,43,alpine,11,15.636363636363637,0.0,20
+2025,19,Austin,44,ferrari,16,6.6875,130.0,6
+2025,19,Austin,55,williams,15,10.933333333333334,38.0,10
+2025,19,Austin,63,mercedes,18,4.388888888888889,244.0,4
+2025,19,Austin,81,mclaren,17,2.4705882352941178,336.0,1
+2025,19,Austin,87,haasf1team,16,11.5,18.0,19
+2025,20,Mexico City,1,redbullracing,18,3.388888888888889,306.0,3
+2025,20,Mexico City,4,mclaren,19,3.8947368421052633,332.0,2
+2025,20,Mexico City,5,kicksauber,16,13.6875,18.0,19
+2025,20,Mexico City,6,racingbulls,17,10.823529411764707,39.0,10
+2025,20,Mexico City,10,alpine,16,13.5625,20.0,17
+2025,20,Mexico City,12,mercedes,15,8.866666666666667,89.0,7
+2025,20,Mexico City,14,astonmartin,15,10.466666666666667,37.0,12
+2025,20,Mexico City,16,ferrari,17,5.176470588235294,192.0,5
+2025,20,Mexico City,18,astonmartin,18,13.333333333333334,32.0,13
+2025,20,Mexico City,22,redbullracing,18,12.166666666666666,28.0,16
+2025,20,Mexico City,23,williams,16,8.9375,73.0,8
+2025,20,Mexico City,27,kicksauber,17,11.941176470588236,41.0,9
+2025,20,Mexico City,30,racingbulls,15,11.266666666666667,30.0,14
+2025,20,Mexico City,31,haasf1team,18,12.666666666666666,28.0,15
+2025,20,Mexico City,43,alpine,12,15.75,0.0,20
+2025,20,Mexico City,44,ferrari,17,6.529411764705882,142.0,6
+2025,20,Mexico City,55,williams,15,10.933333333333334,38.0,11
+2025,20,Mexico City,63,mercedes,19,4.473684210526316,252.0,4
+2025,20,Mexico City,81,mclaren,18,2.611111111111111,346.0,1
+2025,20,Mexico City,87,haasf1team,17,11.352941176470589,20.0,18
+2025,21,São Paulo,1,redbullracing,19,3.3684210526315788,326.0,3
+2025,21,São Paulo,4,mclaren,20,3.75,365.0,1
+2025,21,São Paulo,5,kicksauber,17,13.470588235294118,19.0,19
+2025,21,São Paulo,6,racingbulls,18,10.944444444444445,39.0,11
+2025,21,São Paulo,10,alpine,17,13.647058823529411,21.0,18
+2025,21,São Paulo,12,mercedes,16,8.6875,104.0,7
+2025,21,São Paulo,14,astonmartin,15,10.466666666666667,40.0,10
+2025,21,São Paulo,16,ferrari,18,5,214.0,5
+2025,21,São Paulo,18,astonmartin,19,13.368421052631579,32.0,14
+2025,21,São Paulo,22,redbullracing,19,12.105263157894736,28.0,17
+2025,21,São Paulo,23,williams,17,9.117647058823529,73.0,8
+2025,21,São Paulo,27,kicksauber,17,11.941176470588236,41.0,9
+2025,21,São Paulo,30,racingbulls,15,11.266666666666667,30.0,15
+2025,21,São Paulo,31,haasf1team,19,12.473684210526315,30.0,16
+2025,21,São Paulo,43,alpine,13,15.76923076923077,0.0,20
+2025,21,São Paulo,44,ferrari,18,6.611111111111111,148.0,6
+2025,21,São Paulo,55,williams,16,11.3125,38.0,12
+2025,21,São Paulo,63,mercedes,20,4.6,264.0,4
+2025,21,São Paulo,81,mclaren,19,2.736842105263158,356.0,2
+2025,21,São Paulo,87,haasf1team,18,10.944444444444445,32.0,13
+2025,22,Las Vegas,1,redbullracing,20,3.35,341.0,3
+2025,22,Las Vegas,4,mclaren,21,3.619047619047619,390.0,1
+2025,22,Las Vegas,5,kicksauber,17,13.470588235294118,19.0,19
+2025,22,Las Vegas,6,racingbulls,19,10.789473684210526,43.0,10
+2025,22,Las Vegas,10,alpine,18,13.444444444444445,22.0,18
+2025,22,Las Vegas,12,mercedes,17,8.294117647058824,122.0,7
+2025,22,Las Vegas,14,astonmartin,16,10.6875,40.0,12
+2025,22,Las Vegas,16,ferrari,18,5,214.0,5
+2025,22,Las Vegas,18,astonmartin,20,13.5,32.0,15
+2025,22,Las Vegas,22,redbullracing,20,12.35,28.0,17
+2025,22,Las Vegas,23,williams,18,9.222222222222221,73.0,8
+2025,22,Las Vegas,27,kicksauber,18,11.777777777777779,43.0,9
+2025,22,Las Vegas,30,racingbulls,16,11,36.0,14
+2025,22,Las Vegas,31,haasf1team,20,12.45,30.0,16
+2025,22,Las Vegas,43,alpine,14,15.714285714285714,0.0,20
+2025,22,Las Vegas,44,ferrari,18,6.611111111111111,148.0,6
+2025,22,Las Vegas,55,williams,17,11.411764705882353,38.0,13
+2025,22,Las Vegas,63,mercedes,21,4.571428571428571,276.0,4
+2025,22,Las Vegas,81,mclaren,20,2.85,366.0,2
+2025,22,Las Vegas,87,haasf1team,19,10.68421052631579,40.0,11
+2025,23,Lusail,1,redbullracing,21,3.238095238095238,371.0,3
+2025,23,Lusail,4,mclaren,21,3.619047619047619,396.0,1
+2025,23,Lusail,5,kicksauber,17,13.470588235294118,19.0,19
+2025,23,Lusail,6,racingbulls,20,10.55,51.0,9
+2025,23,Lusail,10,alpine,19,13.421052631578947,22.0,18
+2025,23,Lusail,12,mercedes,18,8,140.0,7
+2025,23,Lusail,14,astonmartin,17,10.705882352941176,42.0,12
+2025,23,Lusail,16,ferrari,19,4.947368421052632,226.0,5
+2025,23,Lusail,18,astonmartin,20,13.5,32.0,16
+2025,23,Lusail,22,redbullracing,21,12.333333333333334,32.0,17
+2025,23,Lusail,23,williams,18,9.222222222222221,73.0,8
+2025,23,Lusail,27,kicksauber,19,11.526315789473685,49.0,10
+2025,23,Lusail,30,racingbulls,17,11.176470588235293,36.0,14
+2025,23,Lusail,31,haasf1team,21,12.285714285714286,32.0,15
+2025,23,Lusail,43,alpine,15,15.666666666666666,0.0,20
+2025,23,Lusail,44,ferrari,19,6.684210526315789,152.0,6
+2025,23,Lusail,55,williams,18,11.055555555555555,49.0,11
+2025,23,Lusail,63,mercedes,22,4.454545454545454,301.0,4
+2025,23,Lusail,81,mclaren,20,2.85,374.0,2
+2025,23,Lusail,87,haasf1team,20,10.65,41.0,13
+2025,24,Yas Island,1,redbullracing,22,3.1363636363636362,396.0,2
+2025,24,Yas Island,4,mclaren,22,3.6363636363636362,408.0,1
+2025,24,Yas Island,5,kicksauber,18,13.444444444444445,19.0,19
+2025,24,Yas Island,6,racingbulls,21,10.904761904761905,51.0,10
+2025,24,Yas Island,10,alpine,20,13.55,22.0,18
+2025,24,Yas Island,12,mercedes,19,7.842105263157895,150.0,7
+2025,24,Yas Island,14,astonmartin,18,10.5,48.0,12
+2025,24,Yas Island,16,ferrari,20,5.1,230.0,5
+2025,24,Yas Island,18,astonmartin,21,13.666666666666666,32.0,17
+2025,24,Yas Island,22,redbullracing,22,12.227272727272727,33.0,15
+2025,24,Yas Island,23,williams,19,9.31578947368421,73.0,8
+2025,24,Yas Island,27,kicksauber,19,11.526315789473685,49.0,11
+2025,24,Yas Island,30,racingbulls,18,11.055555555555555,38.0,14
+2025,24,Yas Island,31,haasf1team,22,12.409090909090908,32.0,16
+2025,24,Yas Island,43,alpine,16,15.5625,0.0,20
+2025,24,Yas Island,44,ferrari,20,6.95,152.0,6
+2025,24,Yas Island,55,williams,19,10.631578947368421,64.0,9
+2025,24,Yas Island,63,mercedes,23,4.521739130434782,309.0,4
+2025,24,Yas Island,81,mclaren,21,2.8095238095238093,392.0,3
+2025,24,Yas Island,87,haasf1team,20,10.65,41.0,13
+2026,1,Melbourne,1,mclaren,0,,0.0,6
+2026,1,Melbourne,3,redbullracing,0,,0.0,
+2026,1,Melbourne,5,audi,0,,0.0,10
+2026,1,Melbourne,6,redbullracing,0,,0.0,3
+2026,1,Melbourne,10,alpine,0,,0.0,14
+2026,1,Melbourne,11,cadillac,0,,0.0,18
+2026,1,Melbourne,12,mercedes,0,,0.0,2
+2026,1,Melbourne,14,astonmartin,0,,0.0,17
+2026,1,Melbourne,16,ferrari,0,,0.0,4
+2026,1,Melbourne,18,astonmartin,0,,0.0,
+2026,1,Melbourne,23,williams,0,,0.0,15
+2026,1,Melbourne,30,racingbulls,0,,0.0,8
+2026,1,Melbourne,31,haasf1team,0,,0.0,13
+2026,1,Melbourne,41,racingbulls,0,,0.0,9
+2026,1,Melbourne,43,alpine,0,,0.0,16
+2026,1,Melbourne,44,ferrari,0,,0.0,7
+2026,1,Melbourne,55,williams,0,,0.0,
+2026,1,Melbourne,63,mercedes,0,,0.0,1
+2026,1,Melbourne,77,cadillac,0,,0.0,19
+2026,1,Melbourne,87,haasf1team,0,,0.0,12
+2026,2,Shanghai,3,redbullracing,1,6,8.0,6
+2026,2,Shanghai,6,redbullracing,0,,0.0,18
+2026,2,Shanghai,10,alpine,1,10,1.0,12
+2026,2,Shanghai,11,cadillac,1,16,0.0,17
+2026,2,Shanghai,12,mercedes,1,2,22.0,2
+2026,2,Shanghai,14,astonmartin,0,,0.0,20
+2026,2,Shanghai,16,ferrari,1,3,22.0,3
+2026,2,Shanghai,18,astonmartin,0,,0.0,22
+2026,2,Shanghai,27,audi,0,,0.0,19
+2026,2,Shanghai,30,racingbulls,1,13,2.0,11
+2026,2,Shanghai,31,haasf1team,1,11,0.0,13
+2026,2,Shanghai,41,racingbulls,1,8,4.0,8
+2026,2,Shanghai,43,alpine,1,14,0.0,15
+2026,2,Shanghai,44,ferrari,1,4,18.0,4
+2026,2,Shanghai,55,williams,1,15,0.0,16
+2026,2,Shanghai,63,mercedes,1,1,33.0,1
+2026,2,Shanghai,77,cadillac,0,,0.0,21
+2026,2,Shanghai,87,haasf1team,1,7,7.0,7
+2026,3,Suzuka,1,mclaren,1,5,15.0,6
+2026,3,Suzuka,3,redbullracing,1,6,8.0,8
+2026,3,Suzuka,5,audi,1,9,2.0,14
+2026,3,Suzuka,6,redbullracing,1,8,4.0,11
+2026,3,Suzuka,10,alpine,2,8,9.0,7
+2026,3,Suzuka,11,cadillac,2,15.5,0.0,20
+2026,3,Suzuka,12,mercedes,2,1.5,47.0,2
+2026,3,Suzuka,14,astonmartin,0,,0.0,21
+2026,3,Suzuka,16,ferrari,2,3.5,34.0,3
+2026,3,Suzuka,18,astonmartin,0,,0.0,22
+2026,3,Suzuka,23,williams,1,12,0.0,18
+2026,3,Suzuka,27,audi,1,11,0.0,17
+2026,3,Suzuka,30,racingbulls,2,10,8.0,9
+2026,3,Suzuka,31,haasf1team,2,12.5,0.0,16
+2026,3,Suzuka,41,racingbulls,2,10,4.0,10
+2026,3,Suzuka,43,alpine,2,12,1.0,15
+2026,3,Suzuka,44,ferrari,2,3.5,33.0,4
+2026,3,Suzuka,55,williams,2,12,2.0,13
+2026,3,Suzuka,63,mercedes,2,1.5,51.0,1
+2026,3,Suzuka,77,cadillac,1,13,0.0,19
+2026,3,Suzuka,81,mclaren,0,,3.0,12
+2026,3,Suzuka,87,haasf1team,2,6,17.0,5
+2026,4,Miami Gardens,1,mclaren,2,5,33.0,5
+2026,4,Miami Gardens,3,redbullracing,2,7,16.0,9
+2026,4,Miami Gardens,5,audi,2,11,2.0,13
+2026,4,Miami Gardens,6,redbullracing,2,10,4.0,12
+2026,4,Miami Gardens,10,alpine,3,7.666666666666667,16.0,8
+2026,4,Miami Gardens,11,cadillac,3,16,0.0,20
+2026,4,Miami Gardens,12,mercedes,3,1.3333333333333333,75.0,1
+2026,4,Miami Gardens,14,astonmartin,1,18,0.0,21
+2026,4,Miami Gardens,16,ferrari,3,3.3333333333333335,55.0,3
+2026,4,Miami Gardens,18,astonmartin,0,,0.0,22
+2026,4,Miami Gardens,23,williams,2,16,0.0,18
+2026,4,Miami Gardens,27,audi,2,11,0.0,17
+2026,4,Miami Gardens,30,racingbulls,3,9.666666666666666,10.0,10
+2026,4,Miami Gardens,31,haasf1team,3,11.666666666666666,1.0,15
+2026,4,Miami Gardens,41,racingbulls,3,11.333333333333334,4.0,11
+2026,4,Miami Gardens,43,alpine,3,13.333333333333334,1.0,16
+2026,4,Miami Gardens,44,ferrari,3,4.333333333333333,43.0,4
+2026,4,Miami Gardens,55,williams,3,13,2.0,14
+2026,4,Miami Gardens,63,mercedes,3,2.3333333333333335,68.0,2
+2026,4,Miami Gardens,77,cadillac,2,16,0.0,19
+2026,4,Miami Gardens,81,mclaren,1,2,28.0,6
+2026,4,Miami Gardens,87,haasf1team,2,6,17.0,7
+2026,5,Montréal,1,mclaren,3,4,58.0,4
+2026,5,Montréal,3,redbullracing,3,6.333333333333333,28.0,7
+2026,5,Montréal,5,audi,3,11.333333333333334,2.0,15
+2026,5,Montréal,6,redbullracing,2,10,4.0,13
+2026,5,Montréal,10,alpine,3,7.666666666666667,16.0,9
+2026,5,Montréal,11,cadillac,4,16,0.0,20
+2026,5,Montréal,12,mercedes,4,1.25,106.0,1
+2026,5,Montréal,14,astonmartin,2,16.5,0.0,21
+2026,5,Montréal,16,ferrari,4,4.5,63.0,3
+2026,5,Montréal,18,astonmartin,1,17,0.0,22
+2026,5,Montréal,23,williams,3,14,1.0,17
+2026,5,Montréal,27,audi,2,11,0.0,18
+2026,5,Montréal,30,racingbulls,3,9.666666666666666,10.0,10
+2026,5,Montréal,31,haasf1team,4,12,1.0,16
+2026,5,Montréal,43,alpine,4,11.75,7.0,11
+2026,5,Montréal,44,ferrari,4,4.75,54.0,5
+2026,5,Montréal,55,williams,4,12,4.0,14
+2026,5,Montréal,63,mercedes,4,2.75,88.0,2
+2026,5,Montréal,77,cadillac,3,16.666666666666668,0.0,19
+2026,5,Montréal,81,mclaren,2,2.5,48.0,6
+2026,5,Montréal,87,haasf1team,3,7.666666666666667,17.0,8
+2026,6,Monte Carlo,1,mclaren,3,4,58.0,5
+2026,6,Monte Carlo,3,redbullracing,4,5.5,43.0,7
+2026,6,Monte Carlo,5,audi,4,11.75,2.0,15
+2026,6,Monte Carlo,6,redbullracing,3,8.333333333333334,14.0,12
+2026,6,Monte Carlo,10,alpine,4,7.75,20.0,8
+2026,6,Monte Carlo,11,cadillac,4,16,0.0,20
+2026,6,Monte Carlo,12,mercedes,5,1.2,131.0,1
+2026,6,Monte Carlo,14,astonmartin,2,16.5,0.0,22
+2026,6,Monte Carlo,16,ferrari,5,4.4,75.0,3
+2026,6,Monte Carlo,18,astonmartin,2,16,0.0,21
+2026,6,Monte Carlo,23,williams,3,14,1.0,17
+2026,6,Monte Carlo,27,audi,3,11.333333333333334,0.0,18
+2026,6,Monte Carlo,30,racingbulls,4,9,16.0,10
+2026,6,Monte Carlo,31,haasf1team,5,12.4,1.0,16
+2026,6,Monte Carlo,41,racingbulls,4,12,5.0,14
+2026,6,Monte Carlo,43,alpine,5,10.6,15.0,11
+2026,6,Monte Carlo,44,ferrari,5,4.2,72.0,4
+2026,6,Monte Carlo,55,williams,5,11.4,6.0,13
+2026,6,Monte Carlo,63,mercedes,4,2.75,88.0,2
+2026,6,Monte Carlo,77,cadillac,4,16.5,0.0,19
+2026,6,Monte Carlo,81,mclaren,3,5.333333333333333,48.0,6
+2026,6,Monte Carlo,87,haasf1team,4,8.25,18.0,9
+2026,7,Barcelona,1,mclaren,3,4,58.0,6
+2026,7,Barcelona,3,redbullracing,4,5.5,43.0,7
+2026,7,Barcelona,5,audi,5,11.6,2.0,17
+2026,7,Barcelona,6,redbullracing,4,7,29.0,8
+2026,7,Barcelona,10,alpine,5,7.6,26.0,10
+2026,7,Barcelona,11,cadillac,5,15.8,0.0,21
+2026,7,Barcelona,12,mercedes,6,1.1666666666666667,156.0,1
+2026,7,Barcelona,14,astonmartin,3,14.333333333333334,1.0,18
+2026,7,Barcelona,16,ferrari,5,4.4,75.0,4
+2026,7,Barcelona,18,astonmartin,2,16,0.0,22
+2026,7,Barcelona,23,williams,4,12.5,5.0,15
+2026,7,Barcelona,27,audi,4,11.75,0.0,19
+2026,7,Barcelona,30,racingbulls,5,8.2,26.0,9
+2026,7,Barcelona,31,haasf1team,6,11.833333333333334,3.0,16
+2026,7,Barcelona,41,racingbulls,5,10.8,13.0,13
+2026,7,Barcelona,43,alpine,6,11.166666666666666,15.0,12
+2026,7,Barcelona,44,ferrari,6,3.8333333333333335,90.0,2
+2026,7,Barcelona,55,williams,6,12.166666666666666,6.0,14
+2026,7,Barcelona,63,mercedes,5,4.6,88.0,3
+2026,7,Barcelona,77,cadillac,4,16.5,0.0,20
+2026,7,Barcelona,81,mclaren,4,5,60.0,5
+2026,7,Barcelona,87,haasf1team,4,8.25,18.0,11
+2026,8,Spielberg,1,mclaren,4,3.75,73.0,5
+2026,8,Spielberg,3,redbullracing,5,5.2,55.0,7
+2026,8,Spielberg,5,audi,6,11.5,2.0,17
+2026,8,Spielberg,6,redbullracing,5,6.8,37.0,8
+2026,8,Spielberg,10,alpine,6,7.5,32.0,9
+2026,8,Spielberg,11,cadillac,6,15.5,0.0,21
+2026,8,Spielberg,12,mercedes,7,3.2857142857142856,156.0,1
+2026,8,Spielberg,14,astonmartin,3,14.333333333333334,1.0,18
+2026,8,Spielberg,16,ferrari,6,6.166666666666667,75.0,4
+2026,8,Spielberg,18,astonmartin,2,16,0.0,22
+2026,8,Spielberg,23,williams,4,12.5,5.0,15
+2026,8,Spielberg,27,audi,4,11.75,0.0,19
+2026,8,Spielberg,30,racingbulls,6,8.166666666666666,30.0,10
+2026,8,Spielberg,31,haasf1team,7,12,3.0,16
+2026,8,Spielberg,41,racingbulls,6,10.5,15.0,13
+2026,8,Spielberg,43,alpine,7,11,16.0,12
+2026,8,Spielberg,44,ferrari,7,3.4285714285714284,115.0,2
+2026,8,Spielberg,55,williams,7,12.142857142857142,6.0,14
+2026,8,Spielberg,63,mercedes,6,4.166666666666667,106.0,3
+2026,8,Spielberg,77,cadillac,4,16.5,0.0,20
+2026,8,Spielberg,81,mclaren,5,5,70.0,6
+2026,8,Spielberg,87,haasf1team,5,10,18.0,11
+2026,9,Silverstone,1,mclaren,5,4.4,85.0,4
+2026,9,Silverstone,3,redbullracing,6,4.666666666666667,76.0,7
+2026,9,Silverstone,5,audi,7,11.428571428571429,2.0,17
+2026,9,Silverstone,6,redbullracing,6,6.666666666666667,45.0,8
+2026,9,Silverstone,10,alpine,7,8.285714285714286,32.0,10
+2026,9,Silverstone,11,cadillac,6,15.5,0.0,21
+2026,9,Silverstone,12,mercedes,8,3.25,179.0,1
+2026,9,Silverstone,14,astonmartin,4,15.25,1.0,18
+2026,9,Silverstone,16,ferrari,7,6.428571428571429,83.0,6
+2026,9,Silverstone,18,astonmartin,2,16,0.0,22
+2026,9,Silverstone,23,williams,5,13.4,5.0,15
+2026,9,Silverstone,27,audi,5,11.8,0.0,19
+2026,9,Silverstone,30,racingbulls,7,8.285714285714286,33.0,9
+2026,9,Silverstone,31,haasf1team,8,12.5,3.0,16
+2026,9,Silverstone,41,racingbulls,7,10.428571428571429,16.0,13
+2026,9,Silverstone,43,alpine,8,11.5,16.0,12
+2026,9,Silverstone,44,ferrari,8,3.625,132.0,3
+2026,9,Silverstone,55,williams,7,12.142857142857142,6.0,14
+2026,9,Silverstone,63,mercedes,7,3.7142857142857144,136.0,2
+2026,9,Silverstone,77,cadillac,4,16.5,0.0,20
+2026,9,Silverstone,81,mclaren,6,4.833333333333333,84.0,5
+2026,9,Silverstone,87,haasf1team,6,10.666666666666666,18.0,11
+2026,10,Spa-Francorchamps,1,mclaren,6,4.333333333333333,97.0,5
+2026,10,Spa-Francorchamps,3,redbullracing,7,6.857142857142857,76.0,7
+2026,10,Spa-Francorchamps,5,audi,8,11,6.0,14
+2026,10,Spa-Francorchamps,6,redbullracing,7,6.428571428571429,55.0,8
+2026,10,Spa-Francorchamps,10,alpine,8,8.5,33.0,10
+2026,10,Spa-Francorchamps,11,cadillac,7,15.285714285714286,0.0,21
+2026,10,Spa-Francorchamps,12,mercedes,9,4.555555555555555,179.0,1
+2026,10,Spa-Francorchamps,14,astonmartin,5,15.8,1.0,18
+2026,10,Spa-Francorchamps,16,ferrari,8,5.75,108.0,4
+2026,10,Spa-Francorchamps,18,astonmartin,3,17,0.0,22
+2026,10,Spa-Francorchamps,23,williams,5,13.4,5.0,16
+2026,10,Spa-Francorchamps,27,audi,5,11.8,0.0,19
+2026,10,Spa-Francorchamps,30,racingbulls,8,8,41.0,9
+2026,10,Spa-Francorchamps,31,haasf1team,9,12.555555555555555,3.0,17
+2026,10,Spa-Francorchamps,41,racingbulls,8,10,22.0,11
+2026,10,Spa-Francorchamps,43,alpine,9,11.222222222222221,18.0,13
+2026,10,Spa-Francorchamps,44,ferrari,9,3.5555555555555554,147.0,3
+2026,10,Spa-Francorchamps,55,williams,8,12.75,6.0,15
+2026,10,Spa-Francorchamps,63,mercedes,8,3.5,154.0,2
+2026,10,Spa-Francorchamps,77,cadillac,5,16.4,0.0,20
+2026,10,Spa-Francorchamps,81,mclaren,7,5.714285714285714,84.0,6
+2026,10,Spa-Francorchamps,87,haasf1team,7,10.857142857142858,18.0,12
+2026,11,Budapest,1,mclaren,7,4.714285714285714,103.0,5
+2026,11,Budapest,3,redbullracing,8,6.375,91.0,7
+2026,11,Budapest,5,audi,9,10.666666666666666,10.0,14
+2026,11,Budapest,6,redbullracing,8,6.375,63.0,8
+2026,11,Budapest,10,alpine,9,8.777777777777779,33.0,10
+2026,11,Budapest,11,cadillac,7,15.285714285714286,0.0,21
+2026,11,Budapest,12,mercedes,10,4.2,204.0,1
+2026,11,Budapest,14,astonmartin,6,16.333333333333332,1.0,18
+2026,11,Budapest,16,ferrari,9,5.333333333333333,126.0,4
+2026,11,Budapest,18,astonmartin,3,17,0.0,22
+2026,11,Budapest,23,williams,6,13.666666666666666,5.0,16
+2026,11,Budapest,27,audi,6,12,0.0,19
+2026,11,Budapest,30,racingbulls,9,8.444444444444445,41.0,9
+2026,11,Budapest,31,haasf1team,10,13,3.0,17
+2026,11,Budapest,41,racingbulls,9,9.88888888888889,24.0,11
+2026,11,Budapest,43,alpine,10,11.1,19.0,12
+2026,11,Budapest,44,ferrari,10,3.6,159.0,2
+2026,11,Budapest,55,williams,9,13.11111111111111,6.0,15
+2026,11,Budapest,63,mercedes,8,3.5,154.0,3
+2026,11,Budapest,77,cadillac,6,16.666666666666668,0.0,20
+2026,11,Budapest,81,mclaren,8,5.625,94.0,6
+2026,11,Budapest,87,haasf1team,8,11.25,18.0,13
+2026,12,Zandvoort,1,mclaren,8,4.25,134.0,5
+2026,12,Zandvoort,3,redbullracing,9,5.888888888888889,112.0,6
+2026,12,Zandvoort,5,audi,10,10.7,10.0,14
+2026,12,Zandvoort,10,alpine,10,9.1,34.0,10
+2026,12,Zandvoort,11,cadillac,7,15.285714285714286,0.0,22
+2026,12,Zandvoort,12,mercedes,11,4.090909090909091,224.0,1
+2026,12,Zandvoort,14,astonmartin,7,16,1.0,19
+2026,12,Zandvoort,16,ferrari,10,5.2,145.0,4
+2026,12,Zandvoort,18,astonmartin,4,16,0.0,20
+2026,12,Zandvoort,22,racingbulls,0,,0.0,23
+2026,12,Zandvoort,23,williams,7,14.142857142857142,5.0,16
+2026,12,Zandvoort,27,audi,7,11.571428571428571,2.0,18
+2026,12,Zandvoort,30,redbullracing,10,8.4,45.0,9
+2026,12,Zandvoort,31,haasf1team,11,13.272727272727273,3.0,17
+2026,12,Zandvoort,41,racingbulls,10,9.9,25.0,11
+2026,12,Zandvoort,43,alpine,11,11.454545454545455,19.0,12
+2026,12,Zandvoort,44,ferrari,11,3.727272727272727,171.0,2
+2026,12,Zandvoort,55,williams,10,13.6,6.0,15
+2026,12,Zandvoort,63,mercedes,9,3.888888888888889,168.0,3
+2026,12,Zandvoort,77,cadillac,6,16.666666666666668,0.0,21
+2026,12,Zandvoort,81,mclaren,8,5.625,98.0,7
+2026,12,Zandvoort,87,haasf1team,9,12.11111111111111,18.0,13
+2026,13,Monza,1,mclaren,9,3.888888888888889,159.0,4
+2026,13,Monza,3,redbullracing,9,5.888888888888889,112.0,6
+2026,13,Monza,5,audi,11,10.909090909090908,10.0,14
+2026,13,Monza,10,alpine,11,9.181818181818182,35.0,10
+2026,13,Monza,11,cadillac,8,15.25,0.0,23
+2026,13,Monza,12,mercedes,12,3.9166666666666665,242.0,1
+2026,13,Monza,14,astonmartin,8,15.125,3.0,19
+2026,13,Monza,16,ferrari,11,5.181818181818182,155.0,5
+2026,13,Monza,18,astonmartin,4,16,0.0,21
+2026,13,Monza,22,racingbulls,1,11,0.0,20
+2026,13,Monza,23,williams,8,14.5,5.0,17
+2026,13,Monza,27,audi,8,11.125,6.0,15
+2026,13,Monza,30,redbullracing,11,8.272727272727273,51.0,9
+2026,13,Monza,31,haasf1team,11,13.272727272727273,3.0,18
+2026,13,Monza,41,racingbulls,11,10.090909090909092,25.0,11
+2026,13,Monza,43,alpine,12,11.666666666666666,19.0,12
+2026,13,Monza,44,ferrari,12,3.75,183.0,3
+2026,13,Monza,55,williams,11,13.818181818181818,6.0,16
+2026,13,Monza,63,mercedes,10,3.8,183.0,2
+2026,13,Monza,77,cadillac,6,16.666666666666668,0.0,22
+2026,13,Monza,81,mclaren,9,5.666666666666667,106.0,7
+2026,13,Monza,87,haasf1team,9,12.11111111111111,18.0,13
+2026,14,Madrid,1,mclaren,10,3.9,171.0,4
+2026,14,Madrid,3,redbullracing,10,5.6,127.0,6
+2026,14,Madrid,5,audi,12,10.916666666666666,10.0,14
+2026,14,Madrid,10,alpine,12,9,41.0,10
+2026,14,Madrid,11,cadillac,9,15.555555555555555,0.0,23
+2026,14,Madrid,12,mercedes,13,3.6923076923076925,267.0,1
+2026,14,Madrid,14,astonmartin,8,15.125,3.0,19
+2026,14,Madrid,16,ferrari,11,5.181818181818182,155.0,5
+2026,14,Madrid,18,astonmartin,4,16,0.0,21
+2026,14,Madrid,22,racingbulls,2,10.5,1.0,20
+2026,14,Madrid,23,williams,9,14.777777777777779,5.0,17
+2026,14,Madrid,27,audi,9,11.222222222222221,6.0,15
+2026,14,Madrid,30,redbullracing,12,8.75,51.0,9
+2026,14,Madrid,31,haasf1team,12,13.5,3.0,18
+2026,14,Madrid,41,racingbulls,12,9.916666666666666,29.0,11
+2026,14,Madrid,43,alpine,13,11.461538461538462,21.0,12
+2026,14,Madrid,44,ferrari,13,3.923076923076923,191.0,3
+2026,14,Madrid,55,williams,12,13.75,6.0,16
+2026,14,Madrid,63,mercedes,11,3.6363636363636362,201.0,2
+2026,14,Madrid,77,cadillac,7,17,0.0,22
+2026,14,Madrid,81,mclaren,10,5.6,116.0,7
+2026,14,Madrid,87,haasf1team,10,12.4,18.0,13
+2026,15,Baku,1,mclaren,11,3.8181818181818183,186.0,4
+2026,15,Baku,3,redbullracing,11,5.2727272727272725,145.0,6
+2026,15,Baku,5,audi,13,11.076923076923077,10.0,14
+2026,15,Baku,6,redbullracing,9,6.333333333333333,71.0,8
+2026,15,Baku,10,alpine,13,9.23076923076923,41.0,10
+2026,15,Baku,11,cadillac,9,15.555555555555555,0.0,23
+2026,15,Baku,12,mercedes,14,3.5,292.0,1
+2026,15,Baku,14,astonmartin,9,15.333333333333334,3.0,19
+2026,15,Baku,16,ferrari,12,5.083333333333333,167.0,5
+2026,15,Baku,18,astonmartin,4,16,0.0,21
+2026,15,Baku,23,williams,10,14.8,5.0,17
+2026,15,Baku,27,audi,10,11.1,7.0,15
+2026,15,Baku,30,racingbulls,13,8.538461538461538,59.0,9
+2026,15,Baku,31,haasf1team,13,13.307692307692308,3.0,18
+2026,15,Baku,41,racingbulls,13,9.846153846153847,31.0,11
+2026,15,Baku,43,alpine,14,11.142857142857142,27.0,12
+2026,15,Baku,44,ferrari,13,3.923076923076923,191.0,3
+2026,15,Baku,55,williams,12,13.75,6.0,16
+2026,15,Baku,63,mercedes,12,3.75,211.0,2
+2026,15,Baku,77,cadillac,8,17.125,0.0,22
+2026,15,Baku,81,mclaren,11,5.818181818181818,120.0,7
+2026,15,Baku,87,haasf1team,11,12.727272727272727,18.0,13
+2026,16,Kuala Lumpur,1,mclaren,11,3.8181818181818183,186.0,4
+2026,16,Kuala Lumpur,3,redbullracing,12,5,163.0,6
+2026,16,Kuala Lumpur,5,audi,14,11.357142857142858,10.0,14
+2026,16,Kuala Lumpur,6,redbullracing,10,6,86.0,8
+2026,16,Kuala Lumpur,10,alpine,13,9.23076923076923,41.0,10
+2026,16,Kuala Lumpur,11,cadillac,10,15.4,0.0,23
+2026,16,Kuala Lumpur,12,mercedes,15,3.6,302.0,1
+2026,16,Kuala Lumpur,14,astonmartin,9,15.333333333333334,3.0,19
+2026,16,Kuala Lumpur,16,ferrari,13,5,179.0,5
+2026,16,Kuala Lumpur,18,astonmartin,4,16,0.0,21
+2026,16,Kuala Lumpur,23,williams,10,14.8,5.0,18
+2026,16,Kuala Lumpur,27,audi,11,11.090909090909092,7.0,15
+2026,16,Kuala Lumpur,30,racingbulls,14,8.785714285714286,59.0,9
+2026,16,Kuala Lumpur,31,haasf1team,14,12.928571428571429,7.0,16
+2026,16,Kuala Lumpur,41,racingbulls,14,9.642857142857142,37.0,11
+2026,16,Kuala Lumpur,43,alpine,14,11.142857142857142,27.0,12
+2026,16,Kuala Lumpur,44,ferrari,14,4.071428571428571,199.0,3
+2026,16,Kuala Lumpur,55,williams,13,13.461538461538462,7.0,17
+2026,16,Kuala Lumpur,63,mercedes,13,3.5384615384615383,236.0,2
+2026,16,Kuala Lumpur,77,cadillac,9,17,0.0,22
+2026,16,Kuala Lumpur,81,mclaren,12,6.416666666666667,120.0,7
+2026,16,Kuala Lumpur,87,haasf1team,12,12.416666666666666,20.0,13

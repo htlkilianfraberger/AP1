@@ -24,18 +24,18 @@ public sealed record DriverTrainingRow(
     int DriverNumber, string DriverName, string TeamKey,
     int PreviousStarts, double? PreviousAverageFinish,
     decimal? PointsBeforeRace, int? ChampionshipPositionBeforeRace,
-    int FinishPosition, bool Dnf, bool Dsq, double SampleWeight);
+    int FinishPosition, bool Dnf, bool Dsq);
 
 public sealed record TeamTrainingRow(
     int Season, int Round, int SessionKey, string RaceDate, string Location,
     string TeamKey, string TeamName, int PreviousStarts,
     double? PreviousAverageBestFinish, decimal? PointsBeforeRace,
-    int? ChampionshipPositionBeforeRace, int BestFinishPosition, double SampleWeight);
+    int? ChampionshipPositionBeforeRace, int BestFinishPosition);
 
 public static class TrainingRows
 {
     public static (List<DriverTrainingRow> Drivers, List<TeamTrainingRow> Teams) Build(
-        IEnumerable<RaceSnapshot> snapshots, DateTimeOffset referenceDate)
+        IEnumerable<RaceSnapshot> snapshots)
     {
         var driverRows = new List<DriverTrainingRow>();
         var teamRows = new List<TeamTrainingRow>();
@@ -51,9 +51,6 @@ public static class TrainingRows
                 var drivers = race.Drivers.Where(d => d.DriverNumber > 0 && !string.IsNullOrWhiteSpace(d.TeamName))
                     .GroupBy(d => d.DriverNumber).ToDictionary(g => g.Key, g => g.First());
                 var date = race.Session.DateStart.ToString("yyyy-MM-dd");
-                // A one-year-old race counts half as much as a race on the reference date.
-                var ageDays = Math.Max(0, (referenceDate - race.Session.DateStart).TotalDays);
-                var weight = Math.Pow(0.5, ageDays / 365.25);
                 foreach (var (number, driver) in drivers)
                 {
                     if (!results.TryGetValue(number, out var result) || result.Dns) continue;
@@ -64,7 +61,7 @@ public static class TrainingRows
                         number, driver.FullName ?? $"#{number}", TeamIdentity.Key(driver.TeamName!),
                         prior?.Count ?? 0, prior?.Count > 0 ? prior.Average() : null,
                         standing?.PointsStart, standing?.PositionStart,
-                        result.Position ?? 0, result.Dnf, result.Dsq, weight));
+                        result.Position ?? 0, result.Dnf, result.Dsq));
                 }
                 foreach (var group in drivers.Values.GroupBy(d => TeamIdentity.Key(d.TeamName!)))
                 {
@@ -78,7 +75,7 @@ public static class TrainingRows
                         season.Key, round, race.Session.SessionKey, date, race.Session.Location,
                         group.Key, group.First().TeamName!, prior?.Count ?? 0,
                         prior?.Count > 0 ? prior.Average() : null,
-                        standing?.PointsStart, standing?.PositionStart, finishes.Min(), weight));
+                        standing?.PointsStart, standing?.PositionStart, finishes.Min()));
                 }
                 // Update history only after both row types have been built for this race.
                 foreach (var row in driverRows.Where(r => r.Season == season.Key && r.SessionKey == race.Session.SessionKey && r.FinishPosition > 0 && !r.Dsq))
